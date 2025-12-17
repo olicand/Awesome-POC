@@ -8,4 +8,4 @@
 
 shiro 默认密钥：
 
-![image-20221206161928066](images/image-20221206161928066.png)
+![image-20221206161928066](../.gitbook/assets/image-20221206161928066.png)

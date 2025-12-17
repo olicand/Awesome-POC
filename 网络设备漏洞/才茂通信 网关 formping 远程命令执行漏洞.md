@@ -20,7 +20,7 @@ app="CAIMORE-Gateway"
 
 登陆页面，默认口令 admin/admin
 
-![image-20230417100349175](images/image-20230417100349175.png)
+![image-20230417100349175](../.gitbook/assets/image-20230417100349175.png)
 
 验证POC
 
@@ -31,4 +31,4 @@ Authorization: Basic YWRtaW46YWRtaW4=
 PingAddr=www.baidu.com%7Cls&PingPackNumb=1&PingMsg=
 ```
 
-![image-20230417100401289](images/image-20230417100401289.png)
+![image-20230417100401289](../.gitbook/assets/image-20230417100401289.png)

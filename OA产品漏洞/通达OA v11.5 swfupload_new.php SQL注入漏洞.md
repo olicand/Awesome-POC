@@ -1,8 +1,8 @@
-# 通达OA v11.5 swfupload_new.php SQL注入漏洞
+# 通达OA v11.5 swfupload\_new.php SQL注入漏洞
 
 ## 漏洞描述
 
-通达OA v11.5 swfupload_new.php 文件存在SQL注入漏洞，攻击者通过漏洞可获取服务器敏感信息
+通达OA v11.5 swfupload\_new.php 文件存在SQL注入漏洞，攻击者通过漏洞可获取服务器敏感信息
 
 ## 漏洞影响
 
@@ -20,7 +20,7 @@ app="TDXK-通达OA"
 
 登陆页面
 
-![image-20220520154058320](images/202205201540406.png)
+![image-20220520154058320](../.gitbook/assets/202205201540406.png)
 
 发送请求包触发漏洞
 
@@ -50,4 +50,4 @@ Content-Disposition: form-data; name="SORT_ID"
 ------------GFioQpMK0vv2--
 ```
 
-![image-20220520154111741](images/202205201541795.png)
+![image-20220520154111741](../.gitbook/assets/202205201541795.png)

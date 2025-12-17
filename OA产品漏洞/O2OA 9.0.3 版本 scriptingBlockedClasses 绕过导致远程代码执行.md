@@ -8,9 +8,9 @@ O2OA 9.0.3 版本存在远程代码执行漏洞，平台使用 `scriptingBlocked
 
 参考链接：
 
-- https://github.com/o2oa/o2oa/issues/158
-- https://github.com/o2oa/o2oa/issues/159
-- https://www.o2oa.net/log/log.html
+* https://github.com/o2oa/o2oa/issues/158
+* https://github.com/o2oa/o2oa/issues/159
+* https://www.o2oa.net/log/log.html
 
 ## 披露时间
 
@@ -34,17 +34,17 @@ cd o2server
 
 按照提示进行安装，选择内置 `h2` 数据库：
 
-![](images/O2OA%209.0.3%20版本%20scriptingBlockedClasses%20绕过导致远程代码执行/image-20250227115153709.png)
+![](../.gitbook/assets/image-20250227115153709.png)
 
 ## 漏洞复现
 
 以 `xadmin` 身份登录平台，点击 `Service Platform` 进入服务平台：
 
-![](images/O2OA%209.0.3%20版本%20scriptingBlockedClasses%20绕过导致远程代码执行/image-20250227133946590.png)
+![](../.gitbook/assets/image-20250227133946590.png)
 
 点击 `Create Agent` 创建一个代理：
 
-![](images/O2OA%209.0.3%20版本%20scriptingBlockedClasses%20绕过导致远程代码执行/image-20250227134017147.png)
+![](../.gitbook/assets/image-20250227134017147.png)
 
 填写 `Name`、`Alias` 和 `Time task cron expression` 等必填项，写入 [payload](https://github.com/o2oa/o2oa/issues/158) ：
 
@@ -64,11 +64,11 @@ function mainOutput() {
 
 点击保存。关闭当前窗口，重新进入点击 `Run` 执行：
 
- ![](images/O2OA%209.0.3%20版本%20scriptingBlockedClasses%20绕过导致远程代码执行/image-20250227134123509.png)
+![](../.gitbook/assets/image-20250227134123509.png)
 
 命令成功执行：
 
-![](images/O2OA%209.0.3%20版本%20scriptingBlockedClasses%20绕过导致远程代码执行/image-20250227134221784.png)
+![](../.gitbook/assets/image-20250227134221784.png)
 
 漏洞产生的原因是 9.0.3 版本 `o2server/configSample/general.json` 文件中对类做了黑名单限制，但是攻击者可以通过 Java 反射绕过黑名单中的类：
 
@@ -96,7 +96,7 @@ function mainOutput() {
 ],
 ```
 
-![](images/O2OA%209.0.3%20版本%20scriptingBlockedClasses%20绕过导致远程代码执行/image-20250227114843307.png)
+![](../.gitbook/assets/image-20250227114843307.png)
 
 ## 漏洞修复
 

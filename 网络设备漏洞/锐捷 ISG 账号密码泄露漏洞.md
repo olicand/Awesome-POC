@@ -20,13 +20,12 @@ title="RG-ISG"
 
 登录页面如下
 
-![](images/202202110925459.png)
+![](../.gitbook/assets/202202110925459.png)
 
 F12 查看到账号密码
 
-![](images/202202110925212.png)
+![](../.gitbook/assets/202202110925212.png)
 
 解密md5 后登陆系统
 
-![](images/202202110925656.png)
-
+![](../.gitbook/assets/202202110925656.png)

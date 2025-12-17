@@ -20,17 +20,17 @@ ClickHouse
 
 登录页面
 
-![img](images/202202091258079.png)
+![img](../.gitbook/assets/202202091258079.png)
 
 执行SQL语句
 
-![img](images/202202091258245.png)
+![img](../.gitbook/assets/202202091258245.png)
 
 ```
 http://your-ip:8123/?query=SELECT%20*%20FROM%20system.query_thread_log%20LIMIT%201%20FORMAT%20Vertical
 ```
 
-![img](images/202202091258274-16898396122771.png)
+![img](../.gitbook/assets/202202091258274.png)
 
 其他的SQL语句：
 
@@ -41,4 +41,3 @@ http://your-ip:8123/?query=SHOW%20DATABASES
 ```
 http://your-ip:8123/?query=SELECT%20*%20FROM%20system.tables
 ```
-

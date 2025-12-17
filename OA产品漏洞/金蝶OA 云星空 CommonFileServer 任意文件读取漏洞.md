@@ -18,7 +18,7 @@ app="金蝶云星空-管理中心"
 
 登陆页面
 
-![image-20230828142952286](images/image-20230828142952286.png)
+![image-20230828142952286](../.gitbook/assets/image-20230828142952286.png)
 
 验证POC
 
@@ -27,4 +27,4 @@ app="金蝶云星空-管理中心"
 /CommonFileServer/C%3A%5CProgram%20Files%20%28x86%29%5CKingdee%5CK3Cloud%5CWebSite%5CWeb.config
 ```
 
-![image-20230828143007869](images/image-20230828143007869.png)
+![image-20230828143007869](../.gitbook/assets/image-20230828143007869.png)

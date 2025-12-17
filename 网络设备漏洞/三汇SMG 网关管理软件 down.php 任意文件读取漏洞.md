@@ -20,10 +20,10 @@ body="text ml10 mr20" && title="网关管理软件"
 
 登录页面
 
-![img](images/202203180949105.png)
+![img](../.gitbook/assets/202203180949105.png)
 
 存在漏洞的页面为 **down.php**
 
-![img](images/202203180949106.png)
+![img](../.gitbook/assets/202203180949106.png)
 
-![img](images/202203180949107.png)
+![img](../.gitbook/assets/202203180949107.png)

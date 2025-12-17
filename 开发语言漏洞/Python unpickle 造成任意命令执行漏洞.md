@@ -4,8 +4,8 @@
 
 参考阅读：
 
-- http://rickgray.me/2015/09/12/django-command-execution-analysis.html
-- https://www.leavesongs.com/PENETRATION/zhangyue-python-web-code-execute.html
+* http://rickgray.me/2015/09/12/django-command-execution-analysis.html
+* https://www.leavesongs.com/PENETRATION/zhangyue-python-web-code-execute.html
 
 ## 环境搭建
 
@@ -47,4 +47,4 @@ response = requests.get("http://192.168.174.128:8000/", cookies=dict(
 print(response.content)
 ```
 
-![image-20220228172508273](images/202202281725409.png)
+![image-20220228172508273](../.gitbook/assets/202202281725409.png)

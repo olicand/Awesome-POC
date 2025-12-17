@@ -20,7 +20,7 @@ title="Apache Druid"
 
 访问漏洞环境，点击 Load data -> Streaming，进入页面后点击 Apache Kafka -> Connect data：
 
-![image-20230801093324881](images/image-20230801093324881.png)
+![image-20230801093324881](../.gitbook/assets/image-20230801093324881.png)
 
 在 Bootstrap servers 和 Topic 处填入任意字符，点击 Apply，抓包。
 
@@ -88,6 +88,5 @@ Connection: close
 
 ## 修复建议
 
-- 避免 Apache Druid 开放至公网。
-- 开启身份认证机制,可参考官方文档：https://druid.apache.org/docs/latest/development/extensions-core/druid-basic-security.html
-
+* 避免 Apache Druid 开放至公网。
+* 开启身份认证机制,可参考官方文档：https://druid.apache.org/docs/latest/development/extensions-core/druid-basic-security.html

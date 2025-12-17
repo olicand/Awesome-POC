@@ -22,11 +22,11 @@ web.title=="综合安防管理平台"
 
 登陆页面
 
-![image-20220824134144287](images/202208241341481.png)
+![image-20220824134144287](../.gitbook/assets/202208241341481.png)
 
 需要开放运行管理中心 (8001端口)
 
-![image-20230828163622054](images/image-20230828163622054.png)
+![image-20230828163622054](../.gitbook/assets/image-20230828163622054.png)
 
 ```
 POST /center/api/files;.html HTTP/1.1
@@ -42,4 +42,4 @@ Content-Type: application/zip
 ------WebKitFormBoundary9PggsiM755PLa54a--
 ```
 
-![image-20230828163639195](images/image-20230828163639195.png)
+![image-20230828163639195](../.gitbook/assets/image-20230828163639195.png)

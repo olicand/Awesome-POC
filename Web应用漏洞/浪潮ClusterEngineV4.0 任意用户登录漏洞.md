@@ -18,27 +18,17 @@ title="TSCEV4.0"
 
 ## 漏洞复现
 
-
-
 登录页面如下
 
+![](../.gitbook/assets/202202091851299.png)
 
-
-![](images/202202091850344.png)
-
-
-
-```plain
+```
 USER： admin|pwd
 PASS:  任意
 ```
-
-
 
 成功登陆后台
 
 部分功能是无法使用的
 
-
-
-![](images/202202091850228.png)
+![](../.gitbook/assets/202202091850228.png)

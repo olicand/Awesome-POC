@@ -18,16 +18,10 @@ app="新软科技-极通EWEBS"
 
 ## 漏洞复现
 
-
-
 登录页面如下
 
-
-
-![](images/202202101938494.png)
+![](../.gitbook/assets/202202101938494.png)
 
 访问 testweb.php
 
-
-
-![](images/202202101939393.png)
+![](../.gitbook/assets/202202101939393.png)

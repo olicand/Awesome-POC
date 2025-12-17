@@ -6,7 +6,7 @@ MeterSphere是基于GPLv3协议的一站式的开源持续测试平台。在其1
 
 参考连接：
 
-- <https://xz.aliyun.com/t/10772>
+* [https://xz.aliyun.com/t/10772](https://xz.aliyun.com/t/10772)
 
 ## 漏洞环境
 
@@ -22,7 +22,7 @@ MeterSphere初始化成功后，访问`http://your-ip:8081`即可跳转到默认
 
 首先，我们访问`http://your-ip:8081/plugin/list`可见成功返回插件信息（虽然此时插件为空），说明`/plugin/*`接口存在未授权访问问题，可以利用。
 
-![](images/1-16929500427601.png)
+![](../.gitbook/assets/1-16929500427601.png)
 
 利用漏洞前，需要准备一个恶意MeterSphere插件。Vulhub提供了一个已经编译好的[插件](https://github.com/vulhub/metersphere-plugin-Backdoor/releases/tag/v1.1.0)以供测试（**请勿在非授权环境下测试**）。
 
@@ -47,7 +47,7 @@ Content-Disposition: form-data; name="file"; filename="Evil.jar"
 ------WebKitFormBoundaryJV2KX1EL5qmKWXsd--
 ```
 
-![](images/2-16929500427612.png)
+![](../.gitbook/assets/2-16929500427612.png)
 
 > **如果使用Burpsuite来复现漏洞，你需要注意数据包编码问题，否则可能将无法复现。**
 
@@ -73,4 +73,4 @@ Content-Length: 89
 }
 ```
 
-![](images/3.png)
+![](../.gitbook/assets/3.png)

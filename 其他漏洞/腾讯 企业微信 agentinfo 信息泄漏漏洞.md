@@ -18,7 +18,7 @@ web.body="wework_admin.normal_layout"
 
 登陆页面
 
-![image-20230828145521417](images/image-20230828145521417.png)
+![image-20230828145521417](../.gitbook/assets/image-20230828145521417.png)
 
 验证POC
 
@@ -26,11 +26,10 @@ web.body="wework_admin.normal_layout"
 /cgi-bin/gateway/agentinfo
 ```
 
-![image-20230828145533569](images/image-20230828145533569.png)
+![image-20230828145533569](../.gitbook/assets/image-20230828145533569.png)
 
 获取Token
 
 ```
 https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid=<YOUR_CORPID>&corpsecret=<YOUR_CORPSECRET>
 ```
-

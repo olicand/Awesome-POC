@@ -16,11 +16,11 @@ app="Ruijie-NBR路由器"
 
 ## 漏洞复现
 
-![](images/202202110923377.png)
+![](../.gitbook/assets/202202110923377.png)
 
 出现漏洞的文件在 /ddi/server/fileupload.php， 该文件为标准的文件上传文件
 
-![image-20230828163312522](images/image-20230828163312522.png)
+![image-20230828163312522](../.gitbook/assets/image-20230828163312522.png)
 
 文件名及目录均可控，导致可以任意上传文件
 
@@ -34,8 +34,8 @@ Content-Type: image/jpeg
 <?php phpinfo();?>
 ```
 
-![image-20230828163324363](images/image-20230828163324363.png)
+![image-20230828163324363](../.gitbook/assets/image-20230828163324363.png)
 
 访问上传的文件目录
 
-![image-20230828163346730](images/image-20230828163346730.png)
+![image-20230828163346730](../.gitbook/assets/image-20230828163346730.png)

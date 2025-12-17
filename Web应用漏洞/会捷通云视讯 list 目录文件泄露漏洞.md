@@ -20,22 +20,14 @@ body="/him/api/rest/v1.0/node/role"
 
 登陆页面如下
 
-
-
-![](images/202202101859423.png)
+![](../.gitbook/assets/202202101859423.png)
 
 访问Url
 
-
-
-```plain
+```
 /him/api/rest/V1.0/system/log/list?filePath=../
 ```
 
+![](../.gitbook/assets/202202101859690.png)
 
-
-![](images/202202101859690.png)
-
-
-
-## 
+##

@@ -16,7 +16,7 @@ web.body="cas/css/ace-part2.min.css"
 
 登陆页面
 
-![image-20230828144032254](images/image-20230828144032254.png)
+![image-20230828144032254](../.gitbook/assets/image-20230828144032254.png)
 
 验证POC
 
@@ -24,4 +24,4 @@ web.body="cas/css/ace-part2.min.css"
 /accountApi/getMaster.do
 ```
 
-![image-20230828144049975](images/image-20230828144049975.png)
+![image-20230828144049975](../.gitbook/assets/image-20230828144049975.png)

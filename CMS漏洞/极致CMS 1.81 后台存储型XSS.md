@@ -18,25 +18,24 @@ icon_hash="1657387632"
 
 ## 漏洞复现
 
-网站主页![img](images/202202170914080.png)
+网站主页![img](../.gitbook/assets/202202170914080.png)
 
 登录管理员添加模块
 
-![](images/202202170915540.png)
+![](../.gitbook/assets/202202170915540.png)
 
 注册用户
 
-![](images/202202170915958.png)
+![](../.gitbook/assets/202202170915958.png)
 
 点击发布文章
 
-![](images/202202170915367.png)
+![](../.gitbook/assets/202202170915367.png)
 
 在文章标题处插入xss payload
 
-- `<details open ontoggle= confirm(document[`coo`+`kie`])>`
+* `<details open ontoggle= confirm(document[`coo`+`kie`])>`
 
 当管理员访问时XSS成功
 
-![](images/202202170915879.png)
-
+![](../.gitbook/assets/202202170915879.png)

@@ -6,7 +6,7 @@
 
 参考阅读：
 
-- [泛微OA未授权可导致GetShell](https://www.uedbox.com/post/15730/)
+* [泛微OA未授权可导致GetShell](https://www.uedbox.com/post/15730/)
 
 ## 漏洞版本
 
@@ -34,17 +34,13 @@ String fileid = "Ewv";<br>
             fileid = fileName.substring(0,pointIndex);<br>
         }}
 ```
-![](images/202202091045304.png)
 
-![](images/202202091045317.png)
+![](../.gitbook/assets/202202091045304.png)
 
-![](images/202202091045310.png)
+![](../.gitbook/assets/202202091045317.png)
 
-![](images/202202091045312.png)
+![](../.gitbook/assets/202202091045310.png)
 
-![](images/202202091045316.png)
+![](../.gitbook/assets/202202091045312.png)
 
-
-
-
-
+![](../.gitbook/assets/202202091045316.png)

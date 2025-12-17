@@ -20,9 +20,7 @@ title="nginxwebui"
 
 登录页面
 
-![image-20220628112638269](images/202206281126396.png)
-
-
+![image-20220628112638269](../.gitbook/assets/202206281126396.png)
 
 验证请求包
 
@@ -32,4 +30,4 @@ POST /adminPage/remote/cmdOver
 remoteId=local&cmd=start|id&interval=1
 ```
 
-![image-20220628112938342](images/202206281129491.png)
+![image-20220628112938342](../.gitbook/assets/202206281129491.png)

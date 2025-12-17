@@ -18,7 +18,7 @@ app="泛微-EOffice"
 
 登录页面
 
-![image-20220520134445854](images/202205201344907.png)
+![image-20220520134445854](../.gitbook/assets/202205201344907.png)
 
 ```
 <?php
@@ -83,11 +83,10 @@ Content-Type: image/jpeg
 --e64bdf16c554bbc109cecef6451c26a4--
 ```
 
-![image-20230828150715083](images/image-20230828150715083.png)
+![image-20230828150715083](../.gitbook/assets/image-20230828150715083.png)
 
 访问：
 
 ```
 /attachment/3466744850/xxx.php
 ```
-

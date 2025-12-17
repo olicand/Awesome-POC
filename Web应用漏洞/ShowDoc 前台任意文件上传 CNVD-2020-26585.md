@@ -8,9 +8,9 @@ Showdoc <= 2.8.6 存在 uploadImg 文件上传漏洞，该漏洞源于未正确�
 
 参考链接：
 
-- https://github.com/star7th/showdoc/pull/1059
-- https://github.com/star7th/showdoc/commit/fb77dd4db88dc23f5e570fc95919ee882aca520a
-- https://github.com/star7th/showdoc/commit/e1cd02a3f98bb227c0599e7fa6b803ab1097597f
+* https://github.com/star7th/showdoc/pull/1059
+* https://github.com/star7th/showdoc/commit/fb77dd4db88dc23f5e570fc95919ee882aca520a
+* https://github.com/star7th/showdoc/commit/e1cd02a3f98bb227c0599e7fa6b803ab1097597f
 
 ## 漏洞影响
 
@@ -34,7 +34,7 @@ docker compose up -d
 
 服务启动后，安装，初始账号密码 `showdoc/123456`。访问 `http://your-ip:8080` 即可查看到 ShowDoc 的主页。
 
-![](images/ShowDoc%20前台任意文件上传%20CNVD-2020-26585/image-20240603133023021.png)
+![](../.gitbook/assets/image-20240603133023021.png)
 
 ## 漏洞复现
 
@@ -62,7 +62,7 @@ Content-Type: text/plain
 
 PHP 文件路径将返回在数据包中：
 
-![](images/ShowDoc%20前台任意文件上传%20CNVD-2020-26585/image-20240603133735578.png)
+![](../.gitbook/assets/image-20240603133735578.png)
 
 访问即可查看到 `phpinfo()` 执行结果：
 
@@ -70,4 +70,4 @@ PHP 文件路径将返回在数据包中：
 http://your-ip:8080/Public/Uploads/2024-06-03/665d568d2cdd9.php
 ```
 
-![](images/ShowDoc%20前台任意文件上传%20CNVD-2020-26585/image-20240603133858048.png)
+![](../.gitbook/assets/image-20240603133858048.png)

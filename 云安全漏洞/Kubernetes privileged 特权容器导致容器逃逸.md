@@ -4,19 +4,19 @@
 
 最初，容器特权模式的出现是为了帮助开发者实现 Docker-in-Docker 特性。然而，在特权模式下运行不完全受控容器将给宿主机带来极大安全威胁。
 
-[官方文档](1. [https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities](https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities)) 对特权模式的描述如下：
+\[官方文档]\(1. [https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities](https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities)) 对特权模式的描述如下：
 
 > 当操作者执行 `docker run --privileged` 时，Docker 将允许容器访问宿主机上的所有设备，同时修改 AppArmor 或 SELinux 的配置，使容器拥有与那些直接运行在宿主机上的进程几乎相同的访问权限。
 
 参考链接：
 
-- https://www.docker.com/blog/docker-can-now-run-within-docker/
-- https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities
-- https://github.com/Metarget/metarget
+* https://www.docker.com/blog/docker-can-now-run-within-docker/
+* https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities
+* https://github.com/Metarget/metarget
 
 ## 环境搭建
 
-基础环境准备（Docker + Minikube + Kubernetes），可参考 [Kubernetes + Ubuntu 18.04 漏洞环境搭建](https://github.com/Threekiii/Awesome-POC/blob/master/%E4%BA%91%E5%AE%89%E5%85%A8%E6%BC%8F%E6%B4%9E/Kubernetes%20%2B%20Ubuntu%2018.04%20%E6%BC%8F%E6%B4%9E%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA.md) 完成。
+基础环境准备（Docker + Minikube + Kubernetes），可参考 [Kubernetes + Ubuntu 18.04 漏洞环境搭建](<Kubernetes + Ubuntu 18.04 漏洞环境搭建.md>) 完成。
 
 本例中各组件版本如下：
 
@@ -43,7 +43,7 @@ NAME                   READY   STATUS    RESTARTS   AGE
 privileged-container   1/1     Running   0          5s
 ```
 
-![](images/Kubernetes%20privileged%20特权容器导致容器逃逸/image-20250421192020443.png)
+![](../.gitbook/assets/image-20250421192020443.png)
 
 ## 漏洞复现
 
@@ -63,7 +63,7 @@ root@privileged-container:/# chroot /host
 ubuntu
 ```
 
-![](images/Kubernetes%20privileged%20特权容器导致容器逃逸/image-20250421191351590.png)
+![](../.gitbook/assets/image-20250421191351590.png)
 
 ## 环境复原
 
@@ -74,7 +74,7 @@ kubectl delete -f k8s_metarget_namespace.yaml
 
 ## YAML
 
-[k8s_metarget_namespace.yaml](https://github.com/Metarget/metarget/blob/master/yamls/k8s_metarget_namespace.yaml)
+[k8s\_metarget\_namespace.yaml](https://github.com/Metarget/metarget/blob/master/yamls/k8s_metarget_namespace.yaml)
 
 ```
 apiVersion: v1

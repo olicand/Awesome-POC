@@ -20,7 +20,7 @@ app="EasyImage-简单图床"
 
 主页面
 
-![image-20230417094210473](images/image-20230417094210473.png)
+![image-20230417094210473](../.gitbook/assets/image-20230417094210473.png)
 
 登陆后台后发送POC (通过任意文件读取获取账号密码)
 
@@ -77,7 +77,7 @@ Content-Type: application/octet-stream
 ------WebKitFormBoundaryEUCF9Yq83AkaO6sv--
 ```
 
-![image-20230417094255974](images/image-20230417094255974.png)
+![image-20230417094255974](../.gitbook/assets/image-20230417094255974.png)
 
 上传访问地址为
 

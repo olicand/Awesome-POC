@@ -8,8 +8,8 @@ ThinkPHP 是一个在中国使用较多的 PHP 框架。在其 6.0.13 版本及�
 
 参考链接：
 
-- <https://tttang.com/archive/1865/>
-- <https://www.leavesongs.com/PENETRATION/docker-php-include-getshell.html#0x06-pearcmdphp> （本文介绍了 `pearcmd.php` 利用技巧的原理）
+* [https://tttang.com/archive/1865/](https://tttang.com/archive/1865/)
+* [https://www.leavesongs.com/PENETRATION/docker-php-include-getshell.html#0x06-pearcmdphp](https://www.leavesongs.com/PENETRATION/docker-php-include-getshell.html#0x06-pearcmdphp) （本文介绍了 `pearcmd.php` 利用技巧的原理）
 
 ## 环境搭建
 
@@ -21,13 +21,13 @@ docker-compose up -d
 
 环境启动后，访问 `http://your-ip:8080` 即可查看到 ThinkPHP 默认的欢迎页面。
 
-![image-20230504110841526](images/image-20230504110841526.png)
+![image-20230504110841526](../.gitbook/assets/image-20230504110841526.png)
 
 ## 漏洞利用
 
 首先，ThinkPHP 多语言特性不是默认开启的，所以我们可以尝试包含 `public/index.php` 文件来确认文件包含漏洞是否存在：
 
-![image-20230504111549577](images/image-20230504111549577.png)
+![image-20230504111549577](../.gitbook/assets/image-20230504111549577.png)
 
 如果漏洞存在，则服务器会出错，返回 500 页面。
 
@@ -51,8 +51,8 @@ Cache-Control: max-age=0
 
 如果服务器返回 pearcmd 的命令行执行结果，说明漏洞利用成功：
 
-![image-20230504111600929](images/image-20230504111600929.png)
+![image-20230504111600929](../.gitbook/assets/image-20230504111600929.png)
 
 此时访问 `http://your-ip:8080/shell.php` 即可发现已经成功写入文件：
 
-![image-20230504111609053](images/image-20230504111609053.png)
+![image-20230504111609053](../.gitbook/assets/image-20230504111609053.png)

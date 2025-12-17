@@ -13,8 +13,8 @@ xdebug.remote_enable = 1
 
 更多说明可参考：
 
- - https://xdebug.org
- - https://ricterz.me/posts/Xdebug%3A%20A%20Tiny%20Attack%20Surface
+* https://xdebug.org
+* https://ricterz.me/posts/Xdebug%3A%20A%20Tiny%20Attack%20Surface
 
 ## 环境搭建
 
@@ -27,7 +27,7 @@ docker compose up -d
 
 启动完成后，访问 `http://your-ip:8080/` 即可发现主页是一个简单的 phpinfo，在其中可以找到 xdebug 的配置，可见开启了远程调试。
 
-![](images/PHP%20XDebug%20远程调试模式导致代码执行/image-20240529112232697.png)
+![](../.gitbook/assets/image-20240529112232697.png)
 
 ## 漏洞复现
 
@@ -40,7 +40,7 @@ Vulhub 提供了 [exp.py](https://github.com/vulhub/vulhub/blob/master/php/xdebu
 python3 exp.py -t http://127.0.0.1:8080/index.php -c 'shell_exec('id');'
 ```
 
-![](images/PHP%20XDebug%20远程调试模式导致代码执行/image-20240529112516798.png)
+![](../.gitbook/assets/image-20240529112516798.png)
 
 **重要说明：因为该通信是一个反向连接的过程，exp.py 启动后其实是会监听本地的 9000 端口（可通过 -l 参数指定）并等待 XDebug 前来连接，所以执行该脚本的服务器必须有外网 IP（或者与目标服务器处于同一内网）。**
 

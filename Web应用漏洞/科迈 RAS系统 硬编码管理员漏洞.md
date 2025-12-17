@@ -18,17 +18,13 @@ app="科迈-RAS系统"
 
 ## 漏洞复现
 
-![](images/202202091840562.png)
+![](../.gitbook/assets/202202091840562.png)
 
-![](images/202202091840042.png)
-
-
+![](../.gitbook/assets/202202091840042.png)
 
 可得知存在的账号密码为
 
-
-
-```plain
+```
 user: RASCOM
 pass: 1A2b3C4d56.
 
@@ -36,7 +32,4 @@ user: 1A2b3C4d56.
 pass: 1A2b3C4d56.
 ```
 
-
-
 当开启RDP即可使用该账号登陆
-

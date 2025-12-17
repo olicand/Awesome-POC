@@ -20,17 +20,14 @@ title="platform - Login"
 
 登录页面如下
 
-![](images/202202140926162.png)
+![](../.gitbook/assets/202202140926162.png)
 
 POC
 
-```plain
+```
 http://xxx.xxx.xxx.xxx/hosts
 ```
 
-![](images/202202140927595.png)
+![](../.gitbook/assets/202202140927595.png)
 
 成功获得账号密码
-
-
-

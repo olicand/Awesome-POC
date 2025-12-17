@@ -6,8 +6,8 @@ Apache Spark 是一款集群计算系统，其支持用户向管理节点提交�
 
 参考链接：
 
-- https://weibo.com/ttarticle/p/show?id=2309404187794313453016
-- https://xz.aliyun.com/t/2490
+* https://weibo.com/ttarticle/p/show?id=2309404187794313453016
+* https://xz.aliyun.com/t/2490
 
 ## 漏洞影响
 
@@ -120,11 +120,11 @@ Content-Length: 680
 
 其中，`spark.jars` 即是编译好的应用，mainClass 是待运行的类，appArgs 是传给应用的参数。
 
-![img](images/1-16818019181141.png)
+![img](../.gitbook/assets/1-16818019181141.png)
 
 返回的包中有 submissionId，然后访问 `http://your-ip:8081/logPage/?driverId={submissionId}&logType=stdout`，即可查看执行结果：
 
-![img](images/2-16818019181143.png)
+![img](../.gitbook/assets/2-16818019181143.png)
 
 注意，提交应用是在 master 中，查看结果是在具体执行这个应用的 slave 里（默认 8081 端口）。实战中，由于 slave 可能有多个。
 

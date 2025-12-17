@@ -18,7 +18,7 @@ icon_hash="953405444"
 
 登陆页面
 
-![image-20231116141557650](images/image-20231116141557650.png)
+![image-20231116141557650](../.gitbook/assets/image-20231116141557650.png)
 
 poc
 
@@ -42,9 +42,8 @@ Content-Type: text/html
 ------WebKitFormBoundarynUqjgvhmkL1dxpCV--
 ```
 
-![image-20231116141617020](images/image-20231116141617020.png)
+![image-20231116141617020](../.gitbook/assets/image-20231116141617020.png)
 
 ```
 /files/editor_img/xxx/xxx.asp
 ```
-

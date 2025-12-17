@@ -18,7 +18,7 @@
 
 登陆页面
 
-![image-20231116141405041](images/image-20231116141405041.png)
+![image-20231116141405041](../.gitbook/assets/image-20231116141405041.png)
 
 poc
 
@@ -32,9 +32,8 @@ Accept-Encoding: gzip
 <% out.println("Test");%>
 ```
 
-![image-20231116141354722](images/image-20231116141354722.png)
+![image-20231116141354722](../.gitbook/assets/image-20231116141354722.png)
 
 ```
 /linux/Test.jsp
 ```
-

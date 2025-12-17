@@ -2,7 +2,7 @@
 
 ## 漏洞描述
 
-如果在配置 Action 中 Result 时使用了重定向类型，并且还使用 ${param_name} 作为重定向变量，例如：
+如果在配置 Action 中 Result 时使用了重定向类型，并且还使用 ${param\_name} 作为重定向变量，例如：
 
 ```
 <package name="S2-012" extends="struts-default">
@@ -18,7 +18,7 @@
 
 漏洞详情:
 
-- http://struts.apache.org/docs/s2-012.html
+* http://struts.apache.org/docs/s2-012.html
 
 ## 漏洞影响
 
@@ -45,7 +45,7 @@ docker-compose up -d
 
 发送请求，执行命令：
 
-![image-20220301173613307](images/202203011736450.png)
+![image-20220301173613307](../.gitbook/assets/202203011736450.png)
 
 ### 反弹 shell
 
@@ -82,4 +82,4 @@ bash /usr/local/tomcat/shell.sh
 
 成功接收反弹 shell：
 
-![image-20220301173937416](images/202203011739511.png)
+![image-20220301173937416](../.gitbook/assets/202203011739511.png)

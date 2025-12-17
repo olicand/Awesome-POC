@@ -20,16 +20,16 @@ https://gitee.com/qingzhanwang/kpcms
 
 这里默认开启日志写入
 
-```plain
+```
 runtime/log/202104/06.log
 ```
 
-![](images/202202170921409.png)
+![](../.gitbook/assets/202202170921409.png)
 
 其中可以看到泄露了管理员的Cookie信息和其他敏感信息
 
 并且文件命名为 **年+月/日期.log**
 
-![](images/202202170921851.png)
+![](../.gitbook/assets/202202170921851.png)
 
 这里关注后台的日志文件中的 admin.php页面的cookie就可以获得管理员权限

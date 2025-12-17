@@ -6,8 +6,8 @@ FastAdmin 是一款基于 ThinkPHP 和 Bootstrap 的极速后台开发框架。F
 
 参考链接：
 
-- https://mp.weixin.qq.com/s/otrH75ZjCHBQbRB7g5DdWg
-- https://nosec.org/home/detail/4713.html
+* https://mp.weixin.qq.com/s/otrH75ZjCHBQbRB7g5DdWg
+* https://nosec.org/home/detail/4713.html
 
 ## 网络测绘
 
@@ -49,4 +49,4 @@ Content-Disposition: form-data; name="chunkindex"
 ------WebKitFormBoundarybw5c2a2bqlLLOMEU
 ```
 
-![image-20221206160222513](images/image-20221206160222513.png)
+![image-20221206160222513](../.gitbook/assets/image-20221206160222513.png)

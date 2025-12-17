@@ -21,18 +21,18 @@ title="飞鱼星家用智能路由"
 
 登录页面如下
 
-![](images/202202162236515.png)
+![](../.gitbook/assets/202202162236515.png)
 
 访问 index.html 时会请求 cookie.cgi
 
-```plain
+```
 http://xxx.xxx.xxx.xxx/index.html
 ```
 
 页面抓包 Drop掉 cookie.cgi
 
-![](images/202202162236102.png)
+![](../.gitbook/assets/202202162236102.png)
 
 跳转后台获取了权限
 
-![](images/202202162236589.png)
+![](../.gitbook/assets/202202162236589.png)

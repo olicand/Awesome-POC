@@ -37,4 +37,4 @@ http://xxx.xxx.xxx.xxx/script
 println "cat /etc/passwd".execute().text
 ```
 
-![image-20220525163148014](images/202205251631073.png)
+![image-20220525163148014](../.gitbook/assets/202205251631073.png)

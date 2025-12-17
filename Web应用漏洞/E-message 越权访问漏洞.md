@@ -20,16 +20,12 @@ title="emessage 设置: 数据库设置 - 标准连接"
 
 访问安装页面
 
-```plain
+```
 http://xxx.xxx.xxx.xxx/setup/setup-datasource-standard.jsp
 ```
 
-![](images/202202101934751.png)
-
-
+![](../.gitbook/assets/202202101934751.png)
 
 可以获取账号密码信息，一路点击右下角的继续将会跳转修改管理员账号密码页面，修改后登录即可获取后台权限
 
-
-
-![](images/202202101934975.png)
+![](../.gitbook/assets/202202101934975.png)

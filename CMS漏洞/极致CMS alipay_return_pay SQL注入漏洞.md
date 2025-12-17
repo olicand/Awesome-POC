@@ -1,8 +1,8 @@
-# 极致CMS alipay_return_pay SQL注入漏洞
+# 极致CMS alipay\_return\_pay SQL注入漏洞
 
 ## 漏洞描述
 
-极致CMS支付插件中存在SQL注入漏洞，通过漏洞可以获取数据库信息 
+极致CMS支付插件中存在SQL注入漏洞，通过漏洞可以获取数据库信息
 
 ## 漏洞影响
 
@@ -182,29 +182,27 @@ function exploit(){
 
 如果直接这样GET POST REQUEST 带入数据库 会产生报错注入
 
-例如  ./exploit/name=123'  (加一个引号会报错，如果引号没过滤)
+例如 ./exploit/name=123' (加一个引号会报错，如果引号没过滤)
 
 现在只需要寻找类型是这样没过滤直接带入数据库的语句就行了
 
 简单寻找下其实这样的地方挺多的，拿一个位置举例子
 
-![](images/202202170918836.jpg)
+![](../.gitbook/assets/202202170918836.jpg)
 
 这里是一个支付插件的位置，蓝色方块1增加代码模拟开通支付宝功能通过验证
 
-可以看到这个函数只使用[htmlspecialchars]来过滤了xss，sql语句没有过滤，用刚刚的方法来注入
+可以看到这个函数只使用\[htmlspecialchars]来过滤了xss，sql语句没有过滤，用刚刚的方法来注入
 
-![](images/202202170919997.jpg)
+![](../.gitbook/assets/202202170919997.jpg)
 
 可以看到的确出现了sql语句和数据库错误
 
 直接报错注入获取敏感信息
 
-- `mypay/alipay_return_pay?out_trade_no=1%27 and updatexml(1,concat(0x7e,(select version()),0x7e),1)--+"`
+* `mypay/alipay_return_pay?out_trade_no=1%27 and updatexml(1,concat(0x7e,(select version()),0x7e),1)--+"`
 
-
-
-![](images/202202170919441.jpg)
+![](../.gitbook/assets/202202170919441.jpg)
 
 ```python
 import requests
@@ -417,4 +415,4 @@ if __name__ == '__main__':
     main()
 ```
 
-![](images/202202170919669.jpg)
+![](../.gitbook/assets/202202170919669.jpg)

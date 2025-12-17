@@ -20,15 +20,13 @@ ZXHN F450A
 
 登录页面如下
 
+![](../.gitbook/assets/202202140923388.png)
 
-
-![](images/202202140923388.png)
-
-```plain
+```
 user/pass
 
 useradmin/nE7jA%5m 普通管理员
 telecomadmin/nE7jA%5m 超级管理员
 ```
 
-![](images/202202140923517.png)
+![](../.gitbook/assets/202202140923517.png)

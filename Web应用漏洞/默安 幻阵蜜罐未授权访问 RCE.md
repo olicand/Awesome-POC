@@ -14,56 +14,32 @@
 
 产品页面
 
-
-
-![](images/202202091842964.png)
-
-
+![](../.gitbook/assets/202202091842964.png)
 
 安装页面如下
 
-![](images/202202091843119.png)
-
-
+![](../.gitbook/assets/202202091843119.png)
 
 刷新并抓包
 
+![](../.gitbook/assets/202202091844386.png)
 
+Drop掉 **/huanzhen/have\_installed?**
 
-![](images/202202091844386.png)
-
-
-
-Drop掉 **/huanzhen/have_installed?**
-
-
-
-![](images/202202091844013.png)
-
-
+![](../.gitbook/assets/202202091844013.png)
 
 进入页面
 
-
-
-![](images/202202091844519.png)
+![](../.gitbook/assets/202202091844519.png)
 
 点击调试抓包
 
-![](images/202202091844068.png)
-
-
+![](../.gitbook/assets/202202091844068.png)
 
 执行其他命令
 
-
-
-![](images/202202091844606.png)
-
-
+![](../.gitbook/assets/202202091844606.png)
 
 点击一键诊断泄露 IP数据
 
-
-
-![](images/202202091844354.png)
+![](../.gitbook/assets/202202091844354.png)

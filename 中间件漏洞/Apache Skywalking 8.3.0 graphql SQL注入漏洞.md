@@ -8,8 +8,8 @@ Apache Skywalking是一款针对分布式系统的应用程序性能监视工具
 
 参考链接：
 
-- https://mp.weixin.qq.com/s/hB-r523_4cM0jZMBOt6Vhw
-- https://github.com/apache/skywalking/commit/0bd81495965d801315dd7417bb17333ae0eccf3b#diff-ec87a1cdf66cdb37574d9eafd4d72d99ed94a38c4a8ff2aa9c7b8daeff502a2c
+* https://mp.weixin.qq.com/s/hB-r523\_4cM0jZMBOt6Vhw
+* https://github.com/apache/skywalking/commit/0bd81495965d801315dd7417bb17333ae0eccf3b#diff-ec87a1cdf66cdb37574d9eafd4d72d99ed94a38c4a8ff2aa9c7b8daeff502a2c
 
 ## 环境搭建
 
@@ -25,7 +25,7 @@ docker-compose up -d
 
 可见，SQL语句已经出错，`metricName`参数的值被拼接到`from`后面。
 
-![image-20220301101805554](images/202203011018294.png)
+![image-20220301101805554](../.gitbook/assets/202203011018294.png)
 
 这个请求的HTTP数据包为：
 

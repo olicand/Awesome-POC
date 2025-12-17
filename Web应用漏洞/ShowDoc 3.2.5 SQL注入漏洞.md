@@ -8,7 +8,7 @@ ShowDoc <= 3.2.5 存在一处未授权 SQL 注入漏洞，攻击者可以利用�
 
 参考链接：
 
-- https://github.com/star7th/showdoc/commit/84fc28d07c5dfc894f5fbc6e8c42efd13c976fda
+* https://github.com/star7th/showdoc/commit/84fc28d07c5dfc894f5fbc6e8c42efd13c976fda
 
 ## 漏洞影响
 
@@ -26,7 +26,7 @@ docker compose up -d
 
 服务启动后，访问 `http://your-ip:8080` 即可查看到 ShowDoc 的主页。初始化成功后，使用帐号 `showdoc` 和密码 `123456` 登录用户界面。
 
-![](images/ShowDoc%203.2.5%20SQL注入漏洞/image-20240704153244765.png)
+![](../.gitbook/assets/image-20240704153244765.png)
 
 ## 漏洞复现
 
@@ -44,13 +44,13 @@ pip install onnxruntime ddddocr requests
 python poc.py -u http://your-ip:8080
 ```
 
-![](images/ShowDoc%203.2.5%20SQL注入漏洞/image-20240704155207997.png)
+![](../.gitbook/assets/image-20240704155207997.png)
 
 测试获取的 token 是否合法。
 
 未加 token：
 
-![](images/ShowDoc%203.2.5%20SQL注入漏洞/image-20240704161609189.png)
+![](../.gitbook/assets/image-20240704161609189.png)
 
 添加 token：
 
@@ -58,7 +58,7 @@ python poc.py -u http://your-ip:8080
 Cookie: cookie_token=38f70784c511fe30f8686d5bf44bd0c5a830acd8e8c3efa9db63938f69e11f40
 ```
 
-![](images/ShowDoc%203.2.5%20SQL注入漏洞/image-20240704161636254.png)
+![](../.gitbook/assets/image-20240704161636254.png)
 
 ## 漏洞 POC
 

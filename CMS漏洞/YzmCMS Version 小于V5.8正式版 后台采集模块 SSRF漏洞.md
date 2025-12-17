@@ -8,7 +8,7 @@
 
 参考阅读：
 
-- [There are SSRF vulnerabilities in background collection management](https://github.com/yzmcms/yzmcms/issues/53)
+* [There are SSRF vulnerabilities in background collection management](https://github.com/yzmcms/yzmcms/issues/53)
 
 ## 漏洞影响
 
@@ -22,7 +22,7 @@ https://github.com/yzmcms/yzmcms
 
 按照文档安装即可
 
-![](images/202202170906852.png)
+![](../.gitbook/assets/202202170906852.png)
 
 ## 漏洞复现
 
@@ -30,27 +30,24 @@ https://github.com/yzmcms/yzmcms
 
 添加采集规则
 
-![](images/202202170906839.png)
+![](../.gitbook/assets/202202170906839.png)
 
 在你的服务器上编辑HTML代码
 
-![](images/202202170906899.png)
+![](../.gitbook/assets/202202170906899.png)
 
-- 根目录可能不同，payload需要更改
+* 根目录可能不同，payload需要更改
 
 点击采集读取根目录下的 Flag
 
-
-
-![](images/202202170906740.png)
+![](../.gitbook/assets/202202170906740.png)
 
 出现漏洞的代码位置 `yzmcms/yzmphp/core/class/cache_factory.class.php`
 
-![](images/202202170906476.png)
+![](../.gitbook/assets/202202170906476.png)
 
-这里调用 ***url_check*** 函数
+这里调用 _**url\_check**_ 函数
 
-![](images/202202170906456.png)
+![](../.gitbook/assets/202202170906456.png)
 
 可以看到这里只检测了前4位是否为 http，使用 httpxxx 即可绕过
-

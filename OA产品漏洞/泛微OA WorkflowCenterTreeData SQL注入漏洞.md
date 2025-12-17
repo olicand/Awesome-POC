@@ -6,7 +6,7 @@
 
 参考阅读：
 
-- [泛微OA WorkflowCenterTreeData接口注入复现（仅限oracle数据库）](https://zhuanlan.zhihu.com/p/86082614)
+* [泛微OA WorkflowCenterTreeData接口注入复现（仅限oracle数据库）](https://zhuanlan.zhihu.com/p/86082614)
 
 ## 漏洞影响
 
@@ -18,7 +18,7 @@
 
 泛型微生态OA系统的WorkflowCenterTreeData接口在使用Oracle数据库时，由于内置sql语句分解不严密，导致其存在的sql注入漏洞
 
-![image-20220209103818614](images/202202091038769.png)
+![image-20220209103818614](../.gitbook/assets/202202091038769.png)
 
 漏洞请求包
 
@@ -64,4 +64,3 @@ if __name__ == '__main__':
     url=sys.argv[1]
     exploit(url)
 ```
-

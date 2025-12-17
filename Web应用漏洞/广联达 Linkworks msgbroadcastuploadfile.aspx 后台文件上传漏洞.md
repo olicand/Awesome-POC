@@ -18,11 +18,11 @@ web.body="/Services/Identification/"
 
 登陆页面
 
-![image-20230828150337640](images/image-20230828150337640.png)
+![image-20230828150337640](../.gitbook/assets/image-20230828150337640.png)
 
 GTP.IM.Services.Group.WebSite.GTP.IM.Services.Group 存在文件上传，上传后在当前目录 Upload下
 
-![image-20230828150355277](images/image-20230828150355277.png)
+![image-20230828150355277](../.gitbook/assets/image-20230828150355277.png)
 
 通过SQL注入获取管理员账号密码后登陆后台上传文件,验证POC
 
@@ -41,10 +41,10 @@ Test
 ------WebKitFormBoundaryFfJZ4PlAZBixjELj--
 ```
 
-![image-20230828150407255](images/image-20230828150407255.png)
+![image-20230828150407255](../.gitbook/assets/image-20230828150407255.png)
 
 ```
 /GTP/IM/Services/Group/Upload/xxx-xxx-test.aspx
 ```
 
-![image-20230828150419196](images/image-20230828150419196.png)
+![image-20230828150419196](../.gitbook/assets/image-20230828150419196.png)

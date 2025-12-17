@@ -8,12 +8,12 @@ Celery 是一个简单、灵活且可靠的分布式系统，用于处理大量�
 
 参考阅读：
 
-- https://docs.celeryproject.org/en/stable/userguide/configuration.html
-- https://www.bookstack.cn/read/celery-3.1.7-zh/8d5b10e3439dbe1f.md#dhfmrk
-- https://docs.celeryproject.org/en/stable/userguide/calling.html#serializers
-- https://www.jianshu.com/p/52552c075bc0
-- https://www.runoob.com/w3cnote/python-redis-intro.html
-- https://blog.csdn.net/SKI_12/article/details/85015803
+* https://docs.celeryproject.org/en/stable/userguide/configuration.html
+* https://www.bookstack.cn/read/celery-3.1.7-zh/8d5b10e3439dbe1f.md#dhfmrk
+* https://docs.celeryproject.org/en/stable/userguide/calling.html#serializers
+* https://www.jianshu.com/p/52552c075bc0
+* https://www.runoob.com/w3cnote/python-redis-intro.html
+* https://blog.csdn.net/SKI\_12/article/details/85015803
 
 ## 环境搭建
 
@@ -53,7 +53,7 @@ pip install redis
 python exploit.py [主机IP]
 ```
 
-![image-20220301104913810](images/202203011049883.png)
+![image-20220301104913810](../.gitbook/assets/202203011049883.png)
 
 查看结果：
 
@@ -63,7 +63,7 @@ docker-compose logs celery
 
 可以看到如下任务消息报错：
 
-![image-20220301104801643](images/202203011048739.png)
+![image-20220301104801643](../.gitbook/assets/202203011048739.png)
 
 ```
 docker-compose exec celery ls -l /tmp
@@ -71,5 +71,4 @@ docker-compose exec celery ls -l /tmp
 
 可以看到成功创建了文件`celery_success`
 
-![image-20220301104827599](images/202203011048652.png)
-
+![image-20220301104827599](../.gitbook/assets/202203011048652.png)

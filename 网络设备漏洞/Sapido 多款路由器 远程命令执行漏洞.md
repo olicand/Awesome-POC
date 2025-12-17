@@ -23,16 +23,15 @@ app="Sapido-路由器"
 
 固件中存在一个asp文件为 **syscmd.asp** 存在命令执行
 
-![](images/202202162237726.png)
+![](../.gitbook/assets/202202162237726.png)
 
 访问目标：
 
-```plain
+```
 http://xxx.xxx.xxx.xxx/syscmd.asp
 http://xxx.xxx.xxx.xxx/syscmd.htm
 ```
 
-![](images/202202162237444.png)
+![](../.gitbook/assets/202202162237444.png)
 
 直接输入就可以命令执行了
-

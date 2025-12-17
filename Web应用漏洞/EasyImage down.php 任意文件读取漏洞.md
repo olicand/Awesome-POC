@@ -20,7 +20,7 @@ app="EasyImage-简单图床"
 
 主页面
 
-![image-20230417094057151](images/image-20230417094057151.png)
+![image-20230417094057151](../.gitbook/assets/image-20230417094057151.png)
 
 验证POC
 
@@ -28,4 +28,4 @@ app="EasyImage-简单图床"
 /application/down.php?dw=./config/config.php
 ```
 
-![image-20230417094115549](images/image-20230417094115549.png)
+![image-20230417094115549](../.gitbook/assets/image-20230417094115549.png)

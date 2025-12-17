@@ -12,9 +12,8 @@
 
 ## 漏洞复现
 
-```plain
+```
 GET /api/dbstat/gettablessize HTTP/1.1
 ```
 
-![image-20220209200552429](images/202202092005904.png)
-
+![image-20220209200552429](../.gitbook/assets/202202092005904.png)

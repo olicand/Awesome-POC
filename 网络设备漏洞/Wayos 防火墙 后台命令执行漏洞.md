@@ -20,10 +20,8 @@ body="Get_Verify_Info(hex_md5(user_string)."
 
 登录页面如下
 
-
-
-![](images/202202162240644.png)
+![](../.gitbook/assets/202202162240644.png)
 
 登录后台后 ping 模块命令执行
 
-![](images/202202162240143.png)
+![](../.gitbook/assets/202202162240143.png)

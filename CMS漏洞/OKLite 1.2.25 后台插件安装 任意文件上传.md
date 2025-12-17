@@ -14,9 +14,9 @@ OKLite 1.2.25
 
 关于执行逻辑参照上一篇 **OKLite 1.2.25 后台模块导入 任意文件上传 CVE-2019-16131**
 
-出现漏洞的位置在于**framework/admin/plugin_control.php**
+出现漏洞的位置在于**framework/admin/plugin\_control.php**
 
-![](images/202202162317826.png)
+![](../.gitbook/assets/202202162317826.png)
 
 ```php
 public function unzip_f()
@@ -52,11 +52,11 @@ public function unzip_f()
 	}
 ```
 
-这里可以看到需要上传ZIP压缩包格式的插件，跟进**zip_info**函数
+这里可以看到需要上传ZIP压缩包格式的插件，跟进**zip\_info**函数
 
 函数位置 **framework/libs/phpzip.php**
 
-![](images/202202162317758.png)
+![](../.gitbook/assets/202202162317758.png)
 
 这里会返回关于ZIP压缩包的一些信息
 
@@ -79,7 +79,7 @@ $info = explode('/',$info['filename']);
 
 这里用 explode函数以 **/** 分隔返回两个值，也就是说格式应为 **AAA/BBB**这样的目录格式，直接上传ZIP文件则会报错 **插件打包模式有问题**
 
-![](images/202202162317579.png)
+![](../.gitbook/assets/202202162317579.png)
 
 在这里上传一个ZIP文件，格式要是解压出来为目录，目录中含PHP文件就行了
 

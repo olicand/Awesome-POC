@@ -20,16 +20,14 @@ title="互联世界 物联未来-登录"
 
 登录页面如下
 
-![](images/202202162253135.png)
-
-
+![](../.gitbook/assets/202202162253135.png)
 
 访问Url
 
-```plain
+```
 /simple-index.asp
 ```
 
-![](images/202202162253346.png)
+![](../.gitbook/assets/202202162253346.png)
 
 越过管理员验证获取Wifl账号密码等信息

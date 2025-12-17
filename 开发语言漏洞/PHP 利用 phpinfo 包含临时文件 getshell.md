@@ -6,7 +6,7 @@ PHP 文件包含漏洞中，如果找不到可以包含的文件，我们可以�
 
 参考链接：
 
-- https://dl.packetstormsecurity.net/papers/general/LFI_With_PHPInfo_Assitance.pdf
+* https://dl.packetstormsecurity.net/papers/general/LFI\_With\_PHPInfo\_Assitance.pdf
 
 ## 环境搭建
 
@@ -41,15 +41,15 @@ docker compose up -d
 
 ## 漏洞复现
 
-利用脚本 [exp.py](exp.py) 实现了上述过程，成功包含临时文件后，会执行 `<?php file_put_contents('/tmp/g', '<?=eval($_REQUEST[1])?>')?>`，写入一个新的文件 `/tmp/g`，这个文件就会永久留在目标机器上。
+利用脚本 [exp.py](../%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80%E6%BC%8F%E6%B4%9E/exp.py) 实现了上述过程，成功包含临时文件后，会执行 `<?php file_put_contents('/tmp/g', '<?=eval($_REQUEST[1])?>')?>`，写入一个新的文件 `/tmp/g`，这个文件就会永久留在目标机器上。
 
 用 python2 执行：`python exp.py your-ip 8080 100`：
 
-![](images/PHP%20利用%20phpinfo%20包含临时文件%20getshell/image-20240529110408970.png)
+![](../.gitbook/assets/image-20240529110408970.png)
 
 可见，执行到第 118 个数据包的时候就写入成功。然后，利用 lfi.php，即可执行任意命令：
 
-![](images/PHP%20利用%20phpinfo%20包含临时文件%20getshell/image-20240529110559208.png)
+![](../.gitbook/assets/image-20240529110559208.png)
 
 ## 漏洞 POC
 

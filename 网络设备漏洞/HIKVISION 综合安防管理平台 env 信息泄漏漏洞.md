@@ -18,7 +18,7 @@ app="Hikvision-综合安防管理平台"
 
 登录页面
 
-![image-20220824134144287](images/202208241341481.png)
+![image-20220824134144287](../.gitbook/assets/202208241341481.png)
 
 验证POC
 
@@ -26,4 +26,4 @@ app="Hikvision-综合安防管理平台"
 /artemis-portal/artemis/env 
 ```
 
-![image-20230828163057813](images/image-20230828163057813.png)
+![image-20230828163057813](../.gitbook/assets/image-20230828163057813.png)

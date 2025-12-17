@@ -4,7 +4,7 @@ YApi是一个API管理工具。在其1.12.0版本之前，存在一处NoSQL注�
 
 参考链接：
 
-- https://github.com/YMFE/yapi/commit/59bade3a8a43e7db077d38a4b0c7c584f30ddf8c
+* https://github.com/YMFE/yapi/commit/59bade3a8a43e7db077d38a4b0c7c584f30ddf8c
 
 ## 漏洞环境
 
@@ -16,7 +16,7 @@ docker-compose up -d
 
 环境启动后，访问`http://your-ip:3000`即可看到YApi首页。
 
-![image-20221125164138774](images/202211251641047.png)
+![image-20221125164138774](../.gitbook/assets/202211251641047.png)
 
 ## 漏洞复现
 
@@ -28,11 +28,11 @@ docker-compose up -d
 python poc.py --debug one4all -u http://your-ip:3000/
 ```
 
-![image-20221125164438168](images/202211251644280.png)
+![image-20221125164438168](../.gitbook/assets/202211251644280.png)
 
 ## 漏洞POC
 
-- https://github.com/vulhub/vulhub/blob/master/yapi/mongodb-inj/poc.py
+* https://github.com/vulhub/vulhub/blob/master/yapi/mongodb-inj/poc.py
 
 ```python
 import requests
@@ -381,4 +381,3 @@ def cmd_one4all(url, count, command):
 if __name__ == '__main__':
     cli()
 ```
-

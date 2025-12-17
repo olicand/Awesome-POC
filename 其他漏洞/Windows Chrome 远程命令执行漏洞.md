@@ -2,7 +2,7 @@
 
 ## 漏洞描述
 
-Windows Chrome 0day  在 2021-4-13 被公开
+Windows Chrome 0day 在 2021-4-13 被公开
 
 该漏洞未绕过沙箱，需要关闭沙箱才能成功弹出计算器
 
@@ -157,8 +157,6 @@ copy_shellcode(rwx_page_addr, shellcode);
 f();
 ```
 
-![image-20220209123907689](images/202202091239826.png)
+![image-20220209123907689](../.gitbook/assets/202202091239826.png)
 
-
-
-`
+\`

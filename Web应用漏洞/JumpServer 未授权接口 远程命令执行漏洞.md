@@ -25,7 +25,7 @@ app="FIT2CLOUD-JumpServer-堡垒机"
 
 [下载链接](https://www.o2oxy.cn/wp-content/uploads/2021/01/quick_start.zip)
 
-- 安装注意 配置网络，配置Mysql，配置Redis 选择 n
+* 安装注意 配置网络，配置Mysql，配置Redis 选择 n
 
 等待完成安装执行以下命令
 
@@ -33,8 +33,6 @@ app="FIT2CLOUD-JumpServer-堡垒机"
 cd /opt/jumpserver-installer-v2.6.1
 ./jmsctl.sh start
 ```
-
-
 
 等待安装完毕访问 http://xxx.xxx.xxx.xxxx:8080
 
@@ -44,41 +42,25 @@ cd /opt/jumpserver-installer-v2.6.1
 
 进入后台添加配置
 
-**资产管理 -->  系统用户**
+**资产管理 --> 系统用户**
 
-
-
-![](images/202202101943889.png)
-
-
+![](../.gitbook/assets/202202101943889.png)
 
 **资产管理 --> 管理用户**
 
-
-
-![](images/202202101943769.png)
-
-
+![](../.gitbook/assets/202202101943769.png)
 
 **用户管理 --> 用户列表**
 
-![](images/202202101943018.png)
+![](../.gitbook/assets/202202101943018.png)
 
 **资产管理 --> 资产列表**
 
-
-
-![](images/202202101943864.png)
-
-
+![](../.gitbook/assets/202202101943864.png)
 
 查看一下项目代码提交变动
 
-
-
-![](images/202202101943085.png)
-
-
+![](../.gitbook/assets/202202101943085.png)
 
 ```python
 import time
@@ -159,132 +141,73 @@ class CeleryLogWebsocket(JsonWebsocketConsumer):
         self.close()
 ```
 
-
-
 新版对用户进行了一个判断，可以使用 谷歌插件 WebSocket King 连接上这个websocket 进行日志读取
 
-
-
-![](images/202202101943143.png)
-
-
+![](../.gitbook/assets/202202101943143.png)
 
 比如send这里获取的 Task id ,这里是可以获得一些敏感的信息的
 
-
-
-![](images/202202101944092.png)
-
-
+![](../.gitbook/assets/202202101944092.png)
 
 查看一下连接Web终端的后端api代码
 
+![](../.gitbook/assets/202202101944673.png)
 
-
-![](images/202202101944673.png)
-
-
-
-可以看到这里调用时必须需要 **user asset system_user** 这三个值，再获取一个20秒的 **token**
-
-
+可以看到这里调用时必须需要 **user asset system\_user** 这三个值，再获取一个20秒的 **token**
 
 访问web终端后查看日志的调用
 
+![](../.gitbook/assets/202202101944023.png)
 
-
-![](images/202202101944023.png)
-
-
-
-```plain
+```
 docker exec -it (jumpserve/core的docker) /bin/bash
 cat gunicorn.log | grep /api/v1/perms/asset-permissions/user/validate/?
 ```
 
+![](../.gitbook/assets/202202101944593.png)
 
-
-![](images/202202101944593.png)
-
-
-
-```plain
+```
 assset_id=ee7e7446-6df7-4f60-b551-40a241958451
 system_user_id=d89bd097-b7e7-4616-9422-766c6e4fcdb8	
 user_id=efede3f4-8659-4daa-8e95-9a841dbe82a8
 ```
 
+可以看到在不同的时间访问这个接口的asset\_id等都是一样的，所以只用在 **刚刚的未授权日志读取**里找到想要的这几个值就可以获得 token
 
-
-可以看到在不同的时间访问这个接口的asset_id等都是一样的，所以只用在 **刚刚的未授权日志读取**里找到想要的这几个值就可以获得 token
-
-
-
-![](images/202202101945874.png)
-
-
+![](../.gitbook/assets/202202101945874.png)
 
 发送请求获取20s的token
 
-
-
-![](images/202202101945185.png)
-
-
+![](../.gitbook/assets/202202101945185.png)
 
 看一下 koko.js 这个前端文件
 
-
-
-![](images/202202101945990.png)
-
-
+![](../.gitbook/assets/202202101945990.png)
 
 后端代码 https://github.com/jumpserver/koko/blob/e054394ffd13ac7c71a4ac980340749d9548f5e1/pkg/httpd/webserver.go
 
-
-
-![](images/202202101945914.png)
-
-
+![](../.gitbook/assets/202202101945914.png)
 
 这里我们就可以通过 获得的token来模拟请求
 
-
-
-![](images/202202101945570.png)
-
-
+![](../.gitbook/assets/202202101945570.png)
 
 成功连接模拟了这个 token 的请求,可以在Network看一下流量是怎么发送的
 
-
-
-![](images/202202101945740.png)
-
-
+![](../.gitbook/assets/202202101945740.png)
 
 模拟连接发送和接发数据
 
-
-
-![](images/202202101945777.png)
-
-
+![](../.gitbook/assets/202202101945777.png)
 
 这里可以看到我们只要模拟了这个发送，返回的数据和web终端是一样的，那我们就可以通过这样的方法来进行命令执行了
 
-
-
 ## 漏洞POC
 
-- ✅POC 里包含两个方法，一个是获取日志文件，另一个是命令执行
-- ✅日志提取已经过滤了部分API调用的数据，只需要找到那几个值就好了
-
-- ✅命令执行需要从日志中获取敏感数据并写入脚本对应的变量中
-- ✅接收数据如果卡住请调整 for i in range(7) 这个位置的 7
-
-
+* ✅POC 里包含两个方法，一个是获取日志文件，另一个是命令执行
+* ✅日志提取已经过滤了部分API调用的数据，只需要找到那几个值就好了
+* ✅命令执行需要从日志中获取敏感数据并写入脚本对应的变量中
+* ✅接收数据如果卡住请调整 for i in range(7) 这个位置的 7
 
 ```python
 import requests
@@ -414,6 +337,6 @@ if __name__ == '__main__':
     POC_2(target_url, user, asset, system_user)
 ```
 
-![](images/202202101945982.png)
+![](../.gitbook/assets/202202101945982.png)
 
-![](images/202202101946161.png)
+![](../.gitbook/assets/202202101946161.png)

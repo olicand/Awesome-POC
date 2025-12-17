@@ -1,4 +1,4 @@
-# 通达OA v11.6 print.php 任意文件删除&RCE
+# 通达OA v11.6 print.php 任意文件删除\&RCE
 
 ## 漏洞描述
 
@@ -22,7 +22,7 @@
 
 解密工具已经放在目录下的POC目录中
 
-解密完成后查看 **webroot\general\data_center\utils\upload.php** 文件
+解密完成后查看 **webroot\general\data\_center\utils\upload.php** 文件
 
 ```php
 <?php
@@ -162,13 +162,13 @@ echo "<body>\r\n</body>\r\n</html>";
 include_once "inc/auth.inc.php";
 ```
 
-![image-20220209105907490](images/202202091059689.png)
+![image-20220209105907490](../.gitbook/assets/202202091059689.png)
 
 可以看到这个文件用于检验是否登录，未登录的情况无法利用这个漏洞
 
 查看 **\webroot\module\appbuilder\assets\print.php**文件
 
-![image-20220209105939041](images/202202091059191.png)
+![image-20220209105939041](../.gitbook/assets/202202091059191.png)
 
 ```php
 <?php
@@ -187,8 +187,7 @@ else {
 }
 ```
 
-这里可以看到 页面获取 guid参数的值
-使用**file_exists函数**判断文件是否存在 并未进行校验 就执行unlink删除文件
+这里可以看到 页面获取 guid参数的值 使用**file\_exists函数**判断文件是否存在 并未进行校验 就执行unlink删除文件
 
 可以本地在 **\webroot\inc** 目录创建 1.txt 文件
 
@@ -255,7 +254,7 @@ else {
 }
 ```
 
-在这段代码中，如果不存在 **$from_rep** 变量则会跳到如下代码
+在这段代码中，如果不存在 **$from\_rep** 变量则会跳到如下代码
 
 ```php
 else {
@@ -272,15 +271,15 @@ else {
 
 这里直接将 **$repkid** 变量进行拼接,也就是说可以通过目录穿越来上传恶意文件到指定目录
 
-这里需要利用file_exists函数的漏洞构造/.<>./.<>./.<>./ 逃逸出来
+这里需要利用file\_exists函数的漏洞构造/.<>./.<>./.<>./ 逃逸出来
 
 使用POC来利用漏洞
 
-![image-20220209110025711](images/202202091100958.png)
+![image-20220209110025711](../.gitbook/assets/202202091100958.png)
 
 注意在删除验证身份的文件后，会造成后台页面出现如下图，使用前备份文件
 
-![image-20220209110050983](images/202202091100063.png)
+![image-20220209110050983](../.gitbook/assets/202202091100063.png)
 
 ## 漏洞POC
 
@@ -389,4 +388,4 @@ if __name__ == '__main__':
             POC_4(target_url, cmd)
 ```
 
-![image-20220209110115108](images/202202091101200.png)
+![image-20220209110115108](../.gitbook/assets/202202091101200.png)

@@ -10,7 +10,7 @@ Vulhub运行成功后，Nginx将会监听8080/8081/8082三个端口，分别对�
 
 ## 漏洞复现
 
-### 错误1  CRLF注入漏洞
+### 错误1 CRLF注入漏洞
 
 Nginx会将`$uri`进行解码，导致传入`%0a%0d`即可引入换行符，造成CRLF注入漏洞。
 
@@ -40,9 +40,9 @@ location /files {
 
 Payload: `http://your-ip:8081/files../` ，成功穿越到根目录。
 
-![image-20220227222039275](images/202202272220345.png)
+![image-20220227222039275](../.gitbook/assets/202202272220345.png)
 
-### 错误3 
+### 错误3
 
 Nginx配置文件子块（server、location、if）中的`add_header`，将会覆盖父块中的`add_header`添加的HTTP头，造成一些安全隐患。
 

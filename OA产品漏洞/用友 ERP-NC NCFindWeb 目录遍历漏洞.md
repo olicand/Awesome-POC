@@ -22,11 +22,8 @@ icon_hash="1085941792"
 
 poc
 
-```plain
+```
 /NCFindWeb?service=IPreAlertConfigService&filename=
 ```
 
-![](images/用友%20ERP-NC%20NCFindWeb%20目录遍历漏洞/image-20240704143115260.png)
-
-
-
+![](../.gitbook/assets/image-20240704143115260.png)

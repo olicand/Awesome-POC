@@ -6,7 +6,7 @@
 
 参考阅读：
 
-- [Github 绕过文件上传限制导致命令执行](https://github.com/Typesetter/Typesetter/issues/674)
+* [Github 绕过文件上传限制导致命令执行](https://github.com/Typesetter/Typesetter/issues/674)
 
 ## 漏洞影响
 
@@ -18,4 +18,4 @@ Typesetter CMS 5-5.1
 
 按如下步骤复现
 
-![](images/202202170930270.gif)
+![](../.gitbook/assets/202202170930270.gif)

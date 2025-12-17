@@ -1,4 +1,4 @@
-# ECShop 4.x collection_list SQL注入
+# ECShop 4.x collection\_list SQL注入
 
 ## 漏洞描述
 
@@ -6,8 +6,8 @@ ECShop是上海商派网络科技有限公司（ShopEx）旗下——B2C独立�
 
 参考阅读：
 
-- https://mp.weixin.qq.com/s/xHioArEpoAqGlHJPfq3Jiw
-- http://foreversong.cn/archives/1556
+* https://mp.weixin.qq.com/s/xHioArEpoAqGlHJPfq3Jiw
+* http://foreversong.cn/archives/1556
 
 ## 环境搭建
 
@@ -19,11 +19,11 @@ docker-compose up -d
 
 服务器启动后，访问`http://your-ip:8080`安装向导。数据库地址填写为`mysql`，用户名和密码均为`root`。
 
-![image-20220222224056438](images/202202222240560.png)
+![image-20220222224056438](../.gitbook/assets/202202222240560.png)
 
 注册普通用户user。
 
-![image-20220222224432161](images/202202222244240.png)
+![image-20220222224432161](../.gitbook/assets/202202222244240.png)
 
 ## 漏洞复现
 
@@ -43,7 +43,7 @@ Cookie: ECS_ID=f7b1398a0fdc189b691a6f1c969911ac1eea8fca;ECS[password]=445ac05c4a
 Connection: close
 ```
 
-![image-20220222225322409](images/202202222253558.png)
+![image-20220222225322409](../.gitbook/assets/202202222253558.png)
 
 请注意，您应该首先以普通用户身份登录。
 
@@ -61,5 +61,4 @@ Cookie: ECS_ID=f7b1398a0fdc189b691a6f1c969911ac1eea8fca;ECS[password]=445ac05c4a
 Connection: close
 ```
 
-![image-20220222225358070](images/202202222253211.png)
-
+![image-20220222225358070](../.gitbook/assets/202202222253211.png)

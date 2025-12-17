@@ -18,7 +18,7 @@
 
 登录页面
 
-![image-20231115100316838](images/image-20231115100316838.png)
+![image-20231115100316838](../.gitbook/assets/image-20231115100316838.png)
 
 poc，将密码重置为111111
 
@@ -26,4 +26,4 @@ poc，将密码重置为111111
 /dwr/role/resetPwd
 ```
 
-![image-20231115100422870](images/image-20231115100422870.png)
+![image-20231115100422870](../.gitbook/assets/image-20231115100422870.png)

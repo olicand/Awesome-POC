@@ -18,8 +18,8 @@ fid="N3IFMflkcmNQ2s4vuAhjzg=="
 
 登陆页面
 
-![image-20230828150840869](images/image-20230828150840869.png)
+![image-20230828150840869](../.gitbook/assets/image-20230828150840869.png)
 
 通过弱口令登陆后台 admin 拼接命令
 
-![image-20230828150858507](images/image-20230828150858507.png)
+![image-20230828150858507](../.gitbook/assets/image-20230828150858507.png)

@@ -20,12 +20,12 @@ app="新点OA"
 
 构造的Url为
 
-```plain
+```
 /ExcelExport/人员列表.xls
 ```
 
 将会下载人员列表文件
 
-![xindian](images/xindian.png)
+![xindian](../.gitbook/assets/xindian.png)
 
 通过获取的登录名登陆后台(默认密码11111)

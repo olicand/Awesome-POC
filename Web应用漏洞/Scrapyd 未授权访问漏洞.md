@@ -6,7 +6,7 @@ scrapyd是爬虫框架scrapy提供的云服务，用户可以部署自己的scra
 
 参考链接：
 
-- https://www.leavesongs.com/PENETRATION/attack-scrapy.html
+* https://www.leavesongs.com/PENETRATION/attack-scrapy.html
 
 ## 环境搭建
 
@@ -18,7 +18,7 @@ docker-compose up -d
 
 环境启动后，访问`http://your-ip:6800`即可看到Web界面。
 
-![image-20220228223956758](images/202202282239821.png)
+![image-20220228223956758](../.gitbook/assets/202202282239821.png)
 
 ## 漏洞复现
 
@@ -52,7 +52,7 @@ curl http://your-ip:6800/addversion.json -F project=evil -F version=r01 -F egg=@
 
 成功执行命令`touch awesome_poc`：
 
-![image-20220228225416938](images/202202282254990.png)
+![image-20220228225416938](../.gitbook/assets/202202282254990.png)
 
 同样的方法实现反弹shell，编辑 `evil/__init__.py`, 加入恶意代码：
 
@@ -83,4 +83,4 @@ curl http://your-ip:6800/addversion.json -F project=evil -F version=r01 -F egg=@
 
 成功反弹shell：
 
-![image-20220228230711087](images/202202282307169.png)
+![image-20220228230711087](../.gitbook/assets/202202282307169.png)

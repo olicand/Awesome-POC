@@ -2,7 +2,7 @@
 
 ## 漏洞描述
 
-- 参考阅读： [http://archive.hack.lu/2016/Wavestone%20-%20Hack.lu%202016%20-%20Hadoop%20safari%20-%20Hunting%20for%20vulnerabilities%20-%20v1.0.pdf](http://archive.hack.lu/2016/Wavestone - Hack.lu 2016 - Hadoop safari - Hunting for vulnerabilities - v1.0.pdf)
+* 参考阅读： \[http://archive.hack.lu/2016/Wavestone%20-%20Hack.lu%202016%20-%20Hadoop%20safari%20-%20Hunting%20for%20vulnerabilities%20-%20v1.0.pdf]\(http://archive.hack.lu/2016/Wavestone - Hack.lu 2016 - Hadoop safari - Hunting for vulnerabilities - v1.0.pdf)
 
 ## 环境搭建
 
@@ -14,7 +14,7 @@ docker-compose up -d
 
 环境启动后，访问`http://your-ip:8088`即可看到Hadoop YARN ResourceManager WebUI页面。
 
-![image-20220224001542564](images/202202240015697.png)
+![image-20220224001542564](../.gitbook/assets/202202240015697.png)
 
 ## 漏洞复现
 
@@ -55,4 +55,4 @@ requests.post(url, json=data)
 
 成功反弹shell：
 
-![image-20220224001724727](images/202202240017808.png)
+![image-20220224001724727](../.gitbook/assets/202202240017808.png)

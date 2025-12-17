@@ -18,7 +18,7 @@ app="用友-移动系统管理"
 
 登陆页面
 
-![image-20230828164047741](images/image-20230828164047741.png)
+![image-20230828164047741](../.gitbook/assets/image-20230828164047741.png)
 
 验证POC
 
@@ -39,9 +39,8 @@ hello
 ------WebKitFormBoundaryvLTG6zlX0gZ8LzO3--
 ```
 
-![image-20230828164101589](images/image-20230828164101589.png)
+![image-20230828164101589](../.gitbook/assets/image-20230828164101589.png)
 
 ```
 /maupload/apk/a.jsp
 ```
-

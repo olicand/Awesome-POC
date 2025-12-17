@@ -1,8 +1,8 @@
-# 信诺瑞得 WiseGrid慧敏应用交付网关 sysadmin_action.php 后台命令执行漏洞
+# 信诺瑞得 WiseGrid慧敏应用交付网关 sysadmin\_action.php 后台命令执行漏洞
 
 ## 漏洞描述
 
-信诺瑞得 WiseGrid慧敏应用交付网关 sysadmin_action.php 对应的ping功能存在后台命令执行漏洞，通过默认口令可以获取系统权限
+信诺瑞得 WiseGrid慧敏应用交付网关 sysadmin\_action.php 对应的ping功能存在后台命令执行漏洞，通过默认口令可以获取系统权限
 
 ## 漏洞影响
 
@@ -20,7 +20,7 @@ app="WiseGrid慧敏应用交付网关"
 
 登录页面
 
-![image-20220525143430650](images/202205251434774.png)
+![image-20220525143430650](../.gitbook/assets/202205251434774.png)
 
 默认口令
 
@@ -52,6 +52,6 @@ X-Remote-Addr: 127.0.0.1
 Connection: close
 ```
 
-![](images/202205251433134.png)
+![](../.gitbook/assets/202205251433134.png)
 
-![]()![](images/202205251434769.png)
+![](../%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87%E6%BC%8F%E6%B4%9E) ![](../.gitbook/assets/202205251434769.png)

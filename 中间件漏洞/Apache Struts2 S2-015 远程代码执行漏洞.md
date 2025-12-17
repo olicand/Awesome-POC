@@ -2,7 +2,7 @@
 
 ## 漏洞描述
 
-漏洞产生于配置了 Action 通配符 *，并将其作为动态值时，解析时会将其内容执行 OGNL 表达式，例如：
+漏洞产生于配置了 Action 通配符 \*，并将其作为动态值时，解析时会将其内容执行 OGNL 表达式，例如：
 
 ```
 <package name="S2-015" extends="struts-default">
@@ -18,7 +18,7 @@
 
 漏洞详情:
 
-- http://struts.apache.org/docs/s2-015.html
+* http://struts.apache.org/docs/s2-015.html
 
 ## 漏洞影响
 
@@ -57,7 +57,7 @@ GET /S2-015/%24%7b%23%63%6f%6e%74%65%78%74%5b%27%78%77%6f%72%6b%2e%4d%65%74%68%6
 
 直接回显：
 
-![image-20220301185208869](images/202203011852988.png)
+![image-20220301185208869](../.gitbook/assets/202203011852988.png)
 
 除了上面所说到的这种情况以外，S2-015 还涉及一种二次引用执行的情况：
 
@@ -70,7 +70,7 @@ GET /S2-015/%24%7b%23%63%6f%6e%74%65%78%74%5b%27%78%77%6f%72%6b%2e%4d%65%74%68%6
 </action>
 ```
 
-这里配置了 `<param name="errorMessage">${message}</param>`，其中 message 为 ParamAction 中的一个私有变量，这样配置会导致触发该 Result 时，Struts2 会从请求参数中获取 message 的值，并在解析过程中，触发了 OGNL 表达式执行，因此只用提交 %{1111*2} 作为其变量值提交就会得到执行。这里需要注意的是这里的二次解析是因为在 struts.xml 中使用 ${param} 引用了 Action 中的变量所导致的，并不针对于 type="httpheader" 这种返回方式。
+这里配置了 `<param name="errorMessage">${message}</param>`，其中 message 为 ParamAction 中的一个私有变量，这样配置会导致触发该 Result 时，Struts2 会从请求参数中获取 message 的值，并在解析过程中，触发了 OGNL 表达式执行，因此只用提交 %{1111\*2} 作为其变量值提交就会得到执行。这里需要注意的是这里的二次解析是因为在 struts.xml 中使用 ${param} 引用了 Action 中的变量所导致的，并不针对于 type="httpheader" 这种返回方式。
 
 可以构造 Payload 如下：
 
@@ -121,4 +121,4 @@ bash /usr/local/tomcat/shell.sh
 
 成功接收反弹 shell：
 
-![image-20220301190047036](images/202203011900116.png)
+![image-20220301190047036](../.gitbook/assets/202203011900116.png)

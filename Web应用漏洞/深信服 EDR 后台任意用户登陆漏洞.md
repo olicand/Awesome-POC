@@ -16,5 +16,4 @@ https://xxx.xxx.xxx.xxx/ui/login.php?user=admin
 
 注意最后的admin需要为存在的用户名
 
-![img](images/202202091912509.png)
-
+![img](../.gitbook/assets/202202091912509.png)

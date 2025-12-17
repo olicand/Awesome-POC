@@ -8,8 +8,8 @@ kkFileView 是使用 Spring Boot 搭建的文档在线预览解决方案，能�
 
 参考链接：
 
-- https://github.com/kekingcn/kkFileView/issues/553
-- https://github.com/luelueking/kkFileView-v4.3.0-RCE-POC
+* https://github.com/kekingcn/kkFileView/issues/553
+* https://github.com/luelueking/kkFileView-v4.3.0-RCE-POC
 
 ## 披露时间
 
@@ -33,7 +33,7 @@ docker compose up -d
 
 服务启动后，访问 `http://your-ip:8012` 即可查看到首页。
 
-![](images/kkFileView%20ZipSlip%20远程命令执行漏洞/image-20240419210738761.png)
+![](../.gitbook/assets/image-20240419210738761.png)
 
 ## 漏洞复现
 
@@ -65,23 +65,23 @@ python poc.py
 
 然后，使用 kkFileView 服务上传 `test.zip`：
 
-![](images/kkFileView%20ZipSlip%20远程命令执行漏洞/image-20240419212103511.png)
+![](../.gitbook/assets/image-20240419212103511.png)
 
 点击 `test.zip` 的“预览”按钮，可以看到 zip 压缩包中的文件列表：
 
-![](images/kkFileView%20ZipSlip%20远程命令执行漏洞/image-20240419212029664.png)
+![](../.gitbook/assets/image-20240419212029664.png)
 
 最后，上传任意一个 odt 文件，例如 [sample.odt](https://github.com/vulhub/vulhub/blob/master/kkfileview/4.3-zipslip-rce/sample.odt)，发起 Libreoffice 任务：
 
-![](images/kkFileView%20ZipSlip%20远程命令执行漏洞/image-20240419212226172.png)
+![](../.gitbook/assets/image-20240419212226172.png)
 
 点击 `sample.odt` 的“预览”按钮，触发代码执行漏洞：
 
-![](images/kkFileView%20ZipSlip%20远程命令执行漏洞/image-20240419212315976.png)
+![](../.gitbook/assets/image-20240419212315976.png)
 
 可见，`touch /tmp/success` 已经成功被执行：
 
-![](images/kkFileView%20ZipSlip%20远程命令执行漏洞/image-20240419212427494.png)
+![](../.gitbook/assets/image-20240419212427494.png)
 
 反弹 shell：
 
@@ -100,8 +100,8 @@ if __name__ == "__main__":
         raise e
 ```
 
-![](images/kkFileView%20ZipSlip%20远程命令执行漏洞/image-20240419220258376.png)
+![](../.gitbook/assets/image-20240419220258376.png)
 
 ## 漏洞修复
 
-- https://github.com/kekingcn/kkFileView/commit/421a2760d58ccaba4426b5e104938ca06cc49778
+* https://github.com/kekingcn/kkFileView/commit/421a2760d58ccaba4426b5e104938ca06cc49778

@@ -29,7 +29,7 @@ vim kube-apiserver.yaml
 - --insecure-bind-address=0.0.0.0
 ```
 
-![image-20230215102911534](images/image-20230215102911534.png)
+![image-20230215102911534](../.gitbook/assets/image-20230215102911534.png)
 
 重启 k8s：
 
@@ -39,7 +39,7 @@ systemctl restart kubectl
 
 访问 8080 端口即可看到存在未授权：
 
-![image-20230215110103802](images/image-20230215110103802.png)
+![image-20230215110103802](../.gitbook/assets/image-20230215110103802.png)
 
 也可以使用 kubectl 远程连接获得信息：
 
@@ -55,7 +55,7 @@ kubectl -s http://your-ip:8080 get nodes
 
 正常情况下访问 6443 端口，提示 Forbidden。
 
-![image-20230215110607076](images/image-20230215110607076.png)
+![image-20230215110607076](../.gitbook/assets/image-20230215110607076.png)
 
 执行如下命令将 "system:anonymous" 用户绑定到 "cluster-admin" 用户组：
 
@@ -147,7 +147,7 @@ default       nginx-deployment-58d48b746d-d6x8t    1/1     Running   3          
 
 通过获取到的 pods 节点信息，进入对应 docker 命令执行。-n 对应的是 NAMESPACE，-it 对应的是 NAME。
 
-##### 8080 端口
+**8080 端口**
 
 ```
 # 进入命名空间为default，名字为hello-minikube的容器
@@ -157,7 +157,7 @@ kubectl -s http://your-ip:8080 exec -n default -it hello-minikube -- /bin/bash
 kubectl -s http://your-ip:8080 exec -n kube-system -it etcd-ubuntu -- /bin/sh
 ```
 
-##### 6443 端口
+**6443 端口**
 
 ```
 kubectl --insecure-skip-tls-verify -s https://172.22.14.37:6443/ exec -it nginx-deployment -- /bin/bash

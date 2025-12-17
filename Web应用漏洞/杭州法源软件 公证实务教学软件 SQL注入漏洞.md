@@ -18,13 +18,11 @@ FOFA暂时未收录任何网站
 
 登录页面如下
 
-![](images/202202101856282.png)
+![](../.gitbook/assets/202202101856282.png)
 
 登录抓取请求包
 
-
-
-```plain
+```
 POST /JusNotary/ HTTP/1.1
 Host: xxx.xxx.xxx.xxx
 Content-Length: 219
@@ -45,10 +43,6 @@ Connection: close
 __EVENTTARGET=&__EVENTARGUMENT=&__VIEWSTATE=%2FwEPDwUKMTE5NTI5NDc1Ng8WAh4TVmFsaWRhdGVSZXF1ZXN0TW9kZQIBZGTTkYMK0k4DlIElq0ua0zvxEhpFH8rCzVrUscEhlVc9pw%3D%3D&__VIEWSTATEGENERATOR=1B0004A3&txtName=123&txtPwd=123&btnSubmit=+
 ```
 
-
-
 其中注入的参数为 POST数据中的 **txtName** 参数, 保存为文件使用 Sqlmap跑一下
 
-
-
-![](images/202202101856878.png)
+![](../.gitbook/assets/202202101856878.png)

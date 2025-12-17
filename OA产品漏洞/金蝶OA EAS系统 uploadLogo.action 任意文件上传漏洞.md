@@ -18,7 +18,7 @@
 
 登陆页面
 
-![image-20231116141032395](images/image-20231116141032395.png)
+![image-20231116141032395](../.gitbook/assets/image-20231116141032395.png)
 
 poc
 
@@ -52,9 +52,8 @@ Test
 ------WebKitFormBoundarycxkT8bV6WLIUzm2p--
 ```
 
-![image-20231116141050903](images/image-20231116141050903.png)
+![image-20231116141050903](../.gitbook/assets/image-20231116141050903.png)
 
 ```
 /portal/res/file/upload/xxx.jsp
 ```
-

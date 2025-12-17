@@ -1,4 +1,4 @@
-# 金山 V8 终端安全系统 get_file_content.php 任意文件读取漏洞
+# 金山 V8 终端安全系统 get\_file\_content.php 任意文件读取漏洞
 
 ## 漏洞描述
 
@@ -20,7 +20,7 @@ title="在线安装-V8+终端安全系统Web控制台"
 
 登录页面
 
-![image-20220525150449778](images/202205251504895.png)
+![image-20220525150449778](../.gitbook/assets/202205251504895.png)
 
 存在漏洞的文件`/Console/receive_file/get_file_content.php`
 
@@ -52,8 +52,6 @@ title="在线安装-V8+终端安全系统Web控制台"
 ?>
 ```
 
-
-
 文件中没有任何的过滤 通过 filepaht 参数即可下载任意文件
 
 由于不能出现 `..` ，所以只能读取web目录下的文件
@@ -64,4 +62,4 @@ POST /receive_file/get_file_content.php
 filepath=login.php
 ```
 
-![image-20220525150700239](images/202205251507315.png)
+![image-20220525150700239](../.gitbook/assets/202205251507315.png)

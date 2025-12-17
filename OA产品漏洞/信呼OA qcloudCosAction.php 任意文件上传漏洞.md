@@ -8,7 +8,7 @@
 
 参考链接：
 
-- https://github.com/rainrocka/xinhu
+* https://github.com/rainrocka/xinhu
 
 ## 漏洞影响
 
@@ -26,7 +26,7 @@ app="信呼协同办公系统"
 
 登陆页面：
 
-![](images/信呼OA%20qcloudCosAction.php%20任意文件上传漏洞/image-20240124101156480.png)
+![](../.gitbook/assets/image-20240124101156480.png)
 
 登陆系统，找到上传点：
 

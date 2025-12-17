@@ -16,6 +16,4 @@ Windows正式版6.8
 
 访问 [**http://xxx.xxx.xxx.xxx:888/pma**](http://xxx.xxx.xxx.xxx:888/pma) 即可
 
-
-
-![img](images/202202091838946.png)
+![img](../.gitbook/assets/202202091838946.png)

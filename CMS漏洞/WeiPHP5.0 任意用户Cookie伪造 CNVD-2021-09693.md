@@ -16,9 +16,7 @@ Weiphp <= 5.0
 
 参考官方手册创建网站即可
 
-![](images/202202162320938.png)
-
-
+![](../.gitbook/assets/202202162320938.png)
 
 ## 网络测绘
 
@@ -26,23 +24,23 @@ app="WeiPHP"
 
 ## 漏洞复现
 
-首先需要得到数据库配置文件中的**data_auth_key**密钥
+首先需要得到数据库配置文件中的**data\_auth\_key**密钥
 
-![](images/202202162320455.png)
+![](../.gitbook/assets/202202162320455.png)
 
 得到这个配置文件可参照上一篇**Weiphp5.0 前台文件任意读取**
 
-```plain
+```
 'data_auth_key' => '+0SeoAC#YR,Jm&c?[PhUg9u;:Drd8Fj4q|XOkx*T'
 ```
 
 全局查找下使用了这个密钥的地方
 
-![](images/202202162320938.png)
+![](../.gitbook/assets/202202162320938.png)
 
 找到了跟据这个密钥的加密方法和解密方法
 
-**加密方法 think_encrypt**
+**加密方法 think\_encrypt**
 
 ```php
 function think_encrypt($data, $key = '', $expire = 0)
@@ -81,7 +79,7 @@ function think_encrypt($data, $key = '', $expire = 0)
 }
 ```
 
-**解密方法 think_decrypt**
+**解密方法 think\_decrypt**
 
 ```php
 function think_decrypt($data, $key = '')
@@ -156,9 +154,9 @@ function is_login()
 }
 ```
 
-根据这里得到的代码，可以知道当**user_Id=1**时,会解密密钥后判断是否正确，如果正确则可以登录系统
+根据这里得到的代码，可以知道当**user\_Id=1**时,会解密密钥后判断是否正确，如果正确则可以登录系统
 
-我们在本地使用加密代码加密**user_id=1**得到的cookie则可以登录系统
+我们在本地使用加密代码加密**user\_id=1**得到的cookie则可以登录系统
 
 ```php
 <?php
@@ -203,16 +201,12 @@ echo 'user_id = ' . think_encrypt($_GET['user_id']);
 ?>
 ```
 
-![](images/202202162320334.png)
+![](../.gitbook/assets/202202162320334.png)
 
-添加**cookie: user_id=xxxxxxxx**即可成功登录
+添加**cookie: user\_id=xxxxxxxx**即可成功登录
 
-![](images/202202162320956.png)
+![](../.gitbook/assets/202202162320956.png)
 
+![](../.gitbook/assets/202202162321696.png)
 
-
-![](images/202202162321696.png)
-
-
-
-- 获取密钥的方法参照上一篇审计文章
+* 获取密钥的方法参照上一篇审计文章

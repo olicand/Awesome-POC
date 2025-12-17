@@ -1,8 +1,8 @@
-# 安恒 明御安全网关 aaa_portal_auth_local_submit 远程命令执行漏洞
+# 安恒 明御安全网关 aaa\_portal\_auth\_local\_submit 远程命令执行漏洞
 
 ## 漏洞描述
 
-安恒 明御安全网关 aaa_portal_auth_local_submit 存在远程命令执行漏洞，攻击者通过漏洞可以获取服务器权限
+安恒 明御安全网关 aaa\_portal\_auth\_local\_submit 存在远程命令执行漏洞，攻击者通过漏洞可以获取服务器权限
 
 ## 漏洞影响
 
@@ -18,7 +18,7 @@ body="/webui/images/basic/login/" && title=="明御安全网关"
 
 登录页面
 
-![image-20230828143428738](images/image-20230828143428738.png)
+![image-20230828143428738](../.gitbook/assets/image-20230828143428738.png)
 
 验证POC
 
@@ -32,10 +32,10 @@ Content-Type: application/x-www-form-urlencoded
 Accept-Encoding: gzip
 ```
 
-![image-20230828143444585](images/image-20230828143444585.png)
+![image-20230828143444585](../.gitbook/assets/image-20230828143444585.png)
 
 ```
 /test.txt
 ```
 
-![image-20230828143501551](images/image-20230828143501551.png)
+![image-20230828143501551](../.gitbook/assets/image-20230828143501551.png)

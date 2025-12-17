@@ -22,25 +22,25 @@ app="Jinher-OA"
 
 登录后点击信息交流，发起协同页面
 
-![](images/202202090137424.png)
+![](../.gitbook/assets/202202090137424.png)
 
 上传附件并上传发送给目标
 
-- 这里登录权限为管理员，我们自己发给自己就好，前文只是展现漏洞挖掘思路过程
+* 这里登录权限为管理员，我们自己发给自己就好，前文只是展现漏洞挖掘思路过程
 
-![](images/202202090137965.png)
+![](../.gitbook/assets/202202090137965.png)
 
 成功收到上传的附件
 
-![](images/202202090138862.png)
+![](../.gitbook/assets/202202090138862.png)
 
 点击查看时抓包，发现一个带有文件ID的请求包
 
-![](images/202202090138285.png)
+![](../.gitbook/assets/202202090138285.png)
 
 返回了几个参数
 
-```plain
+```
 var strFilePath = '../Resource/slaves/1/8b473ecb-7b39-4384-ada2-b0ec72c4f6ed.png';
 var strFileType = 'png';
 var strSid='3jvpvhs410m2wdbbficax5q5';
@@ -53,23 +53,23 @@ var MD = '';
 
 其中我们注意到 strFilePath 为文件的存储地址，我们更改 id参数为另一个值，且测试后发现 name文件名参数无关紧要
 
-![](images/202202090138702.png)
+![](../.gitbook/assets/202202090138702.png)
 
 更改ID后发送请求包发现获得另一个文件的信息
 
-访问Url，注意 **type参数**  需要为正确的文件后缀才可以访问
+访问Url，注意 **type参数** 需要为正确的文件后缀才可以访问
 
-```plain
+```
 http://xxx.xxx.xxx.xxx/C6/control/OpenFile.aspx?id=1200&name=&type=pdf
 ```
 
-![](images/202202090138950.png)
+![](../.gitbook/assets/202202090138950.png)
 
 这里更换一个普通用户测试是否可行，尝试遍历 id
 
-![](images/202202090138469.png)
+![](../.gitbook/assets/202202090138469.png)
 
-![](images/202202090139653.png)
+![](../.gitbook/assets/202202090139653.png)
 
 存在 **strFilePath参数** 则是存在文件，为空则是文件已经不存在
 
@@ -77,14 +77,14 @@ http://xxx.xxx.xxx.xxx/C6/control/OpenFile.aspx?id=1200&name=&type=pdf
 
 **FileID 与 FileIDCode**
 
-![](images/202202090139235.png)
+![](../.gitbook/assets/202202090139235.png)
 
 于是只需要通过刚刚的ID遍历，获取两个关键参数就能下载其他人发送的敏感文件，且只需要普通用户权限
 
 ## 漏洞POC
 
-- POC只检测是否存在漏洞，且漏洞存在于后台需要登录
-- 运行后访问链接即可下载文件
+* POC只检测是否存在漏洞，且漏洞存在于后台需要登录
+* 运行后访问链接即可下载文件
 
 ```python
 import requests
@@ -142,4 +142,4 @@ if __name__ == '__main__':
     POC_1(target_url, file_id, cookie)
 ```
 
-![](images/202202090139356.png)
+![](../.gitbook/assets/202202090139356.png)

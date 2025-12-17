@@ -18,7 +18,7 @@
 
 登陆页面
 
-![image-20231115101204343](images/image-20231115101204343.png)
+![image-20231115101204343](../.gitbook/assets/image-20231115101204343.png)
 
 poc
 
@@ -31,4 +31,4 @@ Accept: */*
 y-forwarded-for: 127.0.0.1
 ```
 
-![image-20231115101759670](images/image-20231115101759670.png)
+![image-20231115101759670](../.gitbook/assets/image-20231115101759670.png)

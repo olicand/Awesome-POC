@@ -8,9 +8,9 @@ uWSGI支持通过魔术变量（Magic Variables）的方式动态配置后端Web
 
 参考链接：
 
-- https://github.com/wofeiwo/webcgi-exploits/blob/master/python/uwsgi-rce-zh.md
-- https://xz.aliyun.com/t/3512
-- https://uwsgi-docs.readthedocs.io/en/latest/Vars.html
+* https://github.com/wofeiwo/webcgi-exploits/blob/master/python/uwsgi-rce-zh.md
+* https://xz.aliyun.com/t/3512
+* https://uwsgi-docs.readthedocs.io/en/latest/Vars.html
 
 ## 环境搭建
 
@@ -26,11 +26,11 @@ docker-compose up -d
 
 使用[poc.py](https://github.com/vulhub/vulhub/blob/master/uwsgi/unacc/poc.py)，执行命令`python poc.py -u your-ip:8000 -c "touch /tmp/awesome_poc"`：
 
-![image-20220302163756128](images/202203021637238.png)
+![image-20220302163756128](../.gitbook/assets/202203021637238.png)
 
 执行`docker-compose exec web bash`进入容器，可见`/tmp/awesome_poc`已经成功执行：
 
-![image-20220302163833950](images/202203021638121.png)
+![image-20220302163833950](../.gitbook/assets/202203021638121.png)
 
 ## 漏洞POC
 
@@ -181,4 +181,3 @@ def main(*args):
 if __name__ == '__main__':
     main()
 ```
-

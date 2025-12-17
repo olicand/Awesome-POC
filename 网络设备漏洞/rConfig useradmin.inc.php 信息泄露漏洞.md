@@ -110,10 +110,10 @@ echo "<p class=\"paginate\">Page: $pages->current_page of $pages->num_pages</p>\
 
 漏洞验证的Url为
 
-```plain
+```
 /useradmin.inc.php
 ```
 
-![](images/202202162242982.png)
+![](../.gitbook/assets/202202162242982.png)
 
 泄露用户信息

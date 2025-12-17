@@ -12,13 +12,13 @@ Spring Cloud Function
 
 ## 环境搭建
 
-- https://github.com/spring-cloud/spring-cloud-function/tree/main/spring-cloud-function-samples/function-sample-pojo
+* https://github.com/spring-cloud/spring-cloud-function/tree/main/spring-cloud-function-samples/function-sample-pojo
 
 ## 漏洞复现
 
 搭建后访问
 
-![image-20220519160206177](images/202205191602220.png)
+![image-20220519160206177](../.gitbook/assets/202205191602220.png)
 
 发送 POC
 
@@ -31,4 +31,4 @@ Content-Length: 1
 
 接收到请求
 
-![image-20220519160240168](images/202205191602216.png)
+![image-20220519160240168](../.gitbook/assets/202205191602216.png)

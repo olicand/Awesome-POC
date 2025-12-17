@@ -29,7 +29,7 @@ consul.exe agent -dev -client <your-target-ip>  -enable-script-checks
 
 访问`your-target-ip:8500`：
 
-![image-20230306091757424](images/image-20230306091757424.png)
+![image-20230306091757424](../.gitbook/assets/image-20230306091757424.png)
 
 验证是否存在该远程命令执行漏洞，访问以下网址，如果`EnableRemoteScriptChecks`参数为`true`，则漏洞存在：
 
@@ -86,6 +86,6 @@ if __name__ == '__main__':
 
 ## 漏洞修复
 
-- 禁用Consul服务器上的脚本检查功能
-- 确保Consul HTTP API服务无法通过外网访问或调用
-- 对`/v1/agent/service/register` 禁止PUT方法
+* 禁用Consul服务器上的脚本检查功能
+* 确保Consul HTTP API服务无法通过外网访问或调用
+* 对`/v1/agent/service/register` 禁止PUT方法

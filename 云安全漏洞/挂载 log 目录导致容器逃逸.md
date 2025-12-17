@@ -4,9 +4,9 @@
 
 当 pod 以可写权限挂载了宿主机的 `/var/log` 目录，且 pod 里的 service account 有权限访问该 pod 在宿主机上的日志时，攻击者可以通过在容器内创建符号链接来完成简单逃逸。
 
-下图展示了 `kubectl logs <pod-name>` 如何从 pod 中检索日志：
+下图展示了 `kubectl logs <pod-name>` 如何从 pod 中检索日志：
 
-![](images/挂载%20log%20目录导致容器逃逸/image-20250520141902202.png)
+![](../.gitbook/assets/image-20250520141902202.png)
 
 kubelet 会在宿主机上的 `/var/log` 目录中创建一个目录结构，如图符号①，代表节点上的 pod。但 `0.log` 实际上是一个符号链接，指向 `/var/lib/docker/containers` 目录中的容器日志文件。当使用 `kubectl logs <pod-name>` 命令查询指定 pod 的日志时，实际上是向 kubelet 的 `/logs/pods/<path_to_0.log>` 接口发起 HTTP 请求。对于该请求的处理逻辑如下：
 
@@ -22,12 +22,12 @@ kubelet 会解析该请求地址，去 `/var/log` 对应的目录下读取 log �
 
 参考链接：
 
-- https://blog.aquasec.com/kubernetes-security-pod-escape-log-mounts
-- https://github.com/danielsagi/kube-pod-escape
+* https://blog.aquasec.com/kubernetes-security-pod-escape-log-mounts
+* https://github.com/danielsagi/kube-pod-escape
 
 ## 环境搭建
 
-基础环境准备（Docker + Minikube + Kubernetes），可参考 [Kubernetes + Ubuntu 18.04 漏洞环境搭建](https://github.com/Threekiii/Awesome-POC/blob/master/%E4%BA%91%E5%AE%89%E5%85%A8%E6%BC%8F%E6%B4%9E/Kubernetes%20%2B%20Ubuntu%2018.04%20%E6%BC%8F%E6%B4%9E%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA.md) 完成。
+基础环境准备（Docker + Minikube + Kubernetes），可参考 [Kubernetes + Ubuntu 18.04 漏洞环境搭建](<Kubernetes + Ubuntu 18.04 漏洞环境搭建.md>) 完成。
 
 本例中各组件版本如下：
 
@@ -54,7 +54,7 @@ NAME            READY   STATUS    RESTARTS   AGE
 mount-var-log   1/1     Running   0          28s
 ```
 
-![](images/挂载%20log%20目录导致容器逃逸/image-20250520141234815.png)
+![](../.gitbook/assets/image-20250520141234815.png)
 
 宿主机的 `/var/log` 被挂载在容器内部且该 pod 有权限访问日志。
 
@@ -92,11 +92,11 @@ root@mount-var-log:~/exploit# lsh /root
 cdk/
 ```
 
-![](images/挂载%20log%20目录导致容器逃逸/image-20250520151106730.png)
+![](../.gitbook/assets/image-20250520151106730.png)
 
 > 由于我们是在 minikube 上运行 kubernetes，这里逃逸到的是 minikube 虚拟机，可以看到，pod 执行 `lsh /root` 后列出的目录确实是 minikube 虚拟机的 `/root` 目录。
 
-![](images/挂载%20log%20目录导致容器逃逸/image-20250520151148672.png)
+![](../.gitbook/assets/image-20250520151148672.png)
 
 ## 环境复原
 
@@ -107,7 +107,7 @@ kubectl delete -f k8s_metarget_namespace.yaml
 
 ## YAML
 
-[k8s_metarget_namespace.yaml](https://github.com/Metarget/metarget/blob/master/yamls/k8s_metarget_namespace.yaml)
+[k8s\_metarget\_namespace.yaml](https://github.com/Metarget/metarget/blob/master/yamls/k8s_metarget_namespace.yaml)
 
 ```
 apiVersion: v1

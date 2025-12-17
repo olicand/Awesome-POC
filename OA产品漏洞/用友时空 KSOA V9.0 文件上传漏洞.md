@@ -14,7 +14,7 @@ app="用友-时空KSOA"
 
 登录界面：
 
-![image-20230601102416204](images/image-20230601102416204.png)
+![image-20230601102416204](../.gitbook/assets/image-20230601102416204.png)
 
 漏洞 URL：
 
@@ -44,7 +44,7 @@ your-payload
 %>
 ```
 
-![image-20230601102530120](images/image-20230601102530120.png)
+![image-20230601102530120](../.gitbook/assets/image-20230601102530120.png)
 
 访问 /pictures/1.jsp 即可。
 
@@ -81,4 +81,3 @@ your-payload
     }
 %>
 ```
-

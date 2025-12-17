@@ -18,7 +18,7 @@
 
 登陆页面
 
-![image-20230828143259744](images/image-20230828143259744.png)
+![image-20230828143259744](../.gitbook/assets/image-20230828143259744.png)
 
 验证POC
 
@@ -36,4 +36,4 @@ Content-Type: text/xml
 </xxx>
 ```
 
-![image-20230828143318826](images/image-20230828143318826.png)
+![image-20230828143318826](../.gitbook/assets/image-20230828143318826.png)

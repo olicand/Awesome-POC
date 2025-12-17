@@ -18,7 +18,7 @@
 
 登陆页面
 
-![image-20230828163144773](images/image-20230828163144773.png)
+![image-20230828163144773](../.gitbook/assets/image-20230828163144773.png)
 
 验证POC
 
@@ -127,4 +127,4 @@ Connection: close
 </methodCall>
 ```
 
-![image-20230828163201512](images/image-20230828163201512.png)
+![image-20230828163201512](../.gitbook/assets/image-20230828163201512.png)

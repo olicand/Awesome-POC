@@ -43,7 +43,7 @@ public class UserAction extends ActionSupport {
 
 漏洞详情:
 
-- http://struts.apache.org/docs/s2-007.html
+* http://struts.apache.org/docs/s2-007.html
 
 ## 漏洞影响
 
@@ -70,7 +70,7 @@ docker-compose up -d
 
 将 Exp 传入可以利用的输入框（age），得到命令执行结果：
 
-![image-20220301170152780](images/202203011701833.png)
+![image-20220301170152780](../.gitbook/assets/202203011701833.png)
 
 ### 反弹 shell
 
@@ -107,4 +107,4 @@ bash /usr/local/tomcat/shell.sh
 
 成功接收反弹 shell：
 
-![image-20220301170256417](images/202203011702511.png)
+![image-20220301170256417](../.gitbook/assets/202203011702511.png)

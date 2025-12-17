@@ -6,8 +6,8 @@ Gitea是从gogs衍生出的一个开源项目，是一个类似于Github、Gitla
 
 参考链接：
 
-- https://security.szurek.pl/gitea-1-4-0-unauthenticated-rce.html
-- https://www.leavesongs.com/PENETRATION/gitea-remote-command-execution.html
+* https://security.szurek.pl/gitea-1-4-0-unauthenticated-rce.html
+* https://www.leavesongs.com/PENETRATION/gitea-remote-command-execution.html
 
 ## 环境搭建
 
@@ -21,7 +21,7 @@ docker-compose up -d
 
 安装完成后，新建一个用户`test`，创建一个公开的仓库，随便添加点文件进去（比如使用选定的文件和模板初始化仓库）：
 
-![image-20220223204543045](images/202202232045145.png)
+![image-20220223204543045](../.gitbook/assets/202202232045145.png)
 
 然后，需要执行一次`docker-compose restart`重启gitea服务。（原因详见第二个参考链接）
 
@@ -54,7 +54,7 @@ Content-Length: 153
 }
 ```
 
-![image-20220223205223472](images/202202232052600.png)
+![image-20220223205223472](../.gitbook/assets/202202232052600.png)
 
 然后，访问`http://your-ip:3000/vulhub/repo.git/info/lfs/objects/......%2F..%2F..%2Fetc%2Fpasswd/sth`，即可看到`/etc/passwd`已被成功读取：
 
@@ -69,4 +69,4 @@ Accept-Language: zh-CN,zh;q=0.9
 Connection: close
 ```
 
-![image-20220223205318090](images/202202232053193.png)
+![image-20220223205318090](../.gitbook/assets/202202232053193.png)

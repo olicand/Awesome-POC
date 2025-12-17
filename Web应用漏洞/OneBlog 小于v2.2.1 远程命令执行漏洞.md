@@ -20,14 +20,8 @@ app="OneBlog开源博客后台管理系统"
 
 登陆页面如下
 
-
-
-![](images/202202101909905.png)
-
-
+![](../.gitbook/assets/202202101909905.png)
 
 使用工具直接利用Apache Shiro漏洞即可
 
-
-
-![](images/202202101909954.png)
+![](../.gitbook/assets/202202101909954.png)

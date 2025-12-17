@@ -20,39 +20,23 @@ title="电子文档安全管理系统"
 
 登录页面如下
 
-
-
-![](images/202202091906952.png)
-
-
+![](../.gitbook/assets/202202091906952.png)
 
 先获取 core name
 
-
-
 访问路径
 
-
-
-```plain
+```
 /solr/admin/cores
 ```
 
-
-
-![](images/202202091906483.png)
-
-
+![](../.gitbook/assets/202202091906483.png)
 
 使用POC执行whoami
 
-![](images/202202091906902.png)
-
-
+![](../.gitbook/assets/202202091906902.png)
 
 ## 漏洞POC
-
-
 
 ```python
 import requests

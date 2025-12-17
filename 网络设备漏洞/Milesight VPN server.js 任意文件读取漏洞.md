@@ -18,7 +18,7 @@ Milesight VPN
 
 登陆页面
 
-![image-20230828161340509](images/image-20230828161340509.png)
+![image-20230828161340509](../.gitbook/assets/image-20230828161340509.png)
 
 验证POC
 
@@ -29,4 +29,4 @@ Accept: */*
 Content-Type: application/x-www-form-urlencoded
 ```
 
-![image-20230828161357209](images/image-20230828161357209.png)
+![image-20230828161357209](../.gitbook/assets/image-20230828161357209.png)

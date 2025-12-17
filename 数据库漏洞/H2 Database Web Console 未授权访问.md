@@ -13,7 +13,7 @@ spring.h2.console.settings.web-allow-others=true
 
 参考链接：
 
-- https://mp.weixin.qq.com/s?__biz=MzI2NTM1MjQ3OA==&mid=2247483658&idx=1&sn=584710da0fbe56c1246755147bcec48e
+* https://mp.weixin.qq.com/s?\_\_biz=MzI2NTM1MjQ3OA==\&mid=2247483658\&idx=1\&sn=584710da0fbe56c1246755147bcec48e
 
 ## 环境搭建
 
@@ -57,11 +57,11 @@ public class EvilRMIServerNew {
 
 首先设置 JNDI 工具中执行的命令为 `touch /tmp/success`：
 
-![image-20220223235645410](images/202202232356618.png)
+![image-20220223235645410](../.gitbook/assets/202202232356618.png)
 
 然后启动 `JNDI-1.0-all.jar`，在 h2 console 页面填入 JNDI 类名和 URL 地址：
 
-![image-20220224001157803](images/202202240011878.png)
+![image-20220224001157803](../.gitbook/assets/202202240011878.png)
 
 Driver Class（JNDI 的工厂类）：
 
@@ -77,8 +77,8 @@ rmi://192.168.128.1:23456/BypassByEL
 
 点击连接后，恶意 RMI 成功接收到请求：
 
-![image-20220224001238367](images/202202240012570.png)
+![image-20220224001238367](../.gitbook/assets/202202240012570.png)
 
 `touch /tmp/success` 已成功执行：
 
-![image-20220224001248279](images/202202240012334.png)
+![image-20220224001248279](../.gitbook/assets/202202240012334.png)

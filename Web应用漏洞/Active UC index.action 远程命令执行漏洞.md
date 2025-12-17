@@ -20,13 +20,11 @@ title="网动统一通信平台(Active UC)"
 
 登录页面如下
 
-![](images/202202101923695.png)
-
-
+![](../.gitbook/assets/202202101923695.png)
 
 发送如下请求包
 
-```plain
+```
 POST /acenter/index.action HTTP/1.1
 Cookie: SessionId=96F3F15432E0660E0654B1CE240C4C36
 User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)
@@ -47,4 +45,4 @@ xxxxxxx
 -----------------------------18012721719170
 ```
 
-![](images/202202101923511.png)
+![](../.gitbook/assets/202202101923511.png)

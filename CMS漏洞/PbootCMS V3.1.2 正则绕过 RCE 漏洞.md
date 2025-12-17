@@ -2,7 +2,7 @@
 
 ## 漏洞描述
 
-PbootCMS 项目路径下 /common/function.php 中存在两个函数 get_lg 和 get_backurl，可绕过正则处理，进而执行命令。
+PbootCMS 项目路径下 /common/function.php 中存在两个函数 get\_lg 和 get\_backurl，可绕过正则处理，进而执行命令。
 
 ## 漏洞复现
 
@@ -44,6 +44,6 @@ Connection: close
 
 写 `webshell` 时用 `file_put_contents` 写入时有关键字限制：
 
-![image-20230601112738897](images/image-20230601112738897.png)
+![image-20230601112738897](../.gitbook/assets/image-20230601112738897.png)
 
 可使用 `copy` 函数远程落地。

@@ -20,7 +20,7 @@ https://downloads.wordpress.org/plugin/3dprint-lite.1.9.1.4.zip
 
 首先看一下插件注册的接口
 
-![1638590530183-dbba3790-04d8-4567-bf1e-2f49629a9911](images/202205241329738.png)
+![1638590530183-dbba3790-04d8-4567-bf1e-2f49629a9911](../.gitbook/assets/202205241329738.png)
 
 ```
 if ( is_admin() ) {
@@ -35,19 +35,19 @@ else {
 }
 ```
 
-跟踪 p3dlite_handle_upload 方法 `wp-content/plugins/3dprint-lite/includes/3dprint-lite-functions.php`
+跟踪 p3dlite\_handle\_upload 方法 `wp-content/plugins/3dprint-lite/includes/3dprint-lite-functions.php`
 
-![](images/202205241331648.png)
+![](../.gitbook/assets/202205241331648.png)
 
 向下看可以看到一个标准的文件上传代码
 
-![](images/202205241331787.png)
+![](../.gitbook/assets/202205241331787.png)
 
 通过调试可以找到上传路径 `/wp-content/uploads/p3d/`
 
-![image-20220524133048318](images/202205241330351.png)
+![image-20220524133048318](../.gitbook/assets/202205241330351.png)
 
-未授权调用 p3dlite_handle_upload 上传文件
+未授权调用 p3dlite\_handle\_upload 上传文件
 
 ```
 # Exploit Title: Wordpress Plugin 3DPrint Lite 1.9.1.4 - Arbitrary File Upload
@@ -120,4 +120,4 @@ def main():
 main();        
 ```
 
-![](images/202205241331913.png)
+![](../.gitbook/assets/202205241331913.png)

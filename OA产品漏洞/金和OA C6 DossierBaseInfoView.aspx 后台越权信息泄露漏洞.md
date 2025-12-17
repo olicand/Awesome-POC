@@ -22,13 +22,12 @@ app="Jinher-OA"
 
 访问的POC为
 
-```plain
+```
 http://xxx.xxx.xxx.xxx/C6/JHSoft.Web.Dossier/DossierBaseInfoView.aspx?CollID=1&UserID=RY120330
 ```
 
-- 注意 RY120330 需要为确定的其他的用户编号
+* 注意 RY120330 需要为确定的其他的用户编号
 
-![](images/202202090135010.png)
+![](../.gitbook/assets/202202090135010.png)
 
 泄露了部分的敏感信息
-

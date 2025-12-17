@@ -6,9 +6,9 @@ JavaServer Faces (JSF) 是一种用于构建 Web 应用程序的标准，Mojarra
 
 参考链接：
 
-- https://www.alphabot.com/security/blog/2017/java/Misconfigured-JSF-ViewStates-can-lead-to-severe-RCE-vulnerabilities.html
-- https://www.exploit-db.com/docs/48126
-- https://www.synacktiv.com/ressources/JSF_ViewState_InYourFace.pdf
+* https://www.alphabot.com/security/blog/2017/java/Misconfigured-JSF-ViewStates-can-lead-to-severe-RCE-vulnerabilities.html
+* https://www.exploit-db.com/docs/48126
+* https://www.synacktiv.com/ressources/JSF\_ViewState\_InYourFace.pdf
 
 ## 环境搭建
 
@@ -24,7 +24,7 @@ docker-compose up -d
 
 JSF的ViewState结构如下：
 
-![image-20220226215414515](images/202202262154554.png)
+![image-20220226215414515](../.gitbook/assets/202202262154554.png)
 
 根据这个结构，我们使用ysoserial的Jdk7u21利用链来生成一段合法的Payload：
 
@@ -35,8 +35,8 @@ H4sIAAVGF18AA61WzW8bRRR/Yye2Y9zmo/lsaZvQlnxAd/PlJsURbT5Ia3BIhNNUwocwXk/sbde7293Z
 
 然后，我们提交表单并抓包，修改其中`javax.faces.ViewState`字段的值为上述Payload（需要URL编码）：
 
-![image-20220226223548557](images/202202262235702.png)
+![image-20220226223548557](../.gitbook/assets/202202262235702.png)
 
 `touch /tmp/success`已成功执行：
 
-![image-20220226223611383](images/202202262236431.png)
+![image-20220226223611383](../.gitbook/assets/202202262236431.png)

